@@ -59,5 +59,9 @@ find . -name '*.png' -exec file {} \; | cut -c 37-45 | uniq
     \item Fail 2: Train and validation set do not have same classes because of ordering in dataset loading code
 \end{itemize}
 
+After training for a short time with the fixes, we get an acceptable accuracy rate of 55\%. We then started to calculate the accuracy per class, as has been done on the reproduce-chexnet discussed above. We quickly discovered that only the "No findings" class was accurate, an all other classes had zero correct classifications.
+
+
+
 
 
