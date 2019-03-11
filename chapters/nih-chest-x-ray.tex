@@ -42,4 +42,10 @@ Better results:
 % https://medium.com/@jrzech/reproducing-chexnet-with-pytorch-695ff9c3bf66
 
 \subsubsection{Image resize problems}
+In the Densenet code there was a reference that some images were not properly resized. We did a short check on our preprocessed data, but it revelead no such problems. Used bash command:
 
+
+\begin{minted}{bash}
+find . -name '*.png' -exec file {} \; | cut -c 37-45 | uniq
+\end{minted}
+299 x 299
