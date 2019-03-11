@@ -41,6 +41,10 @@ Better results:
 \subsection{Densenet}
 % https://medium.com/@jrzech/reproducing-chexnet-with-pytorch-695ff9c3bf66
 
+Loading the saved model did not work, because the used version of PyTorch was old and incompatible with ours.
+
+=> Retraining
+
 \subsubsection{Image resize problems}
 In the Densenet code there was a reference that some images were not properly resized. We did a short check on our preprocessed data, but it revelead no such problems. Used bash command:
 
