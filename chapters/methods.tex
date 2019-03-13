@@ -37,19 +37,18 @@ The most common method for image segmentation in the medical image analysis (tod
 https://medium.com/@keremturgutlu/semantic-segmentation-u-net-part-1-d8d6f6005066
 
 
-\begin{tabular}{|l|l|l|l|}
+\begin{tabularx}{\textwidth}{|l|l|l|}
 \hline
- \textbf{Method} & \textbf{Model blackbox} & \textbf{Works with PyTorch} \\ \hline
- RISE & Yes & Supported out of the box \\ \hline
- LIME & Yes & Easy \\ \hline
- Layer-wise Relevance Propagation (LRP) & No & Should be possible & ? \\ \hline
- Deconvolution (Zeiler 2014) \\ \hline
- DeepLIFT
- PetternNet
- Deep Taylor
- Grad-CAM
- 
-\end{tabular}
+\textbf{Method} & \textbf{Model blackbox} & \textbf{Works with PyTorch} \\ \hline
+RISE & Yes & Supported out of the box \\ \hline
+LIME & Yes & Indepenent of library \\ \hline
+Layer-wise Relevance Propagation (LRP) & No & Should be possible  \\ \hline
+DeepLIFT
+PatternNet
+Deep Taylor
+Grad-CAM
+\hline
+\end{tabularx}
 
 PatternNet: https://arxiv.org/pdf/1705.05598.pdf
 SHAP: https://github.com/slundberg/shap
