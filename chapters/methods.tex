@@ -11,3 +11,51 @@ Examples for PyTorch, unknown simple porting to pytorch would be => TODO investi
 Similar technology as LIME, uses PyTorch. Newer than LIME, paper asserts to be better.
 
 Written for PyTorch
+
+
+
+
+
+\section{Methods}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+ \textbf{Method} & \textbf{Model blackbox} & \textbf{Portable to PyTorch} & \textbf{Usable for image segmentation} \\ \hline
+ RISE & Yes & Supported out of the box & Yes\\ \hline
+ LIME & Yes & Easy & Yes \\ \hline
+ Layer-wise Relevance Propagation (Heatmapping.org) & No & Should be possible & ? \\ \hline
+ Deconvolution (Zeiler 2014) \\ \hline
+ DeepLIFT
+ PetternNet
+ Deeo Taylor
+ Grad-CAM
+ 
+\end{tabular}
+
+PatternNet: https://arxiv.org/pdf/1705.05598.pdf
+SHAP: https://github.com/slundberg/shap
+
+heatmap presentation:
+Baehrens'10 Gradient
+Sundarajan'17 Int Grad
+Zintgraf'17 Pred Diff
+Ribeiro'16 LIME
+Haufe'15 Pattern
+Symonian'13 Gradient
+Zeiler'14 Occlusions
+Fong'17 M Perturb
+Zurada'94 Gradient
+Poulin'06 Additive
+Zeiler'14 Deconv
+Lundberg'17 Shapley
+Landecker'13 Contrib Prop
+Caruana'15 Fitted Additive
+Bazen'13 Taylor
+Springenberg'14 Guided BP
+Montavon'17 Deep Taylor
+Bach'15 LRP
+Zhou'16 GAP
+Kindernnans'17 PatternNet
+Shrikumar'17 DeepLIFT
+Zhang'16 Excitation BP
+Selvaraju'17 Grad-CAM
