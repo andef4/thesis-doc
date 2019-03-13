@@ -16,7 +16,15 @@ Written for PyTorch
 
 
 
-\section{Methods}
+\section{Method types}
+One of the main questions we have to answer is which methods for interpretability can be used on an Image Segmentation task.
+Generally there are two types of methods for interpretability: Blackbox and whitebox.
+Blackbox methods like LIME or RISE do not need an understanding of the underlying model and can therefore be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
+Whitebox methods need to have access to the underling model, because they analyze a certain part of the network (e.g. extracted features).
+
+\subsection{Blackbox}
+Blackbox methods modify the input image, run it trough the network and then analyze how the im
+
 
 \begin{tabular}{|l|l|l|l|}
 \hline
