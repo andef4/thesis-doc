@@ -28,16 +28,11 @@ The main goal of this thesis is to provide such a tool by modifying existing int
 All steps described here are prerequisites for the next step if not marked otherwise.
 
 \subsection{NIH Chest X-ray}
-To get a general overview how the different interpretability methods work, we plan to build a model for a medical imaging task and apply some of the more commonly used methods on it.
+To get a general overview how the different interpretability methods work, we plan to build a model for a medical imaging task and apply some of the more commonly used methods on it. We will also search for existing pretrained models, to complete this work faster. The model will reuse an existing convolutional neural network architecture, e.g. ResNet or Inception.
 
 The dataset selected for this task is the NIH Chest X-ray dataset \cite{wang2017chestx}. It contains 120.000 grayscale x-ray scans of chests and labels ranging from no findings to one or more diagnoses.
 
-
-TODO:
-Learn a standard architecture for image classification on the model using PyTorch (e.g. Inception, ResNet)
-etermine which methods are directly usable with a PyTorch model or require low porting effort
-Determine which methods are independent of the used network architecture (methods that view the model as a black box)
-Find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful
+After building the model, we evaluate some of the common methods on the trained models. We want to determine which methods are independent of the used network architecture (methods that view the model as a black box). We also want to find implementations written for PyTorch or find out how easy the methods could be ported to PyTorch. The last step is to find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful for the interpretability of a method.
 
 \subsection{Brain tumors}
 To build the methods to interpret image segmentation tasks, we need a real world task. Brain tumor segmentation is an interesting problem in the medical image field. Segmenting brain tumors manually is a tedious process, because MRI machines generate many slices of the brain which then have to be looked at one by one. Automating the process with machine learning will give medical professionals more time to do other tasks and also gives them more confidence in their manual work when supported by an automated model.
@@ -45,7 +40,7 @@ To build the methods to interpret image segmentation tasks, we need a real world
 To build a working machine learning model, some medical background is required. We will investigate what types of brain tumors exits, how do they look like on a scan and what scanner types exists (MRI/PET/CT). We also investigate how a tumor looks like on a specific scanner type.
 
 \subsection{The BraTS 2018 dataset}
-The BraTS\cite{menze2015multimodal}
+The BraTS\cite{menze2015multimodal} dataset contains MRI scans of the human brain and segmentation labels for found tumors in the scans.
 
 
 
