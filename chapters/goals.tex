@@ -1,6 +1,7 @@
 \chapter{Goals}
 
 \section{Introduction}
+what the hell are we trying to do? Everyone is doing it on classification, can we do it on image segmentation?
 
 \section{Infrastructure and technology}
 This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
@@ -62,6 +63,10 @@ The first thing we want to learn is the medical background of the thesis, answer
     \item In what format is the labeling saved?
     \item Build a loader for the dataset
     \item Display some scans
+    \item Dataset: BraTS, extract 2D slices
+    \item Do NOT use slice from same head in training \& validation set (they look nearly the same) 4 different labels, representing 4 different sizes of a tumor
+    \item Merge innermost 2 layers into one
+    \item an image has 4 black/white channels, use them as separate channels
 \end{itemize}
 
 \subsection{Model for the BraTS dataset}
@@ -71,45 +76,39 @@ The first thing we want to learn is the medical background of the thesis, answer
     \item Investigate U-Net architectures
     \item Build and train network for the BraTS dataset in PyTorch based on an existing architecture
     \item Investigate and if necessary/helpful implement data augmentation for the dataset
-    \item Dataset: BraTS, extract 2D slices
-    \item Do NOT use slice from same head in training \& validation set (they look nearly the same) 4 different labels, representing 4 different sizes of a tumor
-    \item Merge innermost 2 layers into one
-    \item an image has 4 black/white channels, use them as separate channels
 \end{itemize}
 
-\iffalse
 
-
-\section{LIME}
-\begin{itemize}
-    \item Investigate how LIME works
-    \item Figure out how to use LIME in image segmentation tasks, examples found until now only for classification
-    \item Implement LIME for the neural network implemented above
-\end{itemize}
-
-\section{Visualization Tools}
-Visualizing and UnderstandingConvolutional Networks
-https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf
-
-\section{RISE (optional)}
+\subsection{RISE}
 Randomized Input Sampling for Explanations
+Blackbox model
 \begin{itemize}
     \item Investigate how RISE works
     \item Figure out how to use RISE in image segmentation tasks
     \item Implement RISE for the neural network implemented above
 \end{itemize}
 
-\section{iNNvestigate}
+\subsection{Other blackbox model methods (Optional}
+e.g. lime
+
+\subsection{Grad-CAM Method}
+Example for a whitebox model. Whitebox idea: dynamic unet can use standard model arch (e.g. resnet), so we can use these on half the network => does it make any sense?
+Many implementations for PyTorch, an example for a whitebox model. If we get this to work, other methods should be possible too.
+
+Because this method is a whitebox model, it is independent of the implementation of the RISE model.
+
+\subsection{Other whitebox model methods (Optional}
+
+\subsubsection{iNNvestigate}
 https://github.com/albermax/innvestigate
 
 \begin{itemize}
     \item Figure out how to use iNNvestigate in image segmentation tasks
     \item Check if a port to 
 \end{itemize}
-\fi
 
 
-\section{Library}
+\subsection{Library}
 Build a library with a common interface for the implemented tools, so that all of them can be applied easily.
 \begin{itemize}
     \item Write example programs for the library to use with PyTorch
