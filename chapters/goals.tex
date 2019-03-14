@@ -2,7 +2,7 @@
 
 \section{Introduction}
 Modern machine learning models based on deep neural networks are achieving remarkable performance on many fields, including medical image analysis. In comparison
-with classic machine learning technologies like decision trees, it is much harder to explain how a neural network came to its conclusion, because it uses thousands to millions of training parameters.
+with classic machine learning technologies like decision trees, it is much harder to explain how these neural network came to its conclusion, because it uses thousands to millions of training parameters.
 
 In recent years, many methods for the interpretability of deep (convolutional) neural networks have been proposed, e.g. LIME\cite{ribeiro2016should}, RISE\cite{Petsiuk2018rise}, Grad-CAM\cite{selvaraju2017grad} or DeepLIFT \cite{shrikumar2017learning}.
 
@@ -25,14 +25,14 @@ On other problems like finding and segmenting brain tumors on MRI images, medica
 The main goal of this thesis is to provide such a tool by modifying existing interpretability methods to work on image segmentation.
 
 \section{Planning}
-All steps described here are prerequisites for the next step if not marked otherwise.
+All steps described here are prerequisites for the next step if not noted otherwise.
 
 \subsection{NIH Chest X-ray}
-To get a general overview how the different interpretability methods work, we plan to build a model for a medical imaging task and apply some of the more commonly used methods on it. We will also search for existing pretrained models, to complete this work faster. The model will reuse an existing convolutional neural network architecture, e.g. ResNet or Inception.
+To get a general overview how the different interpretability methods work, we plan to build a model for a medical imaging task and apply some of the more commonly used methods on it. We will also search for existing pretrained models to complete this work faster and/or to have a more accurate model. The model will reuse an existing convolutional neural network architecture, e.g. ResNet or Inception.
 
 The dataset selected for this task is the NIH Chest X-ray dataset \cite{wang2017chestx}. It contains 120.000 grayscale x-ray scans of chests and labels ranging from no findings to one or more diagnoses.
 
-After building the model, we evaluate some of the common methods on the trained models. We want to determine which methods are independent of the used network architecture (methods that view the model as a black box). We also want to find implementations written for PyTorch or find out how easy the methods could be ported to PyTorch. The last step is to find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful for the interpretability of a method.
+After building the model, we evaluate some of the common methods on the trained models. We want to determine which methods are independent of the used network architecture (methods that view the model as a black box). We also want to find implementations of the methods written for PyTorch or alternatively estimate how easy the methods could be ported to PyTorch. The last step is to show how the output of the method looks like and (optionally) check with a medical professional which output they think would be most helpful for the interpretability of a method.
 
 \subsection{Brain tumors}
 To build the methods to interpret image segmentation tasks, we need a real world task. Brain tumor segmentation is an interesting problem in the medical image field. Segmenting brain tumors manually is a tedious process, because MRI machines generate many slices of the brain which then have to be looked at one by one. Automating the process with machine learning will give medical professionals more time to do other tasks and also gives them more confidence in their manual work when supported by an automated model.
@@ -81,7 +81,7 @@ Grad-CAM is a widely used method with many high quality implementations which al
 As with RISE, Grad-CAM is built for image classification tasks. Because the encoder part of a U-Net is a standard convolutional neural network, it should be possible to apply Grad-CAM on this part of the U-Net. If and how this is possible is is the main research topic for this thesis.
 
 \subsection{Other whitebox model methods (Optional}
-As described above, there are many whitebox model methods which can be applied to this problem.
+As described above, there are many whitebox model methods which can be applied to this problem. If we can find a solution how to apply Grad-CAM, using other methods like PatternNet or 
 
 \subsection{Library}
 If we succeed with modifying the methods to work with image segmentation tasks, we plan to build a Python library which allows to easily apply the methods to other datasets by its users. The library should be usable with PyTorch models. Documenting the library (e.g. on readthedocs.io) is essential for potential users, as are examples how to use the library which can be extracted from the thesis source code.
