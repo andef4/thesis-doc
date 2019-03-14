@@ -81,6 +81,7 @@ The first thing we want to learn is the medical background of the thesis, answer
 
 \subsection{RISE}
 Randomized Input Sampling for Explanations
+Challenge: RISE works with classificatin, how can we remodel it to use segmentation output
 Blackbox model
 \begin{itemize}
     \item Investigate how RISE works
@@ -95,7 +96,10 @@ e.g. lime
 Example for a whitebox model. Whitebox idea: dynamic unet can use standard model arch (e.g. resnet), so we can use these on half the network => does it make any sense?
 Many implementations for PyTorch, an example for a whitebox model. If we get this to work, other methods should be possible too.
 
+Do these methods work when we do not have a class? Only a specific activation?
+
 Because this method is a whitebox model, it is independent of the implementation of the RISE model.
+
 
 \subsection{Other whitebox model methods (Optional}
 
