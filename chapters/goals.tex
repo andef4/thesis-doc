@@ -24,9 +24,8 @@ On other problems like finding and segmenting brain tumors on MRI images, medica
 
 The main goal of this thesis is to provide such a tool by modifying existing interpretability methods to work on image segmentation.
 
-
 \section{Planning}
-All steps described here are prerequisites for the next step if not marked otherwise. All steps build on the steps before it and cannot be skipped expect when explicitly mentioned.
+All steps described here are prerequisites for the next step if not marked otherwise.
 
 \subsection{NIH Chest X-ray}
 Purpose: Run some methods on a simpler dataset.
@@ -82,37 +81,35 @@ The first thing we want to learn is the medical background of the thesis, answer
 
 
 \subsection{RISE}
-Randomized Input Sampling for Explanations
-Challenge: RISE works with classificatin, how can we remodel it to use segmentation output
+Randomized Input Sampling for Explanations (RISE) is a interpretability method that uses the model as a blackbox. It does not need to know anything about the underlying machine learning model, it only needs access to the input image and the probabilities of the output classes.
+
+RISE generates a series of masks which get applied to the input image. The modified image is then run through the model and the changed probabilities of the output classes are recorded. From the probabilities of the different masks, a heatmap is generated which shows which parts of the image influence the correct classification of the image the most.
+
+todo Challenge: RISE works with classificatin, how can we remodel it to use segmentation output
 Blackbox model
-\begin{itemize}
-    \item Investigate how RISE works
-    \item Figure out how to use RISE in image segmentation tasks
-    \item Implement RISE for the neural network implemented above
-\end{itemize}
 
 \subsection{Other blackbox model methods (Optional}
-e.g. lime
+There are other blackbox methods (e.g. LIME\cite{ribeiro2016should}) which work similar to RISE. If a successful method is found to apply RISE to image segmentation tasks, modifing these other methods to also for segmentation should not be a major problem.
+
+A high quality solution with RISE has a higher priority than adding additional methods.
 
 \subsection{Grad-CAM Method}
+
+
+
+
 Example for a whitebox model. Whitebox idea: dynamic unet can use standard model arch (e.g. resnet), so we can use these on half the network => does it make any sense?
 Many implementations for PyTorch, an example for a whitebox model. If we get this to work, other methods should be possible too.
 
 Do these methods work when we do not have a class? Only a specific activation?
 
+works on UNET!
+
 Because this method is a whitebox model, it is independent of the implementation of the RISE model.
 
 
 \subsection{Other whitebox model methods (Optional}
-
-\subsubsection{iNNvestigate}
-https://github.com/albermax/innvestigate
-
-\begin{itemize}
-    \item Figure out how to use iNNvestigate in image segmentation tasks
-    \item Check if a port to 
-\end{itemize}
-
+As described above, there are many whitebox model methods which can be applied to this problem.
 
 \subsection{Library}
 Build a library with a common interface for the implemented tools, so that all of them can be applied easily.
