@@ -1,11 +1,13 @@
-\chapter*{Goals}
+\chapter{Goals}
+
+\section{Introduction}
 
 \section{Infrastructure and technology}
 This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
 
 Other machine learning libraries will be used on demand, for example:
 
-\begin{tabular}{|p(3cm)|p|}
+\begin{tabular}{|p{3cm}|p{12.5cm}|}
     \hline
     \textbf{Library} & \textbf{Description} \\ \hline
     Scikit & Diverse kit of machine learning libraries \\ \hline
@@ -13,32 +15,37 @@ Other machine learning libraries will be used on demand, for example:
     PIL/Pillow & Image manipulation library \\ \hline
     NumPy & Matrix manipulation library \\ \hline
     pandas & Dataframe library \\ \hline
-    torchvision & PyTorch extension for computer vision problems, also contains predefinied models for common architecture and pretrained networks \\ \hline
+    torchvision & PyTorch extension for computer vision problems. Contains models for common architectures and pretrained parameters for these networks. Also contains tools for data augmentation. \\ \hline
 \end{tabular}
 
-The development of the system will take place inside Jupyter notebooks. Jupyter notebooks allow a very fast test and development cycle. The notebook server will be running on a powerful desktop computer of the author and is then exposed to the internet, so the computational power is always accessible independent of the work location.
+The development of the system will take place inside Jupyter notebooks. Jupyter notebooks allow a very fast test and development cycle. The notebook server will be running on a powerful desktop computer of the author which is exposed to the internet, so the computational power is always available independent of the work location.
 
 In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
 
+\section{Planning}
+All steps described here are required to be completed if not marked otherwise. All steps build on the steps before it and cannot be skipped expect when explicitly mentioned.
 
-
-\iffalse
-Pflichtenheft: Anforderungen, Prioritäten, in der Dokumentation, muss/kann, Abhängigkeiten
-
-\section*{NIH Chest X-Ray}
+\subsection{NIH Chest X-ray}
+Purpose: Run some methods on a simpler dataset.
+What is the dataset?
+Used to figure out which methods work and can be used from PyTorch.
 Use a basic image classificiation problem from the mediacal imaging field to evaluate methods.
 \begin{itemize}
     \item Use the NIH chest x-ray dataset
     \item Learn a standard architecture for image classification on the model using PyTorch (e.g. Inception, ResNet)
     \item Apply methods on the output of the network
 \end{itemize}
+
+
 Goals
 \begin{itemize}
     \item Determine which methods are directly usable with a PyTorch model or require low porting effort
     \item Determine which methods are independent of the used network architecture (methods that view the model as a black box)
+    \item Find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful
 \end{itemize}
 
-\section*{Brain tumors}
+
+\subsection{Brain tumors}
 The first thing we want to learn is the medical background of the thesis, answering the following questions:
 \begin{itemize}
     \item What are brain tumors?
@@ -48,7 +55,7 @@ The first thing we want to learn is the medical background of the thesis, answer
     \item How does a doctor analyze such a scan?
 \end{itemize}
 
-\section*{The BraTS dataset}
+\subsection{The BraTS dataset}
 \begin{itemize}
     \item What scanner is used and what tumor types are detected?
     \item What data format is used to save the scans?
@@ -57,30 +64,34 @@ The first thing we want to learn is the medical background of the thesis, answer
     \item Display some scans
 \end{itemize}
 
-\section*{Neural Network}
+\subsection{Model for the BraTS dataset}
 
 \begin{itemize}
     \item Research current state of the art networks for image segmentation
     \item Investigate U-Net architectures
     \item Build and train network for the BraTS dataset in PyTorch based on an existing architecture
     \item Investigate and if necessary/helpful implement data augmentation for the dataset
+    \item Dataset: BraTS, extract 2D slices
+    \item Do NOT use slice from same head in training \& validation set (they look nearly the same) 4 different labels, representing 4 different sizes of a tumor
+    \item Merge innermost 2 layers into one
+    \item an image has 4 black/white channels, use them as separate channels
 \end{itemize}
 
+\iffalse
 
 
-
-\section*{LIME}
+\section{LIME}
 \begin{itemize}
     \item Investigate how LIME works
     \item Figure out how to use LIME in image segmentation tasks, examples found until now only for classification
     \item Implement LIME for the neural network implemented above
 \end{itemize}
 
-\section*{Visualization Tools}
+\section{Visualization Tools}
 Visualizing and UnderstandingConvolutional Networks
 https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf
 
-\section*{RISE (optional)}
+\section{RISE (optional)}
 Randomized Input Sampling for Explanations
 \begin{itemize}
     \item Investigate how RISE works
@@ -95,10 +106,10 @@ https://github.com/albermax/innvestigate
     \item Figure out how to use iNNvestigate in image segmentation tasks
     \item Check if a port to 
 \end{itemize}
+\fi
 
 
-
-\section*{Library}
+\section{Library}
 Build a library with a common interface for the implemented tools, so that all of them can be applied easily.
 \begin{itemize}
     \item Write example programs for the library to use with PyTorch
@@ -109,5 +120,4 @@ Build a library with a common interface for the implemented tools, so that all o
     
 \end{itemize}
 
-\section*{GANT Chart}
-\fi
+\section{GANT Chart}
