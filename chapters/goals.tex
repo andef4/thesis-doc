@@ -133,14 +133,18 @@ In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Te
 
 \section{Gantt Chart}
 \begin{ganttchart}[
-bar/.style={fill=barblue},
+bar/.style={fill=blue},
 ]{9}{26}
     \gantttitlelist{9,...,26}{1} \\
-    %\ganttbar{Task 1}{1}{2} \ganttnewline
-    %\ganttbar{Task 2}{3}{4} \ganttnewline
-    %\ganttbar{Task 3}{5}{8} \ganttnewline
-    %\ganttbar{Final Task}{8}{11} \ganttnewline
+    \ganttbar[bar/.append style={fill=teal!50}]{Full-time work on thesis}{10}{15} \ganttnewline
+
+    \ganttbar{Chest X-Ray}{10}{11} \ganttnewline
+    \ganttbar{Investigate interpretability methods}{11}{11} \ganttnewline
+    \ganttmilestone{Goals definied}{11} \ganttnewline
+    \ganttbar{U-Net model for BraTS}{12}{12} \ganttnewline
     
+    
+
     \ganttmilestone{Draft paper done}{22} \ganttnewline
     \ganttmilestone{Deadline paper}{24} \ganttnewline
     \ganttmilestone{Defense}{25}
