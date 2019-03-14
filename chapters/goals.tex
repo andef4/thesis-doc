@@ -136,10 +136,14 @@ In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Te
 bar/.style={fill=bar},
 vgrid,
 hgrid,
-milestone/.append style={anchor=east,xshift=-1pt,fill=milestone},
-]{9}{26}
+milestone/.append style={anchor=east,xshift=-1pt,fill=milestone,shape=circle,draw=milestone,},
+title height=1.0,
+x unit=6mm,
+y unit title=8mm,
+y unit chart=8mm,
+]{10}{26}
     \gantttitle{Calendar weeks 2019}{18} \\
-    \gantttitlelist{9,...,26}{1} \\
+    \gantttitlelist{10,...,25}{1} \\
     \ganttbar[bar/.append style={fill=fulltimebar}]{Full-time work on thesis}{10}{15} \ganttnewline
 
     \ganttbar{Chest X-Ray}{10}{11} \ganttnewline
@@ -152,12 +156,13 @@ milestone/.append style={anchor=east,xshift=-1pt,fill=milestone},
     
     \ganttbar[bar/.append style={fill=optionalbar}]{Blackbox methods}{16}{18} \ganttnewline
     \ganttbar[bar/.append style={fill=optionalbar}]{Whitebox methods}{16}{18} \ganttnewline
-    \ganttbar{Python library}{20}{20} \ganttnewline
+    \ganttbar{Python library}{19}{19} \ganttnewline
     
-    \ganttbar{Finish text}{21}{22} \ganttnewline
+    \ganttbar{Finish text}{20}{22} \ganttnewline
 
     \ganttmilestone{Draft paper done}{22} \ganttnewline
-    \ganttmilestone{Deadline paper}{24} \ganttnewline
+    \ganttbar{Presentation preparation}{23}{24} \ganttnewline
+    \ganttmilestone{Deadline paper \& Presentation}{24} \ganttnewline
     \ganttmilestone{Defense}{25}
     
 \end{ganttchart}
