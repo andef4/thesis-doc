@@ -3,6 +3,23 @@
 \section{Infrastructure and technology}
 This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
 
+Other machine learning libraries will be used on demand, for example:
+
+\begin{tabular}{|p(3cm)|p|}
+    \hline
+    \textbf{Library} & \textbf{Description} \\ \hline
+    Scikit & Diverse kit of machine learning libraries \\ \hline
+    Matplotlib & Library to generate graphs \\ \hline
+    PIL/Pillow & Image manipulation library \\ \hline
+    NumPy & Matrix manipulation library \\ \hline
+    pandas & Dataframe library \\ \hline
+    torchvision & PyTorch extension for computer vision problems, also contains predefinied models for common architecture and pretrained networks \\ \hline
+\end{tabular}
+
+The development of the system will take place inside Jupyter notebooks. Jupyter notebooks allow a very fast test and development cycle. The notebook server will be running on a powerful desktop computer of the author and is then exposed to the internet, so the computational power is always accessible independent of the work location.
+
+In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
+
 
 
 \iffalse
