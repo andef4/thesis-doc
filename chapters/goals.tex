@@ -41,21 +41,12 @@ To build a working machine learning model, some medical background is required. 
 
 \subsection{The BraTS 2018 dataset}
 The BraTS\cite{menze2015multimodal} dataset contains MRI scans of the human brain and segmentation labels for found tumors in the scans.
+The scan is 3D, saved as horizontal 2D slices. Every slice has four different black/white channels, each with a different setting of the MRI scanner.
+There are four different labels for every slice, representing 4 different sizes of a tumor.
 
+The tasks for this step is to figure out the data format of the dataset and then load the dataset into memory. Displaying some slices will show if the data was loaded correctly. Next, we extract multiple slices per scanned brain. We only use slices which contain visible tumors. This way we have 2D images we can feed into the encoder convolutional neural network of the U-net.
 
-
-todo
-\begin{itemize}
-    \item What scanner is used and what tumor types are detected?
-    \item What data format is used to save the scans?
-    \item In what format is the labeling saved?
-    \item Build a loader for the dataset
-    \item Display some scans
-    \item Dataset: BraTS, extract 2D slices
-    \item Do NOT use slice from same head in training \& validation set (they look nearly the same) 4 different labels, representing 4 different sizes of a tumor
-    \item Merge innermost 2 layers into one
-    \item an image has 4 black/white channels, use them as separate channels
-\end{itemize}
+The next step is loading the labels of the data. As recommended by Alain Jungo of the Universität Bern, we will merge the two innermost region labels into one label and discard the other two labels.
 
 \subsection{Model for the BraTS dataset}
 A widely used architecture for segmentation (especially in the medical imaging field) is the U-Net\cite{ronneberger2015u} architecture.
@@ -66,7 +57,9 @@ A widely used architecture for segmentation (especially in the medical imaging f
 \includegraphics[width=10cm]{images/unet.png}
 \end{figure}
 
-The architecture uses an "encoder" network on the left side which generates features. A standard convolutional neural network can be used as an encoder. On the right side, instead of a linear layer mapping features generated from the convolutions to classes, a "decoder" network is used. The decoder network generates the output segmentation pixels based on the features extracted by the encoder. 
+The architecture uses an "encoder" network on the left side which generates features. A standard convolutional neural network can be used as an encoder. On the right side, instead of a linear layer mapping features generated from the convolutions to classes, a "decoder" network is used. The decoder network generates the output segmentation pixels based on the features extracted by the encoder.
+
+We will build a U-Net using a standard convolutional neural network architecture. The fast.ai library contains a dynamic U-Net Python class which can automatically generate a the decoder part of a U-Net by analyzing the CNN. We will evaluate if this works good enough or if a custom architecture is required.
 
 \subsection{RISE}
 Randomized Input Sampling for Explanations (RISE) is a interpretability method that uses the model as a blackbox. It does not need to know anything about the underlying machine learning model, it only needs access to the input image and the probabilities of the output classes.
@@ -115,6 +108,7 @@ The development of the system will take place inside Jupyter notebooks. Jupyter 
 
 In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
 
+\pagebreak
 \section{Gantt chart}
 
 The following Gantt chart shows the time planning for the thesis. The light blue charts represent optional goals, which also function as reserve time if another goal needs more time than anticipated.
