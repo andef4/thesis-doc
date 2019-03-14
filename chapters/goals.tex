@@ -131,18 +131,21 @@ The development of the system will take place inside Jupyter notebooks. Jupyter 
 
 In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
 
-\section{Gantt Chart}
+\section{Gantt chart}
+
+The following Gantt chart shows the time planning for the thesis.
+
 \begin{ganttchart}[
 bar/.style={fill=bar},
 vgrid,
 hgrid,
 milestone/.append style={anchor=east,xshift=-1pt,fill=milestone,shape=circle,draw=milestone,},
 title height=1.0,
-x unit=6mm,
+x unit=7mm,
 y unit title=8mm,
 y unit chart=8mm,
-]{10}{26}
-    \gantttitle{Calendar weeks 2019}{18} \\
+]{10}{25}
+    \gantttitle{Calendar weeks 2019}{16} \\
     \gantttitlelist{10,...,25}{1} \\
     \ganttbar[bar/.append style={fill=fulltimebar}]{Full-time work on thesis}{10}{15} \ganttnewline
 
@@ -154,8 +157,8 @@ y unit chart=8mm,
     \ganttbar{RISE}{13}{14} \ganttnewline
     \ganttbar{Grad-CAM}{14}{15} \ganttnewline
     
-    \ganttbar[bar/.append style={fill=optionalbar}]{Blackbox methods}{16}{18} \ganttnewline
-    \ganttbar[bar/.append style={fill=optionalbar}]{Whitebox methods}{16}{18} \ganttnewline
+    \ganttbar[bar/.append style={fill=optionalbar}]{Additional blackbox methods}{16}{18} \ganttnewline
+    \ganttbar[bar/.append style={fill=optionalbar}]{Additional whitebox methods}{16}{18} \ganttnewline
     \ganttbar{Python library}{19}{19} \ganttnewline
     
     \ganttbar{Finish text}{20}{22} \ganttnewline
@@ -164,5 +167,4 @@ y unit chart=8mm,
     \ganttbar{Presentation preparation}{23}{24} \ganttnewline
     \ganttmilestone{Deadline paper \& Presentation}{24} \ganttnewline
     \ganttmilestone{Defense}{25}
-    
 \end{ganttchart}
