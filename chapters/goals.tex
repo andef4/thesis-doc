@@ -12,37 +12,21 @@ In recent years, many methods for the interpretability of deep (convolutional) n
 \includegraphics[width=14cm]{images/tusker_saliency.png}
 \end{figure}
 
-These methods focus on providing explanations and interpretability of classification problems for datasets like ImageNet or MNIST. What is missing is a method to interpret outputs of image segmentation problems. 
+These methods focus on providing explanations and interpretability of classification problems for datasets like ImageNet or MNIST. What has not yet been researched much is the interpretability of image segmentation tasks. On many image segmentation tasks, interpretability based image regions like gradcam (see image above) does not make that much sense, because the segmentation already returns a region of an image.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \caption{Image segmentation on MRI scans of the brain\cite{soltaninejad2017automated}}
 \includegraphics[width=10cm]{images/brain_segmentation.jpg}
 \end{figure}
 
+On other problems like finding and segmenting brain tumors on MRI images, medical professionals do not only look at the exact region where a tumor resides, but also at other regions of the brain. On the upper row of the scan above it is cleary visible that the tumor on the right side is extending the space used for the right half of the brain, and therefore many brain features are not symmetrical any longer. A neural network trained on this task should also use these cues to correctly segment the tumors. 
 
-\section{Infrastructure and technology}
-This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
+The main goal of this thesis is to provide such a tool by modifying existing interpretability methods to work on image segmentation.
 
-Other machine learning libraries will be used on demand, for example:
-
-\begin{tabular}{|p{3cm}|p{12.5cm}|}
-    \hline
-    \textbf{Library} & \textbf{Description} \\ \hline
-    Scikit & Diverse kit of machine learning libraries \\ \hline
-    Matplotlib & Library to generate graphs \\ \hline
-    PIL/Pillow & Image manipulation library \\ \hline
-    NumPy & Matrix manipulation library \\ \hline
-    pandas & Dataframe library \\ \hline
-    torchvision & PyTorch extension for computer vision problems. Contains models for common architectures and pretrained parameters for these networks. Also contains tools for data augmentation. \\ \hline
-\end{tabular}
-
-The development of the system will take place inside Jupyter notebooks. Jupyter notebooks allow a very fast test and development cycle. The notebook server will be running on a powerful desktop computer of the author which is exposed to the internet, so the computational power is always available independent of the work location.
-
-In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
 
 \section{Planning}
-All steps described here are required to be completed if not marked otherwise. All steps build on the steps before it and cannot be skipped expect when explicitly mentioned.
+All steps described here are prerequisites for the next step if not marked otherwise. All steps build on the steps before it and cannot be skipped expect when explicitly mentioned.
 
 \subsection{NIH Chest X-ray}
 Purpose: Run some methods on a simpler dataset.
@@ -140,5 +124,25 @@ Build a library with a common interface for the implemented tools, so that all o
     \item (Optional) Publish on PyPI
     
 \end{itemize}
+
+\section{Infrastructure and technology}
+This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
+
+Other machine learning libraries will be used on demand, for example:
+
+\begin{tabular}{|p{3cm}|p{12.5cm}|}
+    \hline
+    \textbf{Library} & \textbf{Description} \\ \hline
+    Scikit & Diverse kit of machine learning libraries \\ \hline
+    Matplotlib & Library to generate graphs \\ \hline
+    PIL/Pillow & Image manipulation library \\ \hline
+    NumPy & Matrix manipulation library \\ \hline
+    pandas & Dataframe library \\ \hline
+    torchvision & PyTorch extension for computer vision problems. Contains models for common architectures and pretrained parameters for these networks. Also contains tools for data augmentation. \\ \hline
+\end{tabular}
+
+The development of the system will take place inside Jupyter notebooks. Jupyter notebooks allow a very fast test and development cycle. The notebook server will be running on a powerful desktop computer of the author which is exposed to the internet, so the computational power is always available independent of the work location.
+
+In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Tesla V100) and from the Institute for Surgical Technology and Biomechanics of the Universität Bern (Unknown number and type of GPUs) are available. Because the setup cost to use these servers is quite high, the usage of these systems is optional and time will only be invested if the learning speedup is worth the additional setup time.
 
 \section{GANT Chart}
