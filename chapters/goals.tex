@@ -133,14 +133,14 @@ In addition, the GPU servers from the Berner Fachhochschule (NVIDIA DGX-1, 4x Te
 
 \section{Gantt Chart}
 \begin{ganttchart}[
-bar/.style={fill=blue},
+bar/.style={fill=bar},
 vgrid,
 hgrid,
-milestone/.append style={anchor=east,xshift=-1pt},
+milestone/.append style={anchor=east,xshift=-1pt,fill=milestone},
 ]{9}{26}
     \gantttitle{Calendar weeks 2019}{18} \\
     \gantttitlelist{9,...,26}{1} \\
-    \ganttbar[bar/.append style={fill=teal!50}]{Full-time work on thesis}{10}{15} \ganttnewline
+    \ganttbar[bar/.append style={fill=fulltimebar}]{Full-time work on thesis}{10}{15} \ganttnewline
 
     \ganttbar{Chest X-Ray}{10}{11} \ganttnewline
     \ganttbar{Investigate interpretability methods}{11}{11} \ganttnewline
@@ -150,9 +150,11 @@ milestone/.append style={anchor=east,xshift=-1pt},
     \ganttbar{RISE}{13}{14} \ganttnewline
     \ganttbar{Grad-CAM}{14}{15} \ganttnewline
     
-    \ganttbar{Blackbox method}{13}{14} \ganttnewline
-    \ganttbar{Whitebox method}{13}{14} \ganttnewline
+    \ganttbar[bar/.append style={fill=optionalbar}]{Blackbox methods}{16}{18} \ganttnewline
+    \ganttbar[bar/.append style={fill=optionalbar}]{Whitebox methods}{16}{18} \ganttnewline
+    \ganttbar{Python library}{20}{20} \ganttnewline
     
+    \ganttbar{Finish text}{21}{22} \ganttnewline
 
     \ganttmilestone{Draft paper done}{22} \ganttnewline
     \ganttmilestone{Deadline paper}{24} \ganttnewline
