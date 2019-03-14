@@ -81,37 +81,19 @@ There are other blackbox methods (e.g. LIME\cite{ribeiro2016should}) which work 
 Building a high quality solution with RISE has a higher priority than adding additional methods.
 
 \subsection{Grad-CAM Method}
-The Grad-CAM (Gradient-weighted Class Activation Mapping) is a whitebox method which uses the parameters of a learned model to output a heatmap for a specific image classified by the network.
+The Grad-CAM\cite{selvaraju2017grad} (Gradient-weighted Class Activation Mapping) is a whitebox method which uses the parameters of a learned model to output a heatmap for a specific image classified by the network.
 
-Grad-CAM is a widly used method with many high quality implementation
+Grad-CAM is a widely used method with many high quality implementations which also generated a easy to understand output which can be used by medical professionals.
 
-
-
-Example for a whitebox model. Whitebox idea: dynamic unet can use standard model arch (e.g. resnet), so we can use these on half the network => does it make any sense?
-Many implementations for PyTorch, an example for a whitebox model. If we get this to work, other methods should be possible too.
-
-Do these methods work when we do not have a class? Only a specific activation?
-
-works on UNET!
-
-Because this method is a whitebox model, it is independent of the implementation of the RISE model.
-
+As with RISE, Grad-CAM is built for image classification tasks. Because the encoder part of a U-Net is a standard convolutional neural network, it should be possible to apply Grad-CAM on this part of the U-Net. If and how this is possible is is the main research topic for this thesis.
 
 \subsection{Other whitebox model methods (Optional}
 As described above, there are many whitebox model methods which can be applied to this problem.
 
 \subsection{Library}
-todo
+If we succeed with modifying the methods to work with image segmentation tasks, we plan to build a Python library which allows to easily apply the methods to other datasets by its users. The library should be usable with PyTorch models. Documenting the library (e.g. on readthedocs.io) is essential for potential users, as are examples how to use the library which can be extracted from the thesis source code.
 
-Build a library with a common interface for the implemented tools, so that all of them can be applied easily.
-\begin{itemize}
-    \item Write example programs for the library to use with PyTorch
-    \item (Optional) Write example programs for the library to use with TensorFlow
-    \item Write documentation how to use the library
-    \item (Optional) Publish on conda
-    \item (Optional) Publish on PyPI
-    
-\end{itemize}
+Also planned is to publish the library on PyPI and conda-forge, so researchers can install the library in their environments.
 
 \section{Infrastructure and technology}
 This work will use the PyTorch\cite{paszke2017automatic} deep learning library. Most newer machine learning papers are written with PyTorch, because it is considered easier to learn and more powerful than Keras and PyTorch\cite{pytorchvstensorflow}.
