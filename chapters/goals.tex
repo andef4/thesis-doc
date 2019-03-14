@@ -81,10 +81,10 @@ Grad-CAM is a widely used method with many high quality implementations which al
 As with RISE, Grad-CAM is built for image classification tasks. Because the encoder part of a U-Net is a standard convolutional neural network, it should be possible to apply Grad-CAM on this part of the U-Net. If and how this is possible is is the main research topic for this thesis.
 
 \subsection{Other whitebox model methods (Optional}
-As described above, there are many whitebox model methods which can be applied to this problem. If we can find a solution how to apply Grad-CAM, using other methods like PatternNet or 
+As described above, there are many whitebox model methods which can be applied to this problem. If we can find a solution how to apply Grad-CAM, using other methods like PatternNet\cite{kindermans2017learning} or Meaningful Perturbation \cite{fong2017interpretable}.
 
 \subsection{Library}
-If we succeed with modifying the methods to work with image segmentation tasks, we plan to build a Python library which allows to easily apply the methods to other datasets by its users. The library should be usable with PyTorch models. Documenting the library (e.g. on readthedocs.io) is essential for potential users, as are examples how to use the library which can be extracted from the thesis source code.
+If we succeed with modifying the methods to work with image segmentation tasks, we plan to build a Python library which allows to easily apply the methods to other datasets by its users. The library should be usable on PyTorch models. Documenting the library (e.g. on readthedocs.io) is essential for potential users, as are examples how to use the library which can be extracted from the thesis source code.
 
 Also planned is to publish the library on PyPI and conda-forge, so researchers can install the library in their environments.
 
