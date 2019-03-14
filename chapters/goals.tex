@@ -30,26 +30,14 @@ All steps described here are prerequisites for the next step if not marked other
 \subsection{NIH Chest X-ray}
 To get a general overview how the different interpretability methods work, we plan to build a model for a medical imaging task and apply some of the more commonly used methods on it.
 
-The dataset selected for this task is the NIH Chest X-ray dataset \cite{todo}. It contains 120.000 grayscale 
-
-Purpose: Run some methods on a simpler dataset.
-What is the dataset?
-Used to figure out which methods work and can be used from PyTorch.
-Use a basic image classificiation problem from the mediacal imaging field to evaluate methods.
-\begin{itemize}
-    \item Use the NIH chest x-ray dataset
-    \item Learn a standard architecture for image classification on the model using PyTorch (e.g. Inception, ResNet)
-    \item Apply methods on the output of the network
-\end{itemize}
+The dataset selected for this task is the NIH Chest X-ray dataset \cite{wang2017chestx}. It contains 120.000 grayscale x-ray scans of chests and labels ranging from no findings to one or more diagnoses.
 
 
-Goals
-\begin{itemize}
-    \item Determine which methods are directly usable with a PyTorch model or require low porting effort
-    \item Determine which methods are independent of the used network architecture (methods that view the model as a black box)
-    \item Find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful
-\end{itemize}
-
+TODO:
+Learn a standard architecture for image classification on the model using PyTorch (e.g. Inception, ResNet)
+etermine which methods are directly usable with a PyTorch model or require low porting effort
+Determine which methods are independent of the used network architecture (methods that view the model as a black box)
+Find out how the output of the model looks like and (optionally) check with a medical professional which output they think would be most helpful
 
 \subsection{Brain tumors}
 Do built the methods to interpret image segmentation tasks, we need a real world task. Brain tumor segmentation is an interesting problem in the medical image field. Segmenting brain tumors manually is a tedious process, because MRI machines generate many slices of brain which then have to be looked at one by one. Automating the process with machine learning will give medical professionals more time to do other tasks and also gives them more confidence in their manual work when supported by an automated model.
@@ -93,7 +81,7 @@ There are other blackbox methods (e.g. LIME\cite{ribeiro2016should}) which work 
 Building a high quality solution with RISE has a higher priority than adding additional methods.
 
 \subsection{Grad-CAM Method}
-
+todo
 
 
 
@@ -111,6 +99,8 @@ Because this method is a whitebox model, it is independent of the implementation
 As described above, there are many whitebox model methods which can be applied to this problem.
 
 \subsection{Library}
+todo
+
 Build a library with a common interface for the implemented tools, so that all of them can be applied easily.
 \begin{itemize}
     \item Write example programs for the library to use with PyTorch
