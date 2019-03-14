@@ -52,14 +52,9 @@ Goals
 
 
 \subsection{Brain tumors}
-The first thing we want to learn is the medical background of the thesis, answering the following questions:
-\begin{itemize}
-    \item What are brain tumors?
-    \item What types of brain tumors exists?
-    \item How do they look like on a scan? What scanner types exists (MRI/PET/CT)? Which one is used when?
-    \item How does a scan look like? Colors? Layers? 2D/3D images?
-    \item How does a doctor analyze such a scan?
-\end{itemize}
+Do built the methods to interpret image segmentation tasks, we need a real world task. Brain tumor segmentation is an interesting problem in the medical image field. Segmenting brain tumors manually is a tedious process, because MRI machines generate many slices of brain which then have to be looked at one by one. Automating the process with machine learning will give medical professionals more time to do other tasks and also gives them more confidence in their manual work when supported by an automated model.
+
+To build a working machine learning model, some medical background is required. We will investigate what types of brain tumors exits, how do they look like on a scan and what scanner types exists (MRI/PET/CT). We also investigate how a tumor looks like on a specific scanner type.
 
 \subsection{The BraTS dataset}
 \begin{itemize}
@@ -75,6 +70,7 @@ The first thing we want to learn is the medical background of the thesis, answer
 \end{itemize}
 
 \subsection{Model for the BraTS dataset}
+A widely used architecture for segmentation (especially in the medical imaging field) is the UNet architecture
 
 \begin{itemize}
     \item Research current state of the art networks for image segmentation
