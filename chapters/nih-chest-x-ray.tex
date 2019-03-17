@@ -70,5 +70,9 @@ After training for a short time with the fixes, we get an acceptable accuracy ra
 \section{Methods}
 
 \subsection{RISE}
+Problem: returned classes from RISE do not match with precalculated classes
+=> normalize was not applied on find\_best\_images.
+=> use same function on all image loaders
+
 \subsection{LIME}
-\subsection{PatternNet}
+\subsection{Grad-CAM}
