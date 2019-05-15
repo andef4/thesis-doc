@@ -151,8 +151,8 @@
 
 \fancyhf{}																		% clean all fields
 \fancypagestyle{plain}{												% new definition of plain style	
-	\fancyfoot[OR,EL]{\footnotesize \thepage} 	% footer right part --> page number
-	\fancyfoot[OL,ER]{\footnotesize \heading, Version \versionnumber, \versiondate}	% footer even page left part 
+	\fancyfoot[OR,L]{\footnotesize \thepage} 	% footer right part --> page number
+	\fancyfoot[OL,R]{\footnotesize \heading, Version \versionnumber, \versiondate}	% footer even page left part 
 }
 
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.  #1}{}}
@@ -187,59 +187,7 @@
 %---------------------------------------------------------------------------
 \pagenumbering{arabic}
 
-Introduction
-
-    What is segmentation?
-    What is interpretability?
-    What can go wrong with NNs in the medical field?
-
-Methods
-
-    White vs blackbox
-    what are all the methods?
-    how and why did we select those?
-    RISE
-    LIME
-    Grad-CAM
-
-Classification
-
-    The NHS-Chest X-ray dataset
-    Training
-    Applying RISE (and commenting what is good/bad)
-    Applying LIME (and commenting what is good/bad)
-    Applying Grad-CAM (and commenting what is good/bad)
-
-Segmentation
-
-    BraTS dataset
-    Medical background
-    Slice selection
-    Neural network architecture
-    Training
-    RISE Single Pixel
-    RISE Multi Pixel
-    Grad-CAM
-
-Testnet
-
-    RISE
-    Grad-CAM
-
-Hausdorf Distance masks
-
-    Hausdorff distance
-    Masking
-    Apply on Testnet
-    Apply on BraTS
-    Apply on BraTS 3D
-
-
-
-\include{chapters/introduction}
-\include{chapters/nih-chest-x-ray}
-\include{chapters/methods}
-\include{chapters/brats_preprocess.tex}
+\input{include}
 
 \phantomsection 
 
