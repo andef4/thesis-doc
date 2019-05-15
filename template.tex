@@ -187,31 +187,61 @@
 %---------------------------------------------------------------------------
 \pagenumbering{arabic}
 
-\include{chapters/goals}
+Introduction
+
+    What is segmentation?
+    What is interpretability?
+    What can go wrong with NNs in the medical field?
+
+Methods
+
+    White vs blackbox
+    what are all the methods?
+    how and why did we select those?
+    RISE
+    LIME
+    Grad-CAM
+
+Classification
+
+    The NHS-Chest X-ray dataset
+    Training
+    Applying RISE (and commenting what is good/bad)
+    Applying LIME (and commenting what is good/bad)
+    Applying Grad-CAM (and commenting what is good/bad)
+
+Segmentation
+
+    BraTS dataset
+    Medical background
+    Slice selection
+    Neural network architecture
+    Training
+    RISE Single Pixel
+    RISE Multi Pixel
+    Grad-CAM
+
+Testnet
+
+    RISE
+    Grad-CAM
+
+Hausdorf Distance masks
+
+    Hausdorff distance
+    Masking
+    Apply on Testnet
+    Apply on BraTS
+    Apply on BraTS 3D
+
+
 
 \include{chapters/introduction}
-\chapter{Image segmentation}
-\section{UNet}
-
 \include{chapters/nih-chest-x-ray}
 \include{chapters/methods}
-
-\chapter{Brain tumor segmentation}
-\section{Medical background}
-\section{BraTS 2018 dataset}
-
-\chapter{Model for BraTS 2018}
 \include{chapters/brats_preprocess.tex}
 
-\chapter{Applying methods on BraTS 2018}
-\section{RISE}
-\section{LIME}
-\section{LRP}
-
-\chapter{Conclusion}
-
 \phantomsection 
-\addcontentsline{toc}{chapter}{Goals}
 
 
 %---------------------------------------------------------------------------
@@ -266,7 +296,7 @@
 %---------------------------------------------------------------------------
 \appendix
 \settocdepth{section}
-\include{appendix/appendixexemple}
+\include{appendix/goals}
 %\include{appendix/appendixexempleB}
 %---------------------------------------------------------------------------
 
