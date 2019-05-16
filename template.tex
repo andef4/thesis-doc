@@ -151,8 +151,8 @@
 
 \fancyhf{}																		% clean all fields
 \fancypagestyle{plain}{												% new definition of plain style	
-	\fancyfoot[OR,L]{\footnotesize \thepage} 	% footer right part --> page number
-	\fancyfoot[OL,R]{\footnotesize \heading, Version \versionnumber, \versiondate}	% footer even page left part 
+	\fancyfoot[R]{\footnotesize \thepage} 	% footer right part --> page number
+	\fancyfoot[L]{\footnotesize \heading}	% footer even page left part 
 }
 
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.  #1}{}}
