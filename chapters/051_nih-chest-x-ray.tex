@@ -1,4 +1,4 @@
-\chapter{NIH Chest X-ray}
+\section{NIH Chest X-ray Dataset }
 To find out what outputs the different methods generate, we started with a simple classification task in the medical image field:
 
 \section{Model Training}
@@ -66,12 +66,11 @@ After training for a short time with the fixes, we get an acceptable accuracy ra
 \end{itemize}
 
 
-\section{Methods}
 
-\subsection{RISE}
+\section{Applying RISE}
 Problem: returned classes from RISE do not match with precalculated classes
 => normalize was not applied on find\_best\_images.
 => use same function on all image loaders
 
-\subsection{LIME}
-\subsection{Grad-CAM}
+\section{Applying LIME}
+\section{Applying Grad-CAM}

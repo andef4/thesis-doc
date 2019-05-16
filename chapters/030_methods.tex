@@ -1,30 +1,4 @@
-\chapter{Methods}
-\section{White vs blackbox}
-\section{what are all the methods?}
-\section{how and why did we select those?}
-\section{RISE}
-\section{LIME}
-\section{Grad-CAM}
-
-
-\section{Lime}
-LIME\cite{todo} stands for X
-
-Interprets models as blackboxes. Covers parts of the image with a mask.
-
-Examples for PyTorch, unknown simple porting to pytorch would be => TODO investiage
-
-
-\section{RISE}
-Similar technology as LIME, uses PyTorch. Newer than LIME, paper asserts to be better.
-
-Written for PyTorch
-
-
-
-
-
-\section{Method types}
+\section{Whitebox and blackbox methods}
 One of the main questions we have to answer is which methods for interpretability can be used on an Image Segmentation task.
 Generally there are two types of methods for interpretability: Blackbox and whitebox.
 Blackbox methods like LIME or RISE do not need an understanding of the underlying model and can therefore be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
@@ -38,8 +12,7 @@ output changes.
 \subsection{Whitebox}
 Whitebox methods require access to the architecture of the model and therefore only work on some specific architectures classes.
 
-The most common method for image segmentation in the medical image analysis (todo citation needed) is the UNet\cite{todo} architecture.
-
+\section{Methods overview}
 
 
 https://medium.com/@keremturgutlu/semantic-segmentation-u-net-part-1-d8d6f6005066
@@ -94,3 +67,21 @@ Springenberg'14 Guided BP
 %Shrikumar'17 DeepLIFT
 %Zhang'16 Excitation Backprop
 %Selvaraju'17 Grad-CAM
+
+\section{Method selection}
+\section{RISE}
+Similar technology as LIME, uses PyTorch. Newer than LIME, paper asserts to be better.
+
+Written for PyTorch
+
+\section{LIME}
+\section{Grad-CAM}
+
+
+
+
+
+
+
+
+
