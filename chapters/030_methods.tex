@@ -1,19 +1,10 @@
 \section{Whitebox and blackbox methods}
 One of the main questions we have to answer is which methods for interpretability can be used on an Image Segmentation task.
-Generally there are two types of methods for interpretability: Blackbox and whitebox.
-Blackbox methods like LIME or RISE do not need an understanding of the underlying model and can therefore be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
-Whitebox methods need to have access to the underling model, because they analyze a certain part of the network (e.g. extracted features).
+Generally there are two types of methods for interpretability: Blackbox and whitebox. Blackbox methods like LIME or RISE do not need insight into the underlying model and can therefore be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
 
-\subsection{Blackbox}
-Blackbox methods modify the input image, run it trough the network and then analyze how the classification output of the network has changed with the modification.
-We think it is feasible to apply this method to image segmentation too, but instead of looking how the classification output changes we check how the segmentation
-output changes.
-
-\subsection{Whitebox}
-Whitebox methods require access to the architecture of the model and therefore only work on some specific architectures classes.
+Whitebox methods need to have access to the underling model (e.g. weights and activation values in a neural network), because they analyze a certain part of the network.
 
 \section{Methods overview}
-
 
 https://medium.com/@keremturgutlu/semantic-segmentation-u-net-part-1-d8d6f6005066
 
