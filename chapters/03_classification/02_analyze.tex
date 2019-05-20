@@ -1,0 +1,22 @@
+\section{Analyzing the network output}
+Find 10 best images for every class => we want to see the best case.
+
+\nblink{nhs-chest-xray/analyze/find\_best\_images.ipynb}
+\nblink{nhs-chest-xray/analyze/find\_best\_images\_with\_bounding\_boxes.ipynb}
+
+\section{Applying RISE}
+Problem: returned classes from RISE do not match with precalculated classes
+=> normalize was not applied on find\_best\_images.
+=> use same function on all image loaders
+
+\nblink{nhs-chest-xray/analyze/rise.ipynb}
+\nblink{nhs-chest-xray/analyze/rise\_bounding\_boxes.ipynb}
+
+\section{Applying LIME}
+
+\nblink{nhs-chest-xray/analyze/lime.ipynb}
+
+\subsection{LIME configuration}
+\nblink{nhs-chest-xray/analyze/lime\_num\_features.ipynb}
+
+\section{Applying Grad-CAM}
