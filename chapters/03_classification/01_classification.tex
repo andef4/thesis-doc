@@ -3,10 +3,11 @@ To find out what outputs the different methods generate, we started with a simpl
 
 \section{Model Training}
 
-\nblink{brats/01\_display.ipynb}
-
 
 \subsection{Inception Resnet v2}
+
+\nblink{nhs-chest-xray/inception\_resnetv2.ipynb}
+
 \begin{itemize}
     \item  chest x-ray, sample data set (small subset)
     \item  multi label classification
@@ -22,6 +23,8 @@ To find out what outputs the different methods generate, we started with a simpl
 \end{itemize}
 
 \subsection{ResNet}
+\nblink{nhs-chest-xray/resnet.ipynb}
+
 Instead of waiting for the expected very long learning time for Inception-Resnet V2, we did a short test with Resnet50 with pretrained parameters (ImageNet) on the sample dataset. Only the last layer is unfreezed.
 
 \begin{itemize}
@@ -43,6 +46,10 @@ Better results:
 65\%
 
 \subsection{Densenet}
+\nblink{nhs-chest-xray/densenet.ipynb}
+
+
+
 % https://medium.com/@jrzech/reproducing-chexnet-with-pytorch-695ff9c3bf66
 
 Loading the saved model did not work, because the used version of PyTorch was old and incompatible with ours.
@@ -57,6 +64,9 @@ find . -name '*.png' -exec file {} \; | cut -c 37-45 | uniq
 \end{minted}
 
 \subsection{Densenet single}
+\nblink{nhs-chest-xray/densenet\_singleclass.ipynb}
+\nblink{nhs-chest-xray/inception\_resnetv2\_singleclass.ipynb}
+
 \begin{itemize}
     \item Fail: Not correctly setting up classes (last layer has 1000 classes for imagenet, we have 14)
     \item Fail 2: Train and validation set do not have same classes because of ordering in dataset loading code
