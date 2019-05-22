@@ -1,4 +1,4 @@
 \section{Whitebox and blackbox methods}
-Generally there are two types of methods for interpretability: Blackbox and whitebox. Blackbox methods like LIME or RISE do not need insight into the underlying model and can therefore be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
+Generally there are two types of methods for interpretability: Blackbox and whitebox. Whitebox methods need access to the neural network parameters (weights, biases etc.) and/or the inidiviual activations of neurons inside the networks when an image is processed by it.
 
-Whitebox methods need to have access to the underling model (e.g. weights and activation values in a neural network), because they analyze a certain part of the network.
+Blackbox methods only work with the input (e.g. images) and the output (e.g. classes) of a neural network and can be used on arbitrary network architectures and even non-deep learning technologies like decision trees.
