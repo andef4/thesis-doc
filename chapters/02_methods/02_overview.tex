@@ -3,15 +3,15 @@
 \begin{tabular}{| p{7cm} | p{2.5cm} | p{6cm} | }
 \hline
 \textbf{Method} & \textbf{Blackbox method} & \textbf{PyTorch implementation available} \\ \hline
-Occlusions (Zeiler et.al. 2013) \cite{zeiler2014visualizing} & Yes & No but port is possible \\ \hline
+Occlusions (Zeiler et.al. 2013) \cite{zeiler2014visualizing} & Yes & No but simple algorithm \\ \hline
 RISE \cite{Petsiuk2018rise} & Yes & Offical implementation is PyTorch \\ \hline
 LIME \cite{ribeiro2016should} & Yes & No but feasible \\ \hline
-Meaningful Perturbation \cite{fong2017interpretable} & Yes & Implementation exitst  \cite{fong2017implementation} \\ \hline
-Prediction Difference Analysis \cite{zintgraf2017visualizing} & Yes & No \\ \hline
+Meaningful Perturbation \cite{fong2017interpretable} & Yes & Yes \cite{fong2017implementation} \\ \hline
+Prediction Difference Analysis \cite{zintgraf2017visualizing} & Yes & No, but simple algorithm \\ \hline
 Layer-wise Relevance Propagation (LRP) \cite{bach2015pixel} & No & Yes, but missing batch normalization \cite{lrppytorch} \\ \hline
 DeepLIFT \cite{shrikumar2017learning} & No & Initial implementation in SHAP \cite{NIPS2017_7062} \\ \hline
 Grad-CAM \cite{selvaraju2017grad} & No & Many implementations, e.g. \cite{visualattribution} \\ \hline
-PatternNet & No & No \\ \hline
+PatternNet \cite{kindermans2017learning} & No & Yes \cite{visualattribution} \\ \hline
 Guided Backpropagation \cite{springenberg2014striving}  & No & Yes \cite{visualattribution} \\ \hline
 Excitation Backprop \cite{zhang2016EB} & No & Yes \cite{visualattribution} \\ \hline
 Integrated Gradients \cite{sundararajan2017axiomatic} & No & Yes \cite{integratedgradientpytorch}  \\ \hline
