@@ -8,27 +8,15 @@ RISE\cite{Petsiuk2018rise} & Yes & Offical implementation is PyTorch \\ \hline
 LIME\cite{ribeiro2016should} & Yes & No but feasible \\ \hline
 Layer-wise Relevance Propagation (LRP) & No & Yes, but missing batch normalization\cite{lrppytorch} \\ \hline
 DeepLIFT\cite{shrikumar2017learning} & No & Initial implementation in SHAP\cite{NIPS2017_7062} \\ \hline
-Grad-CAM (Selvaraju 2017) & No & Many implementations \\ \hline
+Grad-CAM (Selvaraju 2017) & No & Many implementations, e.g. \cite{visualattribution} \\ \hline
 Meaningful Perturbation (Fong 2017)\cite{fong2017interpretable} & Yes & Implementation exitst \cite{fong2017implementation} \\ \hline
-
 Prediction Difference Analysis \cite{todo} & ? & ? \\ \hline
 PatternNet & No & No \\ \hline
 SHAP DeepExplainer\cite{NIPS2017_7062} & No & No \\ \hline
 SHAP KernelExplainer\cite{NIPS2017_7062} & Yes & Yes \\ \hline
-
-Guided Backpropagation  & No & ? \\ \hline
-Excitation Backprop \cite{todo} & No & ? \\ \hline
-
-Integrated Gradients & No & Yes https://github.com/TianhongDai/integrated-gradient-pytorch  \\ \hline
-
+Guided Backpropagation  & No & Yes \cite{visualattribution} \\ \hline
+Excitation Backprop \cite{zhang2016EB} & No & Yes \cite{visualattribution} \\ \hline
+Integrated Gradients & No & Yes \cite{integratedgradientpytorch}  \\ \hline
+Zeiler'14 Occlusions & ? & ? \\ \hline
 \end{tabular}
 
-% many implementations: https://github.com/yulongwang12/visual-attribution
-% https://github.com/marcoancona/DeepExplain/blob/master/docs/comparison.png
-
-
-% Baehrens'10 Gradient
-% Symonian'13 Gradient
-% Landecker'13 Contrib Prop
-% Zeiler'14 Deconv
-% Zeiler'14 Occlusions
