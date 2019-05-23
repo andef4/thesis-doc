@@ -1,0 +1,32 @@
+\section{Applying RISE}
+Problem: returned classes from RISE do not match with precalculated classes
+=> normalize was not applied on find\_best\_images.
+=> use same function on all image loaders
+
+\nblink{nhs-chest-xray/analyze/rise.ipynb}
+\nblink{nhs-chest-xray/analyze/rise\_bounding\_boxes.ipynb}
+
+\subsection{Results}
+\begin{figure}[h]
+\centering
+\caption{RISE example 1}
+\includegraphics[width=12cm]{chapters/03_classification/images/rise_0.png}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\caption{RISE example 2}
+\includegraphics[width=12cm]{chapters/03_classification/images/rise_2.png}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\caption{RISE example 3}
+\includegraphics[width=12cm]{chapters/03_classification/images/rise_8.png}
+\end{figure}
+
+\subsection{Discussion}
+Looks good for most, some (like the last image) are very bad.
+
+\subsection{Conclusion}
+Works good for most of the things, returns good quality, returns results for multiple classes at once which is probably helpful for segmentation
