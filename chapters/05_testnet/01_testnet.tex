@@ -14,12 +14,12 @@ The basic idea in this dataset is to show that not only the pixel data inside th
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/testnet_a-0.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/testnet_a-0.png}
         \caption{Input image}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/testnet_a-1.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/testnet_a-1.png}
         \caption{The expected output segment}
     \end{subfigure}
     \caption{Testnet with circle: The input image contains a circle on the right, therefore the triangle should be segmented}
@@ -30,12 +30,12 @@ The basic idea in this dataset is to show that not only the pixel data inside th
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/testnet_b-0.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/testnet_b-0.png}
         \caption{Input image}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/testnet_b-1.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/testnet_b-1.png}
         \caption{Output segment}
     \end{subfigure}
     \caption{Testnet with cube: The input image contains a square on the right, therefore the cross should be segmented}
@@ -56,19 +56,41 @@ Applying RISE on this dataset is much the same as on the BraTS dataset, the only
 \subsection{Results}
 \begin{figure}[H]
     \centering
-    \caption{RISE Multipixel (Mean)}
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/rise_1.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/rise_1-0.png}
         \caption{ the text for a}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=5cm]{chapters/05_testnet/images/rise_1.png}
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/rise_1-1.png}
         \caption{b}
     \end{subfigure}
     \caption{Explanation text}
+    \label{testnet_rise_mean}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/rise_2-0.png}
+        \caption{ the text for a}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/05_testnet/images/rise_2-1.png}
+        \caption{b}
+    \end{subfigure}
+    \caption{Explanation text}
+    \label{testnet_rise_max}
+\end{figure}
+
+
 \subsection{Discussion}
-TODO: something is visible, but not good enough
+TODO: baaaaad
+
+Figure \ref{testnet_rise_mean} Figure \ref{testnet_rise_max}
+
+\subsection{Conclusion}
+Sadly, this test dataset confirms that not the neural network but our RISE interpretability method is not good enough to generate acceptable results. Not only are the generated saliency maps of low resolution, they also miss an important part of the image (the right side with the circle or square).
