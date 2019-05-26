@@ -6,6 +6,9 @@ While the output from Grad-CAM does not provide a good insight into what the seg
 \nblink{brats/08\_testnet\_generate.ipynb}
 \nblink{brats/09\_testnet\_train.ipynb}
 
+The basic idea in this dataset is to show that not only the pixel data inside the segmentation region is relevant for the network, but also other parts of the image. To show this, we built a dataset where one part of the image is essential to generate a correct segmentation output, but itself is not contained in the segmentation output.
+
+2D shapes (circle, square, cross and triangle) are drawn (with the Python Imaging Library) onto images. On the left side of an image, there is always a cross and a triangle displayed. On the right side, in 50\% of the cases a circle is drawn, in the other 50\% a square is drawn. Depending on the shape on the right side (circle or square), one of the shapes on the left side are segmented. If the right shape is a circle, the triangle is segmented. If the right shape is a square, the cross is segmented
 
 \begin{figure}[H]
     \centering
@@ -17,9 +20,10 @@ While the output from Grad-CAM does not provide a good insight into what the seg
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=5cm]{chapters/05_testnet/images/testnet_a-1.png}
-        \caption{Output segment}
+        \caption{The expected output segment}
     \end{subfigure}
     \caption{Testnet with circle: The input image contains a circle on the right, therefore the triangle should be segmented}
+    \label{testnet_example_1}
 \end{figure}
 
 \begin{figure}[H]
@@ -35,14 +39,18 @@ While the output from Grad-CAM does not provide a good insight into what the seg
         \caption{Output segment}
     \end{subfigure}
     \caption{Testnet with cube: The input image contains a square on the right, therefore the cross should be segmented}
+    \label{testnet_example_2}
 \end{figure}
 
+In Figure \ref{testnet_example_1}, the right shape is a circle. Therefore the triangle is segmented in the output.
+In Figure \ref{testnet_example_2}, the right shape is a square. Therefore the cross is segmented in the output.
 
-\subsection{Results}
+A good interpretability method should not only show an importance on the segment output (circle and cross), but also on the shapes on the right (circle, cross).
 
 \section{Applying RISE}
 \nblink{brats/brats/10\_testnet\_rise.ipynb}
 \nblink{brats/brats/11\_testnet\_rise\_segment\_ignore.ipynb}
+
 
 
 \subsection{Results}
