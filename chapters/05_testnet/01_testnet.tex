@@ -48,13 +48,27 @@ In Figure \ref{testnet_example_2}, the right shape is a square. Therefore the cr
 A good interpretability method should not only show an importance on the segment output (circle and cross), but also on the shapes on the right (circle, cross).
 
 \section{Applying RISE}
-\nblink{brats/brats/10\_testnet\_rise.ipynb}
-\nblink{brats/brats/11\_testnet\_rise\_segment\_ignore.ipynb}
+\nblink{brats/10\_testnet\_rise.ipynb}
+\nblink{brats/10a\_testnet\_rise\_multipixel.ipynb}
 
-
+Applying RISE on this dataset is much the same as on the BraTS dataset, the only difference is that BraTS has four channels (one for each modality) and this dataset only one (grayscale).
 
 \subsection{Results}
-TODO Multipixel RISE results
+\begin{figure}[H]
+    \centering
+    \caption{RISE Multipixel (Mean)}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=5cm]{chapters/05_testnet/images/rise_1.png}
+        \caption{ the text for a}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=5cm]{chapters/05_testnet/images/rise_1.png}
+        \caption{b}
+    \end{subfigure}
+    \caption{Explanation text}
+\end{figure}
 
 \subsection{Discussion}
 TODO: something is visible, but not good enough
