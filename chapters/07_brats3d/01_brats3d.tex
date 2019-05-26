@@ -24,10 +24,9 @@ link up files
 hausdorff + MSE
 
 \subsection{Visualization}
-\nblink{brats3D/05\_display.ipynb}
 We use cubes, do not bother with circles just upscale pixels
 
-\subsection{High resolution single slice}
+\subsection{Results}
 \nblink{brats3D/02a\_generate\_single\_slice.ipynb}
 \nblink{brats3D/06\_display\_single\_slice.ipynb}
 
@@ -36,19 +35,19 @@ We use cubes, do not bother with circles just upscale pixels
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/01_t1.png}
-        \caption{ the text for a}
+        \caption{T1 modality of the slice}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/05_t1_segment.png}
-        \caption{b}
+        \caption{T1 modality overlaid with ground truth tumor segment}
     \end{subfigure}
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/09_t1_hdm10.png}
-        \caption{b}
+        \caption{T1 modality overlaid with hausdorff distance mask output}
     \end{subfigure}
-    \caption{T1}
+    \caption{Visualization of the hausdorff distance mask result of the T1 modality. No big correlation between hausdorff distance mask output and actual tumor.}
 \end{figure}
 
 \begin{figure}[H]
@@ -56,19 +55,19 @@ We use cubes, do not bother with circles just upscale pixels
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/02_t1ce.png}
-        \caption{ the text for a}
+        \caption{T1 contrast enhanced modality}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/06_t1ce_segment.png}
-        \caption{b}
+        \caption{T1 ce modality overlaid with ground truth tumor segment}
     \end{subfigure}
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/10_t1ce_hdm.png}
-        \caption{b}
+        \caption{T1 ce modality overlaid with hausdorff distance mask output}
     \end{subfigure}
-    \caption{T1ce}
+    \caption{Visualization of the hausdorff distance mask result of the T1 constract enhacned modality}
 \end{figure}
 
 
