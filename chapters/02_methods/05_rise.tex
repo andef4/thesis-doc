@@ -1,57 +1,57 @@
 \section{RISE}
 Like LIME, RISE is a block box method and works on manipulation of the input images. Instead of using superpixels, RISE generates masks that are then applied to the input images
 
-
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{.30\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise_original.png}
-        \caption{}
+        \caption{Original image}
     \end{subfigure}\hfill%
-    \begin{subfigure}[t]{.30\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise_mask0.png}
-        \caption{}
+        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise0_mask.png}
+        \caption{RISE mask}
     \end{subfigure}\hfill%
-    \begin{subfigure}[t]{.30\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise_mask0.png}
-        \caption{}
+        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise0_applied.png}
+        \caption{RISE mask applied to original image by multiplication}
     \end{subfigure}
-    \caption{Superpixels generated for an input image. Superpixels are the features LIME analyzes to detect if they are relevant for the classification.\cite{limeoreilly}}
-    \label{lime_superpixel}
+    \caption{By multiplication the input image (left) with a RISE mask (center), a modified input is generated.}
+    \label{rise_mask0}
 \end{figure}
+
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{.35\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/02_methods/images/frog1.png}
+        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise_original.png}
         \caption{Original image}
-    \end{subfigure}\hspace{1.5cm}%
-    \begin{subfigure}[t]{.35\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/02_methods/images/frog2.png}
-        \caption{Original image overlaid with superpixel boundaries}
+        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise1_mask.png}
+        \caption{RISE mask}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/rise1_applied.png}
+        \caption{RISE mask applied to original image by multiplication}
     \end{subfigure}
-    \caption{Superpixels generated for an input image. Superpixels are the features LIME analyzes to detect if they are relevant for the classification.\cite{limeoreilly}}
-    \label{lime_superpixel}
+    \caption{By multiplication the input image (left) with a RISE mask (center), a modified input is generated. In comparison fo Figure \ref{rise_mask0}, this input image retains much less information.}
+    \label{rise_mask1}
 \end{figure}
 
+Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
 
 
-Figure \ref{TODO}
-
-Original implementation written for PyTorch.
-
-TODO: show masks
-TODO: explain the matrix multiplication
 
 \begin{figure}[H]
 \centering
+\includegraphics[width=12cm]{chapters/02_methods/images/rise/sheep.png}
 \caption{Image from original paper explaining some classes}
-\includegraphics[width=12cm]{chapters/02_methods/images/rise.png}
 \end{figure}
 
 
