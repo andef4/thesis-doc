@@ -1,20 +1,15 @@
 \section{Medical background}
-The brain scans in the BraTS 2018 dataset were made with MRI scanners. The brain is mostly consists mostly of water. Water molecules contain two hydrogen molecules
+The brain scans in the BraTS 2018 dataset were made with MRI scanners\cite{mriscanner}.
+The brain consists mostly of water. Water molecules contain two hydrogen molecules, each of which has one proton. A proton spins in a specific direction. When a strong magnet is applied to a proton, the proton starts to spin in the same direction as the magnet. When the magnet is deactivated, the protons go back into their resting position. 
 
-
-
-
-The scans in the BraTS 2018 datasets are created with four different settings of the MRI scanner:
-
-GD-enhancing tumor (ET — label 4),
-peritumoral edema (ED — label 2),
-necrotic and non-enhancing tumor core (NCR/NET — label 1)
-
-% https://www.researchgate.net/post/What_are_the_differences_between_enhancing_and_nonenhancing_lesions_in_MRI
+A MRI scanner can generate a very precise and targeted magnetic field. Depending on the material a proton is part of (gray matter, necrotic tissue etc.), the resting position of the proton is different and a different amount of energy is released when the proton returns to its resting position. This
 
 The scanners detect three different types of kinds of tumor tissues. 
 Gadolinium is a chemical compound given during MRI scans that highlights areas of inflammation (Active Lesions). A gadolinium-enhanced  MRI scan shows active lesions, meaning that there is a breakdown of the blood-brain barrier and inflammation is present.
 
+Gadolinium-enhancing tumor (ET — label 4),
+Peritumoral edema (ED — label 2),
+Necrotic and non-enhancing tumor core (NCR/NET — label 1)
 
 \begin{itemize}
     \item Native (T1)
@@ -22,16 +17,3 @@ Gadolinium is a chemical compound given during MRI scans that highlights areas o
     \item T2-weighted (T2)
     \item T2 Fluid Attenuated Inversion Recovery (FLAIR)
 \end{itemize}
-
-
-
-
-
-
-
-* MRI detects water
-* hydrogen molecule spinning inside a H2O molecule, randomly
-* MRI is a big magnet, making the molecules spinning in a specific direction (North-South or South-North)
-
-Parallel vs anti parallel direction
-* Turn proton, stop magnet, measure how long it takes until proton is in its resting position again (releases electromagnetic energy which can be measures) => depends on material. Measure with 
