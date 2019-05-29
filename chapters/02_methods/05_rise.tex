@@ -1,5 +1,5 @@
 \section{RISE}
-Like LIME, RISE is a block box method and works on manipulation of the input images. Instead of using superpixels, RISE generates masks that are then applied to the input images
+Like LIME, RISE is a block box method and works on manipulation of the input images. Instead of using superpixels, RISE generates masks that are then applied to the input images by multiplying the mask with the input image pixel values. Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
 
 \begin{figure}[H]
     \centering
@@ -44,15 +44,14 @@ Like LIME, RISE is a block box method and works on manipulation of the input ima
     \label{rise_mask1}
 \end{figure}
 
-Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
 
+TODO: matrix multiplication
 
+To visualize the generated explanation map, the data is upscaled to the original image size and displayed as a heatmat by mapping the values to a color map. Figure \ref{rise_example} show some examples for visualization of the RISE output for specific classes.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{chapters/02_methods/images/rise/sheep.png}
 \caption{Image from original paper explaining some classes}
+\label{rise_example}
 \end{figure}
-
-
-* [ ] doc: RISE: explain heatmap, why is it there? => gaus, upsampling
