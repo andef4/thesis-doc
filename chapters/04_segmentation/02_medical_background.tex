@@ -1,15 +1,20 @@
 \section{Medical background}
-The brain scans in the BraTS 2018 dataset were made with MRI scanners\cite{mriscanner}.
-The brain consists mostly of water. Water molecules contain two hydrogen molecules, each of which has one proton. A proton spins in a specific direction. When a strong magnet is applied to a proton, the proton starts to spin in the same direction as the magnet. When the magnet is deactivated, the protons go back into their resting position. 
+The brain scans in the BraTS\cite{menze2015multimodal} 2018 dataset were made with MRI scanners\cite{mriscanner}.
+The brain consists mostly of water. Water molecules contain two hydrogen molecules, each of which has one proton. A proton spins in a specific direction. When a strong magnet is applied to a proton, the proton starts to spin in the same direction as the magnet. Protons have a north and a south pole. Inside the magnet, the direction of the rotation is the same, but the north pole could be parallel to the magnet or anti-parallel to the magnet.
 
-A MRI scanner can generate a very precise and targeted magnetic field. Depending on the material a proton is part of (gray matter, necrotic tissue etc.), the resting position of the proton is different and a different amount of energy is released when the proton returns to its resting position. This
+A MRI scanner can generate a very precise and targeted magnetic field. When the magnet is deactivated, the protons go back into their resting position. Depending on the material a proton is part of (gray matter, necrotic tissue etc.), the resting position of the proton is different and a different amount of energy is released when the proton returns to its resting position. This energy is measured by the MRI scanner and visualized as a scan. MRI scans go trough the brain in layers and generate a 2D image of every layer called a slice. The output of an MRI scanner is therefore a 3D volume.
 
-The scanners detect three different types of kinds of tumor tissues. 
+The scanners detect three different types of tumor tissues. These types are represented in the ground truth/label segment in the BraTS dataset:
+
+\begin{itemize}
+    \item Gadolinium-enhancing tumor (ET - label value 4)
+    \item Peritumoral edema (ED - label value 2),
+    \item Necrotic and non-enhancing tumor core (NCR/NET - label value 1)
+\end{itemize}
+
+
 Gadolinium is a chemical compound given during MRI scans that highlights areas of inflammation (Active Lesions). A gadolinium-enhanced  MRI scan shows active lesions, meaning that there is a breakdown of the blood-brain barrier and inflammation is present.
 
-Gadolinium-enhancing tumor (ET — label 4),
-Peritumoral edema (ED — label 2),
-Necrotic and non-enhancing tumor core (NCR/NET — label 1)
 
 \begin{itemize}
     \item Native (T1)
