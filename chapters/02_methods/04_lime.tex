@@ -1,19 +1,23 @@
 \section{LIME}
 
-LIME \cite{ribeiro2016should} is a black box interpretability method. Like with all black box methods, LIME modifies an input image to detect which parts of the image are relevant for the correct classification of an image. 
+LIME \cite{ribeiro2016should} is a black box interpretability method. Like all black box methods, LIME perturbates features in the input data to detect which feature is relevant for the classification. The output of LIME is a list of features which the algorithm detected as to be relevant for the classification, sorted by importance.
 
-
+In the case of image classification, LIME does not modify single pixels, because this would generate too many different versions of the input.
+Instead, LIME generates superpixels.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{chapters/02_methods/images/lime.jpg}
-\caption{Superpixels generated for an input image. Superpixels are the features LIME analyzes to }
+\caption{Superpixels generated for an input image. Superpixels are the features LIME analyzes to detect if they are relevant for the classification.}
 \end{figure}
+
+Superpixels are continous regions on an image with a similar color. By default, LIME uses the Quick Shift \cite{vedaldi2008quick} clustering algorithm to generate these superpixels.
+
 
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{chapters/02_methods/images/lime.png}
-\caption{Image from original LIME paper explaining three classes}
+\caption{Image from original LIME paper explaining three classes.}
 \end{figure}
