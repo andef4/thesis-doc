@@ -1,5 +1,5 @@
 \section{RISE}
-Like LIME, RISE is a block box method and works on manipulation of the input images. Instead of using superpixels, RISE generates masks that are then applied to the input images by multiplying the mask with the input image pixel values. Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
+Like LIME, RISE\cite{Petsiuk2018rise} is a block box method and works on manipulation of the input images. Instead of using superpixels, RISE generates masks that are then applied to the input images by multiplying the mask with the input image pixel values. Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
 
 \begin{figure}[H]
     \centering
@@ -44,6 +44,7 @@ Like LIME, RISE is a block box method and works on manipulation of the input ima
     \label{rise_mask1}
 \end{figure}
 
+The number of generated masks depend on the image resolution, e.g. for an image of size 240x240 pixels, 3000 masks generate good results. All masks are applied to the input image to generate new input images. The modified imagThese are all run trough the neural network. A high classification score for a class on a modified input images means that the pixels preserved by the mask are important for the classification.
 
 TODO: matrix multiplication
 
