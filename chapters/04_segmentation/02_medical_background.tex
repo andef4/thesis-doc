@@ -20,31 +20,79 @@ The BraTS dataset contains four different slice types, called modalities. These 
 
 \subsubsection{T1}
 For the T1 modality scan, the MRI machine measures the vertical movement of the protons when returning to their resting position. This modality mainly highlights fat and therefore contrast between fat and other tissues, e.g. nerve roots\cite{mriquora}.
+
 \begin{figure}[H]
-\centering
-\includegraphics[width=6cm]{chapters/06_hdm/c_Brats18_2013_17_1_L1/41.png}
-\caption{T1 modality scan}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/t1.png}
+        \caption{T1 modality}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/tumor.png}
+        \caption{Shape moved to the right}
+    \end{subfigure}
+    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \label{hdm_smaller_circles}
 \end{figure}
+
+
 
 \subsubsection{T2}
 The T2 modality measures the horizontal movement of the protons returning to their resting position. This modality highlights water, e.g. spinal fluid.
 \begin{figure}[H]
-\centering
-\includegraphics[width=6cm]{chapters/06_hdm/c_Brats18_2013_17_1_L1/51.png}
-\caption{T1 modality scan}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/t2.png}
+        \caption{Original shape}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/tumor.png}
+        \caption{Shape moved to the right}
+    \end{subfigure}
+    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \label{hdm_smaller_circles}
 \end{figure}
+
+
+
 
 \subsubsection{T1 contrast enhanced}
 Gadolinium is a chemical compound given during MRI scans that highlights areas of inflammation.
 \begin{figure}[H]
-\centering
-\includegraphics[width=6cm]{chapters/06_hdm/c_Brats18_2013_17_1_L1/46.png}
-\caption{T1 contrast enhanced modality scan}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/t1ce.png}
+        \caption{Original shape}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/tumor.png}
+        \caption{Shape moved to the right}
+    \end{subfigure}
+    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \label{hdm_smaller_circles}
 \end{figure}
+
+
 
 \subsubsection{FLAIR}
 \begin{figure}[H]
-\centering
-\includegraphics[width=6cm]{chapters/06_hdm/c_Brats18_2013_17_1_L1/56.png}
-\caption{FLAIR}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/flair.png}
+        \caption{Original shape}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/medical_background/tumor.png}
+        \caption{Shape moved to the right}
+    \end{subfigure}
+    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \label{hdm_smaller_circles}
 \end{figure}
