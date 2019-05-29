@@ -33,22 +33,7 @@ Grad-CAM\cite{selvaraju2017grad} (Gradient-weighted Class Activation Mapping) is
     \label{grad_cam_dog}
 \end{figure}
 
-The main parameter for this method is which layer of the convolutional neural network that should be analyzed. Figure \ref{grad_cam_explanation} shows a schematic of the inner working of Grad-CAM: The feature map of the specified layer is extracted. Every channel of the feature map is weighted, based on how much it influences the final output value of the network for a specific class.
-
-
-
-There are many existing implementations for this method, some of them using the PyTorch library.
-
-TODO: how does it work?
-
-
-* works on a specific layer of the neural network
-* get feature map for every channel of this layer
-* sum up feature map
-* based on output class, so activation has to flow backwards
-
-So, to explain in simple terms, we simply take the final convolutional feature map and then we weigh every channel in that feature with the gradient of the class with respect to the channel. It’s just nothing but how intensely the input image activates different channels by how important each channel is with regard to the class. The best part is it doesn’t require any re-training or change in the existing architecture.
-
+The main parameter for this method is which convolutional layer of the neural network that should be analyzed. Figure \ref{grad_cam_explanation} shows a schematic of the inner working of Grad-CAM for a layer: The feature map of the specified convolutional layer is extracted. Every channel of the feature map is weighted, based on how much it influences the final output value of the network for a specific class. Finally, the weighted channels are summed up and converted into a heat map.
 
 \begin{figure}[H]
 \centering
