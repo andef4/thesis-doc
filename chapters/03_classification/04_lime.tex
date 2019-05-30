@@ -37,4 +37,7 @@ LIME has an important configuration parameter, the count of how many superpixels
 \end{figure}
 
 \subsection{Discussion}
-The LIME output from Figure \ref{lime_example_1} does match the bounding box, but is much bigger than the bounding box. A smaller superpixel count in as seen in Figure \ref{lime_superpixel_count} 
+The LIME output from Figure \ref{lime_example_1} does match the bounding box, but is much bigger than the bounding box. A smaller superpixel count as seen in Figure \ref{lime_superpixel_count} for the same image reduces the marked region, but is still quite inaccurate. Figure \ref{lime_example_2} and \ref{lime_example_3} show only only parts of the LIME output matching with the bounding box.
+
+\subsection{Conclusion}
+The output of the LIME method shows a weak correlation between the bounding boxes provided by physician and the regions the neural network considers important for the output, as shown by LIME superpixels.
