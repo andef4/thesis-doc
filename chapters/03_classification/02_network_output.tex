@@ -2,7 +2,35 @@
 \nblink{nhs-chest-xray/analyze/find\_best\_images.ipynb}
 \nblink{nhs-chest-xray/analyze/find\_best\_images\_with\_bounding\_boxes.ipynb}
 Because our trained network still has a low accuracy (around 33\%), we wanted to find correctly classified images with a high certainty.
-Some images of the dataset also contain bounding boxes where a specific diagnosis 
+
+Some images of the dataset also contain bounding boxes where a specific diagnosis is visible. This is useful to compare the output
+of our interpretability methods with the bounding boxes created by physician.
 
 \nblink{nhs-chest-xray/analyze/accuracy\_per\_class.ipynb}
 
+We also calculated the accuracy for every class in the dataset, see Table \ref{chestxrayaccuracy}.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ | l | l | }
+\hline
+Atelectasis & 0.116105 \\ \hline
+Cardiomegaly & 0.180380 \\ \hline
+Consolidation & 0.022869 \\ \hline
+Edema & 0.064935 \\ \hline
+Effusion & 0.447301 \\ \hline
+Emphysema & 0.062295 \\ \hline
+Fibrosis & 0.028409 \\ \hline
+Hernia & 0.133333 \\ \hline
+Infiltration & 0.703153 \\ \hline
+Mass & 0.203160 \\ \hline
+Nodule & 0.102845 \\ \hline
+Pleural Thickening & 0.058252 \\ \hline
+Pneumonia & 0.000000 \\ \hline
+Pneumothorax & 0.086044 \\
+\hline
+\end{tabular}
+\caption{Table with accuracy for every class for the DenseNet model.}
+\label{chestxrayaccuracy}
+\end{center}
+\end {table}
