@@ -35,17 +35,19 @@ were already very long, we therefore decided to abandon the Inception architectu
 
 The first test of ResNet50 \cite{he2016deep} with pretrained parameters (trained on ImageNet) on the sample dataset showed fast training times but low accuracy. Training the network from scratch showed promising validation accuracy, which started to decrease on later epochs. The training accuracy was still increasing, this is therefore a clear indicator that the neural network is overfitting. We decided to change the architecture to ResNet18 which is a smaller ResNet variant with fewer parameters and should be less susceptible to overfitting.
 
-The 
+The first training run of ResNet18 with the sample dataset looked promising, so we moved to train the network on the full dataset. The results were underwhelming, with the validation accuracy maxing out at 23\%.
 
+The NIH Chest X-ray dataset is a multi class dataset. This means a single image can contain labels for multiple disease. Training models for such datasets is much harder than training datasets where each image only has one label. We therefore decided to remove all images which contain multiple labels and only train on images with one label.
+
+We did multiple iterations on the full dataset with ResNet18, changing multiple parameters:
 \begin{itemize}
-    \item Epoch time of ~40 seconds instead of (TODO) 10 minutes/3 hours for full dataset
-    \item resnet50 with pretrained
-    \item resnet50 without pretrained
-    \item resnet18 without pretrained
-    \item resnet18 without pretrained full dataset
+    \item Running on sample dataset vs. full dataset
+    \item Using SGD optimizer instead of Adam
+    \item Using pretrained model vs. from scratch model
+    \item Use data augmentation on the input (color jitter, random horizontal flip)
 \end{itemize}
 
-
+None of these parameters changed the validation accuracy significantly, always 
 
 
 \subsection{Single label only}
