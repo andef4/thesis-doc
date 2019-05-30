@@ -1,0 +1,17 @@
+\section{Introduction}
+To evaluate the modified methods, we need a dataset and a trained model where we can apply the methods.
+
+The constituent Mauricio Reyes proposed the BraTS \cite{menze2015multimodal} dataset. This dataset contains
+images of human brains taken with an MRI machine. The images are taken from patients which have brain tumors from the type
+glioblastoma or lower grade glioma. The dataset contains four different types of images taken by the MRI machine (called modalities, the first images in Figure \ref{brats_example}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{chapters/04_segmentation/images/brats.png}
+\caption{One slice showing all 4 modalities and the tumor segmentation ground truth overlaid on the T1 contrast modality.}
+\label{brats_example}
+\end{figure}
+
+In addition, the dataset contains ground truth labels. These labels mark the region in the brain where the tumor resides.
+This segments are further divided into different tissue types each showing different states the tumor is in.
+These labels were manually drawn by physicans and validated by experienced neuro-radiologists.
