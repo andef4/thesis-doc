@@ -1,10 +1,9 @@
 \section{Method selection}
-The initial selection of methods contain RISE, LIME and Grad-CAM.
+The selection of methods is difficult because there are many methods, newer methods supersede older methods and generally similar methods.
+If it is possible to modify a method for classification to work on segmentation, it should be possible to modify similar methods in a similar way.
 
-LIME: Widly cited.
-RISE: Proposed enhancement of LIME
-Grad-CAM: Widly cited, many implementations as indicator of popularity and quality.
+The initial selection of methods contain are LIME, RISE and Grad-CAM.
 
-There are many methods, quite a few of them with PyTorch implementation.
-=> visual attribution with generic code for multiple methods
-If the modification of these methods for image segmentation is successful, additional methods will be selected.
+LIME was selected because it has many citations (1327 on Google scholar as of June 2019), many implementations on GitHub and many blog posts describing how LIME works and how to apply it on a model.
+
+RISE was selected because it is proposed as an improved version of LIME. 
