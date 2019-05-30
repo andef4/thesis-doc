@@ -1,7 +1,9 @@
 \section{Modifying and applying RISE (Single Pixel)}
 \nblink{brats/06\_rise.ipynb}
 
-apply on a single pixel, pixel == class
+The approach how to apply RISE on a segmentation task the same as with Grad-CAM in the last chapter. Pixels in the output of a segmentation model are equivalent to classes of a classification model.
+As a first version, we only analyze a single pixel. We chose the first pixel in the tumor ground truth segment by iterating over the segment linearly until the first active pixel is found.
+
 
 \subsection{Results}
 
@@ -9,6 +11,7 @@ apply on a single pixel, pixel == class
 \centering
 \includegraphics[width=8cm]{chapters/04_segmentation/images/rise_single_pixel.png}
 \caption{Saliency map analyzing the topmost pixel in the scan, overlaid on the generated network output}
+\label
 \end{figure}
 
 
