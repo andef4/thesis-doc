@@ -37,6 +37,7 @@ The first test of ResNet50 \cite{he2016deep} with pretrained parameters (trained
 
 The first training run of ResNet18 with the sample dataset looked promising, so we moved to train the network on the full dataset. The results were underwhelming, with the validation accuracy maxing out at 23\%.
 
+\subsection{Single label only}
 The NIH Chest X-ray dataset is a multi class dataset. This means a single image can contain labels for multiple disease. Training models for such datasets is much harder than training datasets where each image only has one label. We therefore decided to remove all images which contain multiple labels and only train on images with one label.
 
 We did multiple iterations on the full dataset with ResNet18, changing multiple parameters:
@@ -47,36 +48,23 @@ We did multiple iterations on the full dataset with ResNet18, changing multiple 
     \item Use data augmentation on the input (color jitter, random horizontal flip)
 \end{itemize}
 
-None of these parameters changed the validation accuracy significantly, always 
-
-
-\subsection{Single label only}
-65\%
-
+None of these parameters changed the validation accuracy significantly, always peaking around 60\% to 65\% training accuracy.
 
 \subsection{Only images with actual diagnosis}
-https://www.kaggle.com/kmader/train-simple-xray-cnn 
-For testing out the methods, images with findings are much more helpful, so filter them out.
+The dataset also contains images which have the class "No findings". This is an important class for training a neural network that should correctly diagnose chest X-ray scans. But for our project, images with actual findings are much more interesting. We decided to filter out these images.
 
-Better results:
+With this change, the validation accuracy dropped to around 30\%, even when running on the full dataset.
 
 \subsection{Densenet}
 \nblink{nhs-chest-xray/densenet.ipynb}
 
+Researching what other people did to train a model for this dataset, we chame across the Che
+Densenet
 
 
 % https://medium.com/@jrzech/reproducing-chexnet-with-pytorch-695ff9c3bf66
-
 Loading the saved model did not work, because the used version of PyTorch was old and incompatible with ours.
-
 => Retraining
-
-\subsubsection{Image resize problems}
-In the Densenet code there was a reference that some images were not properly resized. We did a short check on our preprocessed data, but it revelead no such problems. Used bash command:
-
-\begin{minted}{bash}
-find . -name '*.png' -exec file {} \; | cut -c 37-45 | uniq
-\end{minted}
 
 \subsection{Densenet single}
 \nblink{nhs-chest-xray/densenet\_singleclass.ipynb}
@@ -88,8 +76,3 @@ find . -name '*.png' -exec file {} \; | cut -c 37-45 | uniq
 \end{itemize}
 
 After training for a short time with the fixes, we get an acceptable accuracy rate of 55\%. We then started to calculate the accuracy per class, as has been done on the reproduce-chexnet discussed above. We quickly discovered that only the "No findings" class was accurate, an all other classes had zero correct classifications.
-
-\begin{itemize}
-    \item test with no findings removed => not that better, finds only 3 classes correctly
-    \item try with weighted cross entropy loss
-\end{itemize}
