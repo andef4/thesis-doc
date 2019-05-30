@@ -33,7 +33,9 @@ were already very long, we therefore decided to abandon the Inception architectu
 \subsection{ResNet}
 \nblink{nhs-chest-xray/resnet.ipynb}
 
-Instead of waiting for the expected very long learning time for Inception-Resnet V2, we did a short test with Resnet50 with pretrained parameters (ImageNet) on the sample dataset. Only the last layer is unfreezed.
+The first test of ResNet50 \cite{he2016deep} with pretrained parameters (trained on ImageNet) on the sample dataset showed fast training times but low accuracy. Training the network from scratch showed promising validation accuracy, which started to decrease on later epochs. The training accuracy was still increasing, this is therefore a clear indicator that the neural network is overfitting. We decided to change the architecture to ResNet18 which is a smaller ResNet variant with fewer parameters and should be less susceptible to overfitting.
+
+The 
 
 \begin{itemize}
     \item Epoch time of ~40 seconds instead of (TODO) 10 minutes/3 hours for full dataset
@@ -43,15 +45,18 @@ Instead of waiting for the expected very long learning time for Inception-Resnet
     \item resnet18 without pretrained full dataset
 \end{itemize}
 
+
+
+
+\subsection{Single label only}
+65\%
+
+
 \subsection{Only images with actual diagnosis}
 https://www.kaggle.com/kmader/train-simple-xray-cnn 
 For testing out the methods, images with findings are much more helpful, so filter them out.
 
 Better results:
-
-
-\subsection{Single label only}
-65\%
 
 \subsection{Densenet}
 \nblink{nhs-chest-xray/densenet.ipynb}
