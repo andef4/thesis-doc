@@ -3,21 +3,27 @@ Almost all interpretability methods work on image classification tasks. To learn
 We downloaded the dataset, trained a neural network on the dataset and applied the selected methods described above.
 
 \section{NIH Chest X-ray dataset}
-
-The NIH chest X-
+The NIH Chest X-ray dataset contains 112,120 X-ray scans from 30,805 unique patients \cite{nihchestxraykaggle}. Every scan has one or more disease labels. Figure \ref{chest_xray_sample} show three sample images from the dataset.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=14cm]{chapters/03_classification/images/chest-x-ray.png}
-\caption{Examples for the NIH chest X-ray dataset}
+\caption{Examples for the NIH Chest X-ray dataset}
+\label{chest_xray_sample}
 \end{figure}
 
 \section{Model Training}
+We decided to train a model based on an existing neural network architecture, because building a state of the art architecture is very hard and not the focus of this thesis.
 
-
-\subsection{Inception Resnet v2}
-
+\subsection{Inception ResNet v2}
 \nblink{nhs-chest-xray/inception\_resnetv2.ipynb}
+
+We choose Inception ResNet v2 \cite{szegedy2017inception} as the architecture. This is modern neural network built for image analysis and generally trained on the ImageNet dataset.
+The ResNet variant of the Inception architecture delivers similar performance as the normal Inception model, but with significantly reduced training time.
+
+The preprocessing steps required to use this architecture are resizing the images to 299x299 pixels and converting the 
+
+
 
 \begin{itemize}
     \item  chest x-ray, sample data set (small subset)
