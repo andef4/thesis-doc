@@ -1,5 +1,5 @@
 \section{Motivation}
-While the output from Grad-CAM does not provide a good insight into what the segmentation neural network is doing, the RISE output is quite usable. When evaluation an interpretability method, not only the method itself but also the trained neural network is analyzed. It is therefore possible that a good method returns bad results because the neural network is of low quality. We therefore decided to generate an artificial dataset (a "toy" example) where there is no doubt about its quality.
+While the output from Grad-CAM does not provide a good insight into what the segmentation neural network is doing, the RISE output is quite usable. When evaluation an interpretability method, not only the method itself but also the trained neural network is analyzed. It is therefore possible that a good method returns bad results because the neural network is of low quality. We therefore decided to generate an artificial dataset (a "toy" example) where there is no doubt about the quality of the trained model.
 
 
 \section{Introduction}
@@ -93,4 +93,4 @@ TODO: baaaaad
 Figure \ref{testnet_rise_mean} Figure \ref{testnet_rise_max}
 
 \subsection{Conclusion}
-Sadly, this test dataset confirms that not the neural network but our RISE interpretability method is not good enough to generate acceptable results. Not only are the generated saliency maps of low resolution, they also miss an important part of the image (the right side with the circle or square).
+Sadly, this test dataset confirms that not the neural network but our RISE interpretability method is not good enough to generate results with deep insights into the analyzed model. Not only are the generated saliency maps of low resolution, they also miss an important part of the image (the right side with the circle or square).
