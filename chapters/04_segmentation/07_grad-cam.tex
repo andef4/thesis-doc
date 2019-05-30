@@ -11,6 +11,10 @@ As a first step, we can analyze a saliency map generated for a single class. In 
 
 \subsection{Results}
 
+Figure \ref{grad_cam_brats_result} shows the Grad-CAM output of multiple layers of the neural network. Grad-CAM for classification is applied on the last convolutional layer
+of the network, but in this case this produced no output at all (Image (i) in the figure). We therefore decided to also analyze other layers (batch normalization and convolutional layers)
+to see if there is any insight how the network came up with the output segmentation.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{.33\textwidth}
@@ -26,47 +30,46 @@ As a first step, we can analyze a saliency map generated for a single class. In 
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_14.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{First batch norm layer of the 4. encoder block}
     \end{subfigure}
 
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_17.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{Second convolutional layer of the 5. encoder block}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_24.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{First convolutional layer of the second decoder block}
     \end{subfigure}%
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_29.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{Second convolutional layer of the third decoder block}
     \end{subfigure}
 
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_30.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{First batch norm layer of the third decoder block}
     \end{subfigure}%
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_34.png}
-        \caption{First batch norm layer of the first encoder block}
+        \caption{First batch norm layer of the 4. decoder block}
     \end{subfigure}%
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/04_segmentation/images/grad_cam_36.png}
         \caption{Output convolutional layer}
     \end{subfigure}
-    \caption{Explanation text}
+    \caption{Grad-CAM output of the first pixel of the ground truth output segment (red pixel). No layers provided any significant insight into how the network came to the output segment.}
+    \label{grad_cam_brats_result}
 \end{figure}
 
 \subsection{Discussion}
-TODO
+None of the generated outputs provide good insight into the inner working of the network. The output of the batch normalization layer of the third decoder (Image (g) in Figure \ref{grad_cam_brats_result}) shows the most promising output. But this output can easily be replicated by taking the FLAIR
 
 \subsection{Conclusion}
-TODO
-
-Because of these results, we decided to not modify Grad-CAM to work on multiple pixels and move to other methods.
+Because of these very underwhelming results, we decided to not modify Grad-CAM to work on multiple pixels and move to other methods.
