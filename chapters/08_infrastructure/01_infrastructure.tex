@@ -1,7 +1,12 @@
-\section{Infrastructure setup}
-Computer reachable from internet, running jupyter with password,
-rtx 2080
+\section{Infrastructure}
+All the work for this thesis was done on a consumer PC consisting of a AMD Ryzen 2700X processor, 16 GB of memory and a NVIDIA GeForce RTX 2080.
 
-\section{Scripts}
+Most of the programming work has taken place inside Jupyter notebooks. The Jupyter notebook server was password protected and exposed to the internet trough port forwarding. This enabled remote work from a train or school while still having access to the powerfull desktop hardware required to train neural network models.
 
-\section{Testing}
+\section{Script to extract images from Jupyter notebooks}
+We wrote a Python Script which extracts images from all Jupyter notebooks contained in the git repository. This simplfied the process to extract images for this document and also allows Mauricio Reyes to easily access images which he can use in his teaching material.
+
+The script is available on GitHub: \href{https://github.com/andef4/thesis-code/blob/master/extract_notebook_images.py}{extract\_notebook\_images.py}.
+
+\section{Code styling}
+The code styling of the Python code is checked using the flake8 program. It is setup as a git precommit hook. This way, the code style is always checked when we try to make a commit. Most code for this thesis is inside Jupyter notebooks which flake8 can not parse to check the code style. The solution is a script which uses the Jupytext \cite{jupytext} program to extract Python cod
