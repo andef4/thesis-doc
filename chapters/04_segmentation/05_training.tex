@@ -1,10 +1,17 @@
 \section{Training}
 \nblink{brats/04\_basic\_unet.ipynb}
+
+The first try training the U-Net model returned very bad accuracy values event after training for a long time. To avoid the lengthy process with evaluating different network architectures and parameters like in the classification model for the NIH Chest X-Ray dataset, we started to read different resources for enhancements of the basic U-Net architecture
+
+The first change we implemented was correctly normalizing the input data by using a transform from the PyTorch library.
+The second idea we foundOne of the first things we found was introduction a batch normalization layer after every convolutional layer.
+
+
+
 first try. baaad
 second try with normalization: no change
 build evaluation
 third try with batch norm: much higher loss that slowy goes down, evaluate still shows random pixels
 5. run it for some hours, it worked!
 
-\nblink{brats/05\_evaluate.ipynb}
 
