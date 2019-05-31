@@ -32,11 +32,16 @@ We load the NIFTI file, set a cubic part of the loaded 3D matrix to zero and sav
 
 \subsection{Docker execution}
 \nblink{brats3D/03\_execute.ipynb}
-To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounte
+To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. Do enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
+
+Because of the long execution time for a single scan (1-2 minutes), we initially started a run with very big but few cubes cut out of the modality files. As expected, the output was very high coarse and did not provide much meaningful insight. We decided to execute the method with smaller cubes, but limited to one horizontal plane. The calculations for this configuration took around 6 hours on our current generation desktop machine with a high end consumer graphics card.
 
 \subsection{Distance calculation}
 \nblink{brats3D/04\_calculate\_hausdorff\_distance.ipynb}
-hausdorff + MSE
+The calculation of the distance between the ground truth segment and the output segment from the Docker containers are very similar to the 2D variant. The Hausdorff distance implementation we used only supports 2D matrices and not 3D volumes. A 3D implementation of the Hausdorff distance is feasible, but would be very slow with our volume size. 
+
+Our solution was the following: We calculate the Hausdorff distance between all horizontal planes in the output segment and the corresponding 
+We therefore decided to run the Hausdorff distance on horizontal planes 
 
 \subsection{Visualization}
 We use cubes, do not bother with circles just upscale pixels
