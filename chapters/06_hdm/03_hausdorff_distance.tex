@@ -4,7 +4,7 @@
 
 In the previous section, we showed differences between the reference neural network output and the output of images where a part of them has been masked by a circle.
 Showing this difference for all the applied masks is impractical, a single visualization which shows all the output segment changes would be helpful.
-A first step is getting a single number for the difference of the two segments (unchanged reference segment, output segment from masked image).
+A first step is getting a single number for the difference between two segments (unchanged reference segment vs. output segment from masked image or any generated segment vs. the ground truth).
 
 A way to calculate the similarity (or difference) between two matrices (the output segments of the neural network are 2D matrices) is a distance function.
 
