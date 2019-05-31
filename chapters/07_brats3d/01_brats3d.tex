@@ -65,9 +65,10 @@ Visualizing the calculated values is straight forward. We only run the algorithm
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/09_t1_hdm10.png}
-        \caption{T1 modality overlaid with hausdorff distance mask output}
+        \caption{T1 modality overlaid with Hausdorff distance mask output}
     \end{subfigure}
-    \caption{Visualization of the hausdorff distance mask result of the T1 modality. No big correlation between hausdorff distance mask output and actual tumor.}
+    \caption{Visualization of the Hausdorff distance mask result on the T1 modality.}
+    \label{brats3d_t1}
 \end{figure}
 
 \begin{figure}[H]
@@ -80,16 +81,16 @@ Visualizing the calculated values is straight forward. We only run the algorithm
     \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/06_t1ce_segment.png}
-        \caption{T1 ce modality overlaid with ground truth tumor segment}
+        \caption{T1ce modality overlaid with ground truth tumor segment}
     \end{subfigure}
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/10_t1ce_hdm.png}
-        \caption{T1 ce modality overlaid with hausdorff distance mask output}
+        \caption{T1ce modality overlaid with Hausdorff distance mask output}
     \end{subfigure}
-    \caption{Visualization of the hausdorff distance mask result of the T1 constract enhacned modality. Shows a correleation between the visible TODO}
+    \caption{Visualization of the Hausdorff distance mask result on the T1 contrast enhanced modality.}
+    \label{brats3d_t1ce}
 \end{figure}
-
 
 \begin{figure}[H]
     \centering
@@ -106,9 +107,10 @@ Visualizing the calculated values is straight forward. We only run the algorithm
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/11_t2_hdm.png}
-        \caption{T2 modality overlaid with hausdorff distance mask output}
+        \caption{T2 modality overlaid with Hausdorff distance mask output}
     \end{subfigure}
-    \caption{T2}
+    \caption{Visualization of the Hausdorff distance mask result on the T2 modality.}
+    \label{brats3d_t2}
 \end{figure}
 
 \begin{figure}[H]
@@ -126,12 +128,16 @@ Visualizing the calculated values is straight forward. We only run the algorithm
         \begin{subfigure}{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/12_flair_hdm.png}
-        \caption{FLAIR modality overlaid with hausdorff distance mask output}
+        \caption{FLAIR modality overlaid with Hausdorff distance mask output}
     \end{subfigure}
-    \caption{Flair}
+    \caption{Visualization of the Hausdorff distance mask result on the FLAIR modality.}
+    \label{brats3d_flair}
 \end{figure}
 
 \subsection{Discussion}
+Figure \ref{brats3d_t1} shows the visualization of the distances when inserting cubes into the T1 modality. The marked regions in the visualization correspond mostly to the location of the tumor with some pixels outside of the tumor. Mauricio Reyes commented on this and said that there is discussion in the medical imaging community that the T1 modality is less useful for the segmentation of a tumor, and this result seems to support this argument.
 
+Figure \ref{brats3d_t1ce} shows the  shows the visualization of the distances when inserting cubes into the T1 contrast enhanced modality. This contrast enhanced modality clearly shows the gadolinium enhanced tumor tissue, and from the output of the distances it looks like the neural network learned this fact and successfully uses it to generate a correct segmentation.
 
+Shows a clear correlation between the visible gadolinium enhanced tumor in the T1ce modality and the
 \subsection{Conclusion}
