@@ -25,7 +25,7 @@ In this section we discuss the results when applying Hausdorff distance masks to
         \includegraphics[width=\linewidth]{chapters/06_hdm/c_Brats18_2013_17_1_L1/44.png}
         \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T1}
+    \caption{Modality T1 analyzed with Hausdorff distance masks.}
     \label{brats_201317_t1}
 \end{figure}
 
@@ -51,7 +51,7 @@ In this section we discuss the results when applying Hausdorff distance masks to
         \includegraphics[width=\linewidth]{chapters/06_hdm/c_Brats18_2013_17_1_L1/49.png}
         \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T1 contrast enhanced}
+    \caption{Modality T1 contrast enhanced analyzed with Hausdorff distance masks.}
     \label{brats_201317_t1ce}
 \end{figure}
 
@@ -77,7 +77,7 @@ In this section we discuss the results when applying Hausdorff distance masks to
         \includegraphics[width=\linewidth]{chapters/06_hdm/c_Brats18_2013_17_1_L1/54.png}
         \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T2}
+    \caption{Modality T2 analyzed with Hausdorff distance masks. }
     \label{brats_201317_t2}
 \end{figure}
 
@@ -103,9 +103,9 @@ In this section we discuss the results when applying Hausdorff distance masks to
         \includegraphics[width=\linewidth]{chapters/06_hdm/c_Brats18_2013_17_1_L1/59.png}
         \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality FLAIR}
+    \caption{Modality FLAIR analyzed with Hausdorff distance masks.}
     \label{brats_201317_flair}
 \end{figure}
 
 \subsubsection{Discussion}
-Figures \ref{brats_tcia08_t1}, \ref{brats_tcia08_t1ce}, \ref{brats_tcia08_t2} and \ref{brats_tcia08_flair} show HDM results applied on all four modalities.
+Figures \ref{brats_201317_t1}, \ref{brats_201317_t1ce}, \ref{brats_201317_t2} and \ref{brats_201317_flair} show HDM results applied on all four modalities. In comparison to the analyzed scans in the previous section, these visualization show that the neural network many looks at the border of the tumor, with the exception of the T1 modality. To generate a segmentation, the borders of the tumor are very important, and it seems the neural network successfully learns this fact.
