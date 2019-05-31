@@ -15,14 +15,19 @@ The formula for the Hausdorff distance is:
 $ _{\mathrm {H} }(X,Y)=\max\{\,\sup _{x\in X}\inf _{y\in Y}d(x,y),\,\sup _{y\in Y}\inf _{x\in X}d(x,y)\} $
 
 $X$ and $Y$ are the two sets/matrices which are compared. $d(x,y)$ is the distance between two points. $inf$ and $sup$ are the Infimum and supremum: When comparing two
-ordered sets A and B, the infinum is 
+ordered sets A and B, the infinum of A in comparision to B is the smallest TODO . A visualization
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{chapters/06_hdm/images/inf_sup.png}
-\caption{Visualization of the Hausdorff distance. The distance from set Y to set X is the maximal distance of a point on set Y to a point X \cite{hausdorffdistanceimage2}}
+\caption{Visualization of the Infimum and supremum \cite{hausdorffdistanceimage2}}
 \label{inf_sup}
 \end{figure}
+
+Intuitively, the Hausdorff distance searches two different maximal distances between two sets and returns the higher one as the distance.
+The maximal distance from set A to set B is the biggest distance between a pixel from set A to a pixel in set B, but the distance from the pixel from set A to the pixel B has to be the smallest distance from pixel A to any pixel on the set B.
+
+A visual explanation of the Hausdorff distance is given in Figure \ref{hausdorff_distance}.
 
 \begin{figure}[H]
 \centering
@@ -31,6 +36,7 @@ ordered sets A and B, the infinum is
 \label{hausdorff_distance}
 \end{figure}
 
+\subsection{Examples}
 \begin{figure}[H]
     \centering
     \begin{subfigure}{.5\textwidth}
