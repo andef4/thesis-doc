@@ -19,14 +19,14 @@ In this section we discuss the results when applying Hausdorff distance masks to
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/23.png}
-        \caption{T1 modality with a third mask applied}
+        \caption{Regions where the applied masks reduce the accuracy of the segmentation}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/24.png}
-        \caption{T1 modality with a third mask applied}
+        \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T1}
+    \caption{Modality T1 analyzed with Hausdorff distance masks. The image (c) shows regions which match the tumor, but also shows regions outside of the tumor which influence the segmentation. Image (d) which shows accuracy increases when occluded shows regions in almost the whole brain.}
 \end{figure}
 
 
@@ -40,19 +40,19 @@ In this section we discuss the results when applying Hausdorff distance masks to
     \begin{subfigure}[t]{.4\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/25.png}
-        \caption{T1 contrast enhanced modality ground truth tumor}
+        \caption{Tumor ground truth}
     \end{subfigure}
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/28.png}
-        \caption{T1 contrast enhanced modality with a third mask applied}
+        \caption{Regions where the applied masks reduce the accuracy of the segmentation}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/29.png}
-        \caption{T1 contrast enhanced modality with a third mask applied}
+        \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T1 contrast enhanced}
+    \caption{Modality T1 contrast enhanced analyzed with Hausdorff distance masks. The important regions which decrease the accuracy of the segmentation are located in the tumor region which are clearly visible in this contrast enhanced scan modality.}
 \end{figure}
 
 \begin{figure}[H]
@@ -65,19 +65,19 @@ In this section we discuss the results when applying Hausdorff distance masks to
     \begin{subfigure}[t]{.4\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/30.png}
-        \caption{T2 modality ground truth tumor}
+        \caption{Tumor ground truth}
     \end{subfigure}
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/33.png}
-        \caption{T2 modality with a third mask applied}
+        \caption{Regions where the applied masks reduce the accuracy of the segmentation}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/34.png}
-        \caption{T2 modality with a third mask applied}
+        \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{Modality T2}
+    \caption{Modality T2 analyzed with Hausdorff distance masks. The regions decreasing the accuracy when occluded (image (c)) are in the tumor center which is visible in this modality. Regions increasing the accuracy when occluded (d) are around the tumor borders.}
 \end{figure}
 
 \begin{figure}[H]
@@ -90,17 +90,17 @@ In this section we discuss the results when applying Hausdorff distance masks to
     \begin{subfigure}[t]{.4\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/35.png}
-        \caption{FLAIR modality ground truth tumor}
+        \caption{Tumor ground truth}
     \end{subfigure}
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/38.png}
-        \caption{FLAIR modality with a third mask applied}
+        \caption{Regions where the applied masks reduce the accuracy of the segmentation}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/b_Brats18_TCIA08_242_1_L2/39.png}
-        \caption{FLAIR modality with a third mask applied}
+        \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
     \caption{Modality FLAIR}
 \end{figure}
