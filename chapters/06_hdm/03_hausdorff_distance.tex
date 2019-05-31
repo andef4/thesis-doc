@@ -14,8 +14,15 @@ an object with a completely different shape, even when the changed pixel count i
 The formula for the Hausdorff distance is:
 $ _{\mathrm {H} }(X,Y)=\max\{\,\sup _{x\in X}\inf _{y\in Y}d(x,y),\,\sup _{y\in Y}\inf _{x\in X}d(x,y)\} $
 
-X and Y are the two sets/matrices which are compared.
+$X$ and $Y$ are the two sets/matrices which are compared. $d(x,y)$ is the distance between two points. $inf$ and $sup$ are the Infimum and supremum: When comparing two
+ordered sets A and B, the infinum is 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{chapters/06_hdm/images/inf_sup.png}
+\caption{Visualization of the Hausdorff distance. The distance from set Y to set X is the maximal distance of a point on set Y to a point X \cite{hausdorffdistanceimage2}}
+\label{inf_sup}
+\end{figure}
 
 \begin{figure}[H]
 \centering
