@@ -52,17 +52,17 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.33\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/01_t1.png}
         \caption{T1 modality of the slice}
-    \end{subfigure}%
-    \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/05_t1_segment.png}
         \caption{T1 modality overlaid with ground truth tumor segment}
-    \end{subfigure}
-        \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/09_t1_hdm10.png}
         \caption{T1 modality overlaid with Hausdorff distance mask output}
@@ -73,17 +73,17 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.33\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/02_t1ce.png}
         \caption{T1 contrast enhanced modality}
-    \end{subfigure}%
-    \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/06_t1ce_segment.png}
         \caption{T1ce modality overlaid with ground truth tumor segment}
-    \end{subfigure}
-        \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/10_t1ce_hdm.png}
         \caption{T1ce modality overlaid with Hausdorff distance mask output}
@@ -94,17 +94,17 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.33\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/03_t2.png}
         \caption{T2 modality of the slice}
-    \end{subfigure}%
-    \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/07_t2_segment.png}
         \caption{T2 modality overlaid with ground truth tumor segment}
-    \end{subfigure}
-        \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/11_t2_hdm.png}
         \caption{T2 modality overlaid with Hausdorff distance mask output}
@@ -115,17 +115,17 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.33\textwidth}
+    \begin{subfigure}[t]{.32\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/04_flair.png}
         \caption{FLAIR modality of the slice}
-    \end{subfigure}%
-    \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/08_flair_segment.png}
         \caption{FLAIR modality overlaid with ground truth tumor segment}
-    \end{subfigure}
-        \begin{subfigure}{.33\textwidth}
+    \end{subfigure}\hfill%
+    \begin{subfigure}[t]{.315\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/07_brats3d/images/12_flair_hdm.png}
         \caption{FLAIR modality overlaid with Hausdorff distance mask output}
@@ -137,15 +137,11 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 \subsection{Discussion}
 Figure \ref{brats3d_t1} shows the visualization of the distances when inserting cubes into the T1 modality. The marked regions in the visualization correspond mostly to the location of the tumor with some pixels outside of the tumor. Mauricio Reyes commented on this and said that there is discussion in the medical imaging community that the T1 modality is less useful for the segmentation of a tumor, and this result seems to support this argument.
 
-Figure \ref{brats3d_t1ce} shows the  shows the visualization of the distances when inserting cubes into the T1 contrast enhanced modality. This contrast enhanced modality clearly shows the gadolinium enhanced tumor tissue, and from the output of the distances it looks like the neural network learned this fact and successfully uses it to generate a correct segmentation.
+Figure \ref{brats3d_t1ce} shows the visualization of the distances when inserting cubes into the T1 contrast enhanced modality. This contrast enhanced modality clearly shows the gadolinium enhanced tumor tissue, and from the output of the distances it looks like the neural network learned this fact and successfully uses it to generate a correct segmentation.
 
-Figure \ref{brats3d_t2} shows the  shows the visualization of the distances when inserting cubes into the T2 modality.
+Figure \ref{brats3d_t2} shows the visualization of the distances when inserting cubes into the T2 modality. This modality displays the all tissue types in a similar way, but this neural network seems to use only the information for the edema of the tumor. Possibly because the T1 contrast enhanced modality provides higher quality data for the tumor core.
 
-Figure \ref{brats3d_flair} shows the  shows the visualization of the distances when inserting cubes into the FLAIR modality.
-
-
-
-
+Figure \ref{brats3d_flair} shows the visualization of the distances when inserting cubes into the FLAIR modality. The FLAIR modality highlights the whole tumor, but places a 
 
 
 \subsection{Conclusion}
