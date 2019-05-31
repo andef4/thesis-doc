@@ -10,10 +10,13 @@ Applying the Hausdorff distance mask method on the neural network developed by t
 \nblink{brats3D/01\_preprocess.ipynb}
 
 All participants of the contest are required to provide Docker images containing their neural networks. The Docker containers have to conform to a specific format which
-was specified by the contest organizers. This simplifies the evaluation of the neural network, because all neural networks can be used in the same fasion.
+was specified by the contest organizers. This simplifies the evaluation of the neural network, because all neural networks can be used in the same fashion.
 
-To make these Docker containers work, we created a directory which is mounted into the Docker container. The directory contains the input files (4 files in the NIFTI format)
-and the docker container will write the result in this directory.
+The Docker container can only analyze a single scan at a time. When analyzing multiple scans, the container has to be executed again.
+
+The Docker daemon mounts a directory from the host system into the container. The directory should contain the input files (4 files in the NIFTI format, one for each modality). The container will write the result (volume segment of the tumor, also in the NIFTI format) into the same directory.
+
+The execution time to analyze a single scan varies from container to container. For CPU based neural network, it takes between 3 to 6 minutes to analyze one scan. GPU based networks take around one to two minutes.
 
 \subsection{Zero out cubes}
 \nblink{brats3D/02\_generate\_slices.ipynb}
@@ -27,10 +30,9 @@ We load the NIFTI file, set a cubic part of the loaded 3D matrix to zero and sav
 \label{brats3d_example}
 \end{figure}
 
-
 \subsection{Docker execution}
 \nblink{brats3D/03\_execute.ipynb}
-link up files
+To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounte
 
 \subsection{Distance calculation}
 \nblink{brats3D/04\_calculate\_hausdorff\_distance.ipynb}
