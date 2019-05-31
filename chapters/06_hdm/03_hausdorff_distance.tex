@@ -12,6 +12,7 @@ We choose the Hausdorff distance function because it has a specific property tha
 an object with a completely different shape, even when the changed pixel count is exactly the same.
 
 The formula for the Hausdorff distance is:
+
 $ _{\mathrm {H} }(X,Y)=\max\{\,\sup _{x\in X}\inf _{y\in Y}d(x,y),\,\sup _{y\in Y}\inf _{x\in X}d(x,y)\} $
 
 $X$ and $Y$ are the two sets/matrices which are compared. $d(x,y)$ is the distance between two points. $inf$ and $sup$ are the Infimum and supremum: When comparing two
@@ -24,7 +25,7 @@ ordered sets A and B, the infinum of A in comparision to B is the smallest TODO 
 \label{inf_sup}
 \end{figure}
 
-Intuitively, the Hausdorff distance searches two different maximal distances between two sets and returns the higher one as the distance.
+Intuitively, the Hausdorff distance searches the two maximal distances between sets (A to B and B to a) and returns the higher one as the distance.
 The maximal distance from set A to set B is the biggest distance between a pixel from set A to a pixel in set B, but the distance from the pixel from set A to the pixel B has to be the smallest distance from pixel A to any pixel on the set B.
 
 A visual explanation of the Hausdorff distance is given in Figure \ref{hausdorff_distance}.
@@ -35,6 +36,22 @@ A visual explanation of the Hausdorff distance is given in Figure \ref{hausdorff
 \caption{Visualization of the Hausdorff distance. The distance from set Y to set X is the maximal distance of a point on set Y to a point X \cite{hausdorffdistanceimage}}
 \label{hausdorff_distance}
 \end{figure}
+
+A naive implementation of the algorithm in Python would look like this:
+\begin{minted}{python}
+def inner_hausdorff(X, Y):
+    minimal_distances = []
+    for x in X:
+        distances = []
+        for y in Y:
+            distances.append(distance(x,y))
+        min_distance = min(distances)  # infinum
+        minimal_distances.append(min_distance)
+    return max(minimal_distances) # supremum
+
+def hausdorff_distance(X, Y):
+    return max(inner_hausdorff(X, Y), inner_hausdorff(Y, X))
+\end{minted}
 
 \subsection{Examples}
 \begin{figure}[H]
