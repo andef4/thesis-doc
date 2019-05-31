@@ -11,8 +11,16 @@ The current implementation only supports the complete removal of information (se
 setting the color to the mean value of the pixels inside the circle, setting all the pixel to 1 (full intensity) might also work.
 The size of the circle is a configuration parameter of the algorithm, some experimentation of different sizes is done in \autoref{hdm_circle_size}.
 
-The drawing of the circles work in a similar way
+The drawing of the black circle is implemented in a similar way to RISE. As a first step, masks with the black circles are generate. In a second step,
+these masks are applied to the images. The generation of the masks is not very slow, but the masks are exactly the same for the same parameters of the algorithm and therefore
+only need to be generated once.
 
+The masks are generated based on the image size and the configured offset between the circles.
+This is done by creating an image with the same width and height of the input image using the Python Imaging Library (PIL). All pixels are set to full intensity (white) on initialization.
+The PIL draw module is then used to draw the black circle onto the image. As a last step, the image in converted into a numpy array. This process is repeated for all positions generated
+by the offset parameter of the algorithm.
+
+Applying the mask to and image is done using the numpy \texttt{min()} function with the mask and the image as a parameter giving an output looking like Figure \ref{hdm_masks_1} and \ref{hdm_masks_2}.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{.33\textwidth}
@@ -31,7 +39,7 @@ The drawing of the circles work in a similar way
         \caption{T1 modality with a third mask applied}
     \end{subfigure}
     \caption{Modality T1 with three different round masks applied}
-    \ref{hdm_masks_1}
+    \label{hdm_masks_1}
 \end{figure}
 
 \begin{figure}[H]
@@ -52,7 +60,7 @@ The drawing of the circles work in a similar way
         \caption{FLAIR modality with mask applied}
     \end{subfigure}
     \caption{Modalities T1 contrast enhanced, T2 and FLAIR with the same mask applied}
-    \ref{hdm_masks_2}
+    \label{hdm_masks_2}
 \end{figure}
 
 
