@@ -1,6 +1,8 @@
-we succeded in creating a new method, because existing methods did not deliver the results we hoped.
+The main goal of this thesis has been reached: Building a method to interpret image segmentation models. We set out to modify existing methods (RISE, LIME, Grad-CAM) originally built for image classification to work for image segmentation too. After dismissing LIME from the possible methods after the results where underwhelming in comparison to RISE, we successfully modified RISE to work on image segmentation tasks. The white box method Grad-CAM did not return any useful interpretability results.
 
-limitations: only circle shapes, something similar like superpixels from lime could be helpful
+The generated heat maps from RISE provided insight into the inner workings of the neural networks, but the spatial resolution of the heat maps is very low. We therefore decided to build our own method, based on the ideas proposed in 2014 by Zeiler et al. This new method based on the occlusion of parts of the image and the Hausdorff distance metric to calculate the difference between generated segments 
+
+
 
 further work:
 * investigate other white box and black box methods
