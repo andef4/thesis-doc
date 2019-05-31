@@ -1,17 +1,30 @@
 \section{Introduction}
+The BraTS scans are 3D volumes. The groups participating in the BraTS contest build neural networks that work with these volumes as input directly.
+
+One of the groups participating on the contest is the Healthcare Imaging A.I. group of the medical faculty of the University of Bern. The constituent of this thesis
+is Mauricio Reyes, who is also the head of this group.
+
+Applying the Hausdorff distance mask method on the neural network developed by the group could be helpful to enhance the neural network.
 
 \subsection{Docker setup}
 \nblink{brats3D/01\_preprocess.ipynb}
-correctly symblink files, execute container, copy out result file
+
+All participants of the contest are required to provide Docker images containing their neural networks. The Docker containers have to conform to a specific format which
+was specified by the contest organizers. This simplifies the evaluation of the neural network, because all neural networks can be used in the same fasion.
+
+To make these Docker containers work, we created a directory which is mounted into the Docker container. The directory contains the input files (4 files in the NIFTI format)
+and the docker container will write the result in this directory.
 
 \subsection{Zero out cubes}
 \nblink{brats3D/02\_generate\_slices.ipynb}
-iterate over everything, zero cubes
+The 2D version of the algorithm works by removing information by drawing a black circle onto the image. In the 3D version, we remove a small cube from the input files.
+We load the NIFTI file, set a cubic part of the loaded 3D matrix to zero and save the scan again. An example of a modified volume is shown in Figure \ref{brats3d_example}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=10cm]{chapters/07_brats3d/images/brain-hdm-marked.png}
+\includegraphics[width=8cm]{chapters/07_brats3d/images/brain-hdm-marked.png}
 \caption{Modified scan with removed cube (red circle)}
+\label{brats3d_example}
 \end{figure}
 
 
