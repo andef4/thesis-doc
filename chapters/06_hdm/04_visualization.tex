@@ -46,16 +46,16 @@ Two things can happen when applying a mask (i.e. drawing a black circle) on an i
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.48\textwidth}
         \centering
-        \includegraphics[width=0.9\linewidth]{chapters/06_hdm/visualization/hdm_worse.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/visualization/hdm_worse.png}
         \caption{Visualization of all masks which decrease the accuracy of the output segment when applied to an image}
     \end{subfigure}\hfill%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.48\textwidth}
         \centering
-        \includegraphics[width=0.9\linewidth]{chapters/06_hdm/visualization/hdm_better.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/visualization/hdm_better.png}
         \caption{Visualization of all masks which increase the accuracy of the output segment when applied to an image}
     \end{subfigure}
-    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \caption{Visualization of regions in an image which decrease (left image) the segmentation output accuracy or increase (right image) it when occluded by a circle.}
     \label{hdm_visualization_better_worsebetter}
 \end{figure}
