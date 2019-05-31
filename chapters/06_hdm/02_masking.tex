@@ -86,7 +86,7 @@ The images with the masks applied from above are then run trough the neural netw
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/1c_diff.png}
         \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{The input image (a) is only slightly changed by drawing a circle on the left side of the square. The segment output (b) looks the same as the reference output. The difference with the reference output shows that the segment changed, the confidence for the segment output even increased, but only by a very small amount. }
+    \caption{The input image (a) is only slightly changed by drawing a circle on the left side of the square. The segment output (b) looks the same as the reference output. The difference with the reference output shows (c) that the segment changed, the confidence for the segment output even increased, but only by a very small amount.}
     \label{hdm_changed_output_1}
 \end{figure}
 
@@ -95,19 +95,19 @@ The images with the masks applied from above are then run trough the neural netw
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/0a_masked.png}
-        \caption{Input with mask applied on the top left side of the cross}
+        \caption{Input with mask applied on the center of the square}
     \end{subfigure}%
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/0b_segment.png}
-        \caption{TODO}
+        \caption{Changed output segment}
     \end{subfigure}
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/0c_diff.png}
-        \caption{TODO}
+        \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{TODO}
+    \caption{Applying the mask on center of the square (a) significantly changes the segment output (b) of the neural network. The network even includes a part of the square in the output segment.}
     \label{hdm_changed_output_2}
 \end{figure}
 
@@ -116,19 +116,19 @@ The images with the masks applied from above are then run trough the neural netw
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/3a_masked.png}
-        \caption{TODO}
+        \caption{Input with mask applied on the top left side of the cross}
     \end{subfigure}%
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/3b_segment.png}
-        \caption{TODO}
+        \caption{Changed output segment}
     \end{subfigure}
     \begin{subfigure}[t]{.33\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/3c_diff.png}
-        \caption{TODO}
+        \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{TODO}
+    \caption{Occluding a part of the cross (a), which is part of the output segment, removes this part from the output segment (b), as is to be expected when the crucial information is removed from the input image.}
     \label{hdm_changed_output_3}
 \end{figure}
 
@@ -150,7 +150,7 @@ The images with the masks applied from above are then run trough the neural netw
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/2c_diff.png}
         \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{TODO}
+    \caption{Occluding the left side of the square in the input image (a), the triangle is segmented instead of the cross. The neural network interprets the changed square as a circle and therefore segments the triangle. This shows a clear weakness of this network, for a human the modified square still looks like a square and much less like a circle.}
     \label{hdm_changed_output_4}
 \end{figure}
 
