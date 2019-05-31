@@ -40,11 +40,11 @@ Because of the long execution time for a single scan (1-2 minutes), we initially
 \nblink{brats3D/04\_calculate\_hausdorff\_distance.ipynb}
 The calculation of the distance between the ground truth segment and the output segment from the Docker containers are very similar to the 2D variant. The Hausdorff distance implementation we used only supports 2D matrices and not 3D volumes. A 3D implementation of the Hausdorff distance is feasible, but would be very slow with our volume size. 
 
-Our solution was the following: We calculate the Hausdorff distance between all horizontal planes in the output segment and the corresponding 
-We therefore decided to run the Hausdorff distance on horizontal planes 
+Our solution was the following: We calculate the Hausdorff distance between all horizontal planes in the unchanged baseline network output and the corresponding plane in the ground truth segment.
+This generates an array with a Hausdorff distance for every horizontal plane. We now do the same thing for all output segments generated from our modified scans. We then calculate the mean square error between the array from the baseline segment and the array from the current scan. This gives us a single value for every modified scan.
 
 \subsection{Visualization}
-We use cubes, do not bother with circles just upscale pixels
+Visualizing the calculated values is straight forward. We only run the algorithm on a single horizontal plane, we can therefore use 2D images to display the distances and the distances itself are saved in a 2D matrix. The distances correspond to a specific location, the location where a the cube has been taken out of the volume. We can convert the 2D matrix of the distances into an image (using a color map to convert the float values into a color gradient). As a last step, we upscale the generated image until it has the same size as the 2D plane on which it should be displayed.
 
 \subsection{Results}
 \nblink{brats3D/02a\_generate\_single\_slice.ipynb}
