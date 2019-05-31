@@ -2,8 +2,9 @@
 \nblink{brats/13\_testnet\_hausdorff\_masks.ipynb}
 \nblink{brats/14\_brats\_hausdorff\_masks.ipynb}
 
-doc: grafiken von HDM sehen teilweise gleich aus => sind sie nicht, skalierungsproblem
+After generating the Hausdorff distance between all outputs of the modified images and the unchanged baseline output segment, a visualization of the distance can be generated.
 
+Figure \ref{hdm_visualization_sample} 
 
 raw, absolute, worse, better
 
@@ -25,6 +26,7 @@ raw, absolute, worse, better
         \caption{TODO}
     \end{subfigure}
     \caption{TODO}
+    \label{hdm_visualization_sample}
 \end{figure}
 
 \begin{figure}[H]
@@ -40,7 +42,7 @@ raw, absolute, worse, better
         \caption{Shape moved to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 1353. }
-    \label{hdm_smaller_circles}
+    \label{hdm_visualization_raw}
 \end{figure}
 
 
@@ -57,5 +59,5 @@ raw, absolute, worse, better
         \caption{Shape moved to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 1353. }
-    \label{hdm_smaller_circles}
+    \label{hdm_visualization_better_w}
 \end{figure}

@@ -61,14 +61,14 @@ The following visualizations show samples of shapes compared with the Hausdorff 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_original.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_original.png}
         \caption{Original shape}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_moved1.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_moved1.png}
         \caption{Shape moved slightly to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 476.}
@@ -79,14 +79,14 @@ Figure \ref{hdm_moved1} shows a slightly moved circle, the Hausdorff distance be
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_original.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_original.png}
         \caption{Original shape}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_moved2.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_moved2.png}
         \caption{Shape moved to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 1656. }
@@ -97,14 +97,14 @@ Figure \ref{hdm_moved2} shows a shape that is moved to right, showing a bigger H
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_original.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_original.png}
         \caption{Original shape}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_hole.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_hole.png}
         \caption{Shape moved to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 840. }
@@ -115,35 +115,38 @@ Figure \ref{hdm_hole} shows the shape at the same position but with a hole in th
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_original.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_original.png}
         \caption{Original shape}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_square.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_square.png}
         \caption{Shape moved to the right}
     \end{subfigure}
     \caption{Hausdorff distance between the left and the right figure: 1197. }
     \label{hdm_square}
 \end{figure}
 
-Figure \ref{hdm_square} shows the shape transformed into a square. 
+Figure \ref{hdm_square} shows the shape transformed into a square. The distance between the shapes is much bigger compared the the shape with a hole in it in Figure \ref{hdm_hole}, even when the
+changed count of pixels is similar.
 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_original.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_original.png}
         \caption{Original shape}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.35\textwidth}
         \centering
-        \includegraphics[width=.75\linewidth]{chapters/06_hdm/images/hdm_smaller_circles.png}
+        \includegraphics[width=\linewidth]{chapters/06_hdm/images/hdm_smaller_circles.png}
         \caption{Shape moved to the right}
     \end{subfigure}
-    \caption{Hausdorff distance between the left and the right figure: 1353. }
+    \caption{Hausdorff distance between the left and the right figure: 1353.}
     \label{hdm_smaller_circles}
 \end{figure}
+
+Figure \ref{hdm_smaller_circles} shows the shape completely replaced by three smaller circles. The Hausdorff distance is the highest of all the sample images with 1353.
