@@ -2,13 +2,20 @@
 \label{hausdorff_distance_chapter}
 \nblink{brats/15a\_hausdorff\_distance.ipynb}
 
+In the previous section, we showed differences between the reference neural network output and the output of images where a part of them has been masked by a circle.
+Showing this difference for all the applied masks is impractical, a single visualization which shows all the output segment changes would be helpful.
+A first step is getting a single number for the difference of the two segments (unchanged reference segment, output segment from masked image).
 
+A way to calculate the similarity (or difference) between two matrices (the output segments of the neural network are 2D matrices) is a distance function.
 
-To calculate the similarity between two matrices, a distance function is required. The Hausdorff distance function is a special distance function,
-which not only 
+We choose the Hausdorff distance function because it has a specific property that is helpful for our requirements: A slightly moved object is still considered more similar to
+an object with a completely different shape, even when the changed pixel count is exactly the same.
 
-TODO formular
-TODO explain inf sup
+The formula for the Hausdorff distance is:
+$ _{\mathrm {H} }(X,Y)=\max\{\,\sup _{x\in X}\inf _{y\in Y}d(x,y),\,\sup _{y\in Y}\inf _{x\in X}d(x,y)\} $
+
+X and Y are the two sets/matrices which are compared.
+
 
 \begin{figure}[H]
 \centering
