@@ -141,8 +141,9 @@ Figure \ref{brats3d_t1ce} shows the visualization of the distances when insertin
 
 Figure \ref{brats3d_t2} shows the visualization of the distances when inserting cubes into the T2 modality. This modality displays the all tissue types in a similar way, but this neural network seems to use only the information for the edema of the tumor. Possibly because the T1 contrast enhanced modality provides higher quality data for the tumor core.
 
-Figure \ref{brats3d_flair} shows the visualization of the distances when inserting cubes into the FLAIR modality. The FLAIR modality highlights the whole tumor, but places a 
-
+Figure \ref{brats3d_flair} shows the visualization of the distances when inserting cubes into the FLAIR modality. The FLAIR modality highlights the whole tumor, but the most visible part is the edema. The network learns this too.
 
 \subsection{Conclusion}
-shit works yo
+The Hausdorff distance algorithm was successfully updated to work with 3D data. The execution of the analysis takes a very long time (6 hours for a single horizontal slice). The generated results are very good, showing exactly which parts of the scan the neural network uses to generate a high quality segmentation volume.
+
+The networks for the BraTS competition have a much higher accuracy than our self-trained 2D network. It is therefore not surprising that running the same algorithm on a better network generates better results, because the network interprets only the most relevant data for the segmentation, and not irrelevant data as the less accurate network might do.
