@@ -1,11 +1,28 @@
-compare with goals, including time planning?
+This chapter compares the goals initially set in the introduction and the requirements document in Appendix A with the accomplishments of this thesis.
 
-\begin{itemize}
-\item Research existing methods for image classification
-\item Asses if the found methods can be modified for image segmentation
-\item Modify the methods for image segmentation
-\item Build and train a neural network on the BraTS brain tumor segmentation dataset
-\item Apply the modified methods on the trained neuronal network
-\item Analyze, evaluate and discuss the results
-\item Build a reusable Python library so other developers can easily use our modified messages
-\end{itemize}
+\subsubsection{Research existing methods for image classification}
+A list of methods is listed in chapter 2, three methods (RISE, LIME and Grad-Cam) are explained in detail in the same chapter.
+
+\subsubsection{Asses if the found methods can be modified for image segmentation}
+The methods listed in chapter 2 were asseset and the three methods listed above were selected for modification.
+
+\subsubsection{Modify the methods for image segmentation}
+Two of the methods (RISE and Grad-CAM) were successfully modified to work on image segmentation tasks.
+The LIME method was not modified, because it delivered underwhelming results on the NIH Chest X-ray dataset.
+A new method based on ideas proposed in 2014 by Zeiler et al. was developed and named Hausdorff distance masks (HDM for short).
+
+\subsubsection{Build and train a neural network on the BraTS brain tumor segmentation dataset}
+A neural network with the U-Net architecture was trained on the BraTS dataset and delivered good accuracy values.
+
+\subsubsection{Apply the modified methods on the trained neuronal network}
+The two modified methods RISE and Grad-CAM and the newly developed Hausdorff distance mask method were successfully applied on the BraTS dataset.
+
+\subsubsection{Analyze, evaluate and discuss the results}
+Every chapter or section which shows some kind of result also contains a discussion and conclusion section.
+
+\subsubsection{Provide images for the teaching materials of Mauricio Reyes}
+The Jupyter notebooks in the git repository contain a large amount of images. A script was written which can extract all images from Jupyter notebok
+and save them as normal PNG images.
+
+\subsection{Build a reusable Python library}
+A Python library which allows the application of the RISE and HDM method was developed, documented and published on GitHub and PyPI.
