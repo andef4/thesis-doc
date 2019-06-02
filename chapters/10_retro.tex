@@ -1,15 +1,17 @@
-This chapter compares the goals initially set in the introduction and the requirements document in Appendix A with the accomplishments of this thesis.
+This chapter compares the goals initially set in the introduction and the requirements document in \autoref{appendix_a}  with the accomplishments of this thesis.
+
+\section{Goals}
 
 \subsubsection{Research existing methods for image classification}
-A list of methods is listed in chapter 2, three methods (RISE, LIME and Grad-Cam) are explained in detail in the same chapter.
+A big list of methods was evaluated and listed in \autoref{chapter_methods}. Three selected methods (RISE, LIME and Grad-Cam) are explained in detail in the same chapter.
 
 \subsubsection{Asses if the found methods can be modified for image segmentation}
-The methods listed in chapter 2 were asseset and the three methods listed above were selected for modification.
+The methods listed in chapter 2 were assessed and the three methods listed above were selected for modification.
 
 \subsubsection{Modify the methods for image segmentation}
 Two of the methods (RISE and Grad-CAM) were successfully modified to work on image segmentation tasks.
 The LIME method was not modified, because it delivered underwhelming results on the NIH Chest X-ray dataset.
-A new method based on ideas proposed in 2014 by Zeiler et al. was developed and named Hausdorff distance masks (HDM for short).
+A new method based on ideas proposed in 2014 by Zeiler et al.\cite{zeiler2014visualizing} was developed and named Hausdorff Distance Masks (HDM for short).
 
 \subsubsection{Build and train a neural network on the BraTS brain tumor segmentation dataset}
 A neural network with the U-Net architecture was trained on the BraTS dataset and delivered good accuracy values.
@@ -21,8 +23,10 @@ The two modified methods RISE and Grad-CAM and the newly developed Hausdorff dis
 Every chapter or section which shows some kind of result also contains a discussion and conclusion section.
 
 \subsubsection{Provide images for the teaching materials of Mauricio Reyes}
-The Jupyter notebooks in the git repository contain a large amount of images. A script was written which can extract all images from Jupyter notebok
-and save them as normal PNG images.
+The Jupyter notebooks in the git repository contain a large amount of images. A script was written which can extract all images from Jupyter notebok and save them as normal PNG images. The script is described in the \autoref{chapter_infrastructure}.
 
-\subsection{Build a reusable Python library}
+\subsubsection{Build a reusable Python library}
 A Python library which allows the application of the RISE and HDM method was developed, documented and published on GitHub and PyPI.
+
+\section{Conclusion}
+Almost 
