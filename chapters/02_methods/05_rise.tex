@@ -47,9 +47,9 @@ Instead of superpixels, RISE generates masks that are applied to the input image
     \label{rise_mask1}
 \end{figure}
 
-The number of generated masks depend on the image resolution, e.g. for an image of size 240x240 pixels, 3000 masks generate good results. All masks are applied to the input image to generate new input images. The modified images are run trough the neural network and their classification scores for a specific class are recorded. A high classification score for a class on a modified input image means that the pixels preserved by the mask are important for the classification.
+The number of generated masks depend on the image resolution, e.g. for an image of size 240x240 pixels, 3000 masks generate good results. All masks are applied to the input image to generate new input images. The modified images are passed through the neural network and their classification scores for a specific class are recorded. A high classification score for a class on a modified input image means that the pixels preserved by the mask are important for the classification.
 
-To visualize the results, the classification scores and masks are summed up and converted into a heat map. Figure \ref{rise_explanation} shows how the summing up works: The masks are multiplied with the classification score returned by running the masked image trough the neural network. In Figure \ref{rise_explanation} for example, the leftmost mask was applied to an image, the image was run trough the network and the network returned the value 0.7 for the first class. The next step is summing up all the values from the same cell into one matrix (image (c) in Figure \ref{rise_explanation}). In the actual implementation, the multiplication of the masks with the output values and summing up into one matrix is done with one matrix multiplication step.
+To visualize the results, the classification scores and masks are summed up and converted into a heat map. Figure \ref{rise_explanation} shows how the summing up works: The masks are multiplied with the classification score returned by running the masked image through the neural network. In Figure \ref{rise_explanation} for example, the leftmost mask was applied to an image, the image was run through the network and the network returned the value 0.7 for the first class. The next step is summing up all the values from the same cell into one matrix (image (c) in Figure \ref{rise_explanation}). In the actual implementation, the multiplication of the masks with the output values and summing up into one matrix is done with one matrix multiplication step.
 
 \begin{figure}[H]
     \centering
@@ -61,7 +61,7 @@ To visualize the results, the classification scores and masks are summed up and 
     \begin{subfigure}[t]{\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/02_methods/images/rise/explain_rise_result.png}
-        \caption{Masks multiplied by the classification value returned by the neural network after running the masked images trough it}
+        \caption{Masks multiplied by the classification value returned by the neural network after running the masked images through it}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{.5\textwidth}
         \centering

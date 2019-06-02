@@ -33,7 +33,7 @@ Grad-CAM\cite{selvaraju2017grad} (Gradient-weighted Class Activation Mapping) is
     \label{grad_cam_dog}
 \end{figure}
 
-The main parameter for this method is which convolutional layer of the neural network that should be analyzed. Figure \ref{grad_cam_explanation} shows a schematic of the inner working of Grad-CAM for a layer: The feature map (i.e. the result of applying the convolution kernels on the channel input) of the specified convolutional layer is extracted. Every channel of the feature map is weighted, based on how much it influences the final output value of the network for a specific class. Finally, the weighted channels are summed up, run trough ReLU and converted to a heat map by upsamling. The ReLU is applied to remove pixels which negativly impact the class output.
+The main parameter for this method is which convolutional layer of the neural network that should be analyzed. Figure \ref{grad_cam_explanation} shows a schematic of the inner working of Grad-CAM for a layer: The feature map (i.e. the result of applying the convolution kernels on the channel input) of the specified convolutional layer is extracted. Every channel of the feature map is weighted, based on how much it influences the final output value of the network for a specific class. Finally, the weighted channels are summed up, passed through ReLU and converted to a heat map by upsamling. The ReLU is applied to remove pixels which negatively impact the class output.
 
 \begin{figure}[H]
 \centering

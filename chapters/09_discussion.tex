@@ -9,7 +9,7 @@ The BraTS dataset contains MRI scans of brains which have aggressive brain tumor
 \section{Testnet}
 To more accurately asses the quality of the developed methods, we built a artificial dataset named testnet (a "toy" dataset) and trained the same U-Net model as used with BraTS on it. Using this network we discovered that the output of RISE is not only of low spatial resolution but also misses out an important part of the image which is needed for the correct segmentation of images in the testnet dataset.
 
-\section{Hausdorff distance masks}
+\section{Hausdorff Distance Masks}
 Because Grad-CAM did not work at all and RISE only has low spatial resolution, we started to build our own method. 
 The basic idea is that we occlude small parts of an image (by drawing a black circle onto the image) and then compare the generated output segment with the unmodified baseline segment. When the segment changes significantly, the region occluded by the circle is important for the segmentation of the image.
 The method showed good results on BraTS and testnet, displaying a much higher spatial resolution than RISE.
