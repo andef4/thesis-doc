@@ -50,14 +50,14 @@ We did multiple iterations on the full dataset with ResNet18, experimenting with
 None of these parameters changed the validation accuracy significantly, always peaking around 60\% to 65\%.
 
 \subsection{DenseNet}
-\nblink{nhs-chest-xray/DenseNet.ipynb}
+\nblink{nhs-chest-xray/densenet.ipynb}
 
 Researching what other people did to train a model for this dataset, we came across the CheXNet \cite{rajpurkar2017chexnet} paper and an implementation of the paper in PyTorch \cite{chexnetpytorch}.
 
 The paper uses the DenseNet \cite{huang2017densely} architecture. An implementation of DenseNet is available in PyTorch. The implementation of the paper provided a pretrained model, but loading the saved model did not work, because the used version of PyTorch was old and incompatible with ours.
 
 \subsection{Retraining DenseNet}
-\nblink{nhs-chest-xray/DenseNet\_singleclass.ipynb}
+\nblink{nhs-chest-xray/densenet\_singleclass.ipynb}
 
 After fixing multiple implementation errors (not correctly setting the output class count, assigning of classes to output neurons not the same in test vs. validation set), we started to get acceptable accuracy rates for the DenseNet implementation, peaking around 55\% accuracy.
 
