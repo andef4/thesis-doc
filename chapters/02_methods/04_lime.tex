@@ -35,7 +35,7 @@ Right: Locally weighted regression to generate a preferably continuous region to
 In the next step, LIME generates input images by turning off multiple randomly selected superpixels. Turning off in this case means setting the color inside the superpixel to gray. The center image of Figure \ref{lime_perturbed} shows some examples of deactivated superpixels. The generated input images are then passed through the neural network and the changed probabilities of the relevant class(es) are recorded. As a last step, LIME does a locally weighted (i.e. adjacent superpixels are weighted higher) regression of the probabilities to generate a preferably continuous cluster of superpixels explaining a specific class (right image in Figure \ref{lime_perturbed}).
 
 For visualization, the original image is taken and all pixels that are outside of the superpixel cluster deemed relevant for the classification are grayed out.
-Figure \ref{lime_dog} shows a visualization for three classes on a complex input image. Alternativly, the superpixel cluster is drawn over the input image with transparency.
+Figure \ref{lime_dog} shows a visualization for three classes on a complex input image. Alternatively, the superpixel cluster is drawn over the input image with transparency.
 
 \begin{figure}[H]
     \centering

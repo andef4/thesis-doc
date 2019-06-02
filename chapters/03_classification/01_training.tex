@@ -67,9 +67,9 @@ The implementation of the CheXNet paper displayed an accuracy table per class. W
 We removed the "No findings" class from the dataset and retrained both the ResNet18 and the DenseNet implementation, getting similar results of around 30\% accuracy.
 
 \subsection{Weighted classes}
-The dataset still has a class imbalance, even with the "No findings" class removed. To counter this problem, we calculated the percentage every class has of the full dataset and gave these information as class weight to the back propagation criterion.
+The dataset still has a class imbalance, even with the "No findings" class removed. To counter this problem, we calculated the percentage every class has compared to the full dataset and gave these information as class weight to the back propagation criterion.
 
-This increased the accuracy to around 33\%, but should help classes which are underrepresented in the dataset.
+This increased the accuracy to only around 33\%, but should help classes which are underrepresented in the dataset.
 
 \subsection{Conclusion}
-At this point we decided to stop trying to enhance the neural network, because the training already took a long time and an accurate network is not the goal of this thesis. Some classes showed high accuracy rating, analyzing these classes should provide enough insight how the interpretability methods works.
+At this point we decided to stop trying to enhance the neural network, because the training already took a long time and an accurate network is not the goal of this thesis. Some classes showed high accuracy ratings, analyzing these classes should provide enough insight how the interpretability methods works.
