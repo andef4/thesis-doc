@@ -4,7 +4,7 @@ The BraTS scans are 3D volumes. The groups participating in the BraTS contest bu
 One of the groups participating on the contest is the Healthcare Imaging A.I. group of the medical faculty of the University of Bern. The constituent of this thesis
 is Mauricio Reyes, who is also the head of this group.
 
-Applying the Hausdorff Distance Masks method on the neural network developed by the group could be helpful to enhance the neural network.
+Applying the Hausdorff Distance Masks method on the neural network developed by the group could be helpful to enhance the neural network of the group.
 
 \subsection{Docker setup}
 \nblink{brats3D/01\_preprocess.ipynb}
@@ -14,14 +14,14 @@ was specified by the contest organizers. This simplifies the evaluation of the n
 
 The Docker container can only analyze a single scan at a time. When analyzing multiple scans, the container has to be executed again.
 
-The Docker daemon mounts a directory from the host system into the container. The directory should contain the input files (4 files in the NIFTI format, one for each modality). The container will write the result (volume segment of the tumor, also in the NIFTI format) into the same directory.
+The Docker daemon mounts a directory from the host system into the container. The directory should contain the input files (4 files in the NIfTI format, one for each modality). The container will write the result (volume segment of the tumor, also in the NIfTI format) into the same directory.
 
 The execution time to analyze a single scan varies from container to container. For CPU based neural network, it takes between 3 to 6 minutes to analyze one scan. GPU based networks take around one to two minutes.
 
 \subsection{Zero out cubes}
 \nblink{brats3D/02\_generate\_slices.ipynb}
 The 2D version of the algorithm works by removing information by drawing a black circle onto the image. In the 3D version, we remove a small cube from the input files.
-We load the NIFTI file, set a cubic part of the loaded 3D matrix to zero and save the scan again. An example of a modified volume is shown in Figure \ref{brats3d_example}.
+We load the NIfTI file, set a cubic part of the loaded 3D matrix to zero and save the scan again. An example of a modified volume is shown in Figure \ref{brats3d_example}.
 
 \begin{figure}[H]
 \centering
@@ -32,7 +32,7 @@ We load the NIFTI file, set a cubic part of the loaded 3D matrix to zero and sav
 
 \subsection{Docker execution}
 \nblink{brats3D/03\_execute.ipynb}
-To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. Do enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
+To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. To enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
 
 Because of the long execution time for a single scan (1-2 minutes), we initially started a run with very big but few cubes cut out of the modality files. As expected, the output was very high coarse and did not provide much meaningful insight. We decided to execute the method with smaller cubes, but limited to one horizontal plane. The calculations for this configuration took around 6 hours on our current generation desktop machine with a high end consumer graphics card.
 
@@ -139,7 +139,7 @@ Figure \ref{brats3d_t1} shows the visualization of the distances when inserting 
 
 Figure \ref{brats3d_t1ce} shows the visualization of the distances when inserting cubes into the T1 contrast enhanced modality. This contrast enhanced modality clearly shows the gadolinium enhanced tumor tissue, and from the output of the distances it looks like the neural network learned this fact and successfully uses it to generate a correct segmentation.
 
-Figure \ref{brats3d_t2} shows the visualization of the distances when inserting cubes into the T2 modality. This modality displays the all tissue types in a similar way, but this neural network seems to use only the information for the edema of the tumor. Possibly because the T1 contrast enhanced modality provides higher quality data for the tumor core.
+Figure \ref{brats3d_t2} shows the visualization of the distances when inserting cubes into the T2 modality. This modality displays all tissue types to a similar degree, but this neural network seems to use only the information for the edema of the tumor. Possibly because the T1 contrast enhanced modality provides higher quality data for the tumor core.
 
 Figure \ref{brats3d_flair} shows the visualization of the distances when inserting cubes into the FLAIR modality. The FLAIR modality highlights the whole tumor, but the most visible part is the edema. The network learns this too.
 
