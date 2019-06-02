@@ -9,9 +9,7 @@ A big list of methods was evaluated and listed in \autoref{chapter_methods}. Thr
 The methods listed in chapter 2 were assessed and the three methods listed above were selected for modification.
 
 \subsubsection{Modify the methods for image segmentation}
-Two of the methods (RISE and Grad-CAM) were successfully modified to work on image segmentation tasks.
-The LIME method was not modified, because it delivered underwhelming results on the NIH Chest X-ray dataset.
-A new method based on ideas proposed in 2014 by Zeiler et al.\cite{zeiler2014visualizing} was developed and named Hausdorff Distance Masks (HDM for short).
+Two of the methods (RISE and Grad-CAM) were successfully modified to work on image segmentation tasks. The output from RISE was usable, but had low spatial resolution. The output from Grad-CAM did not provide any significant insight into the inner working of the neural network.  The LIME method was not modified, because it delivered underwhelming results on the NIH Chest X-ray dataset. A new method based on ideas proposed in 2014 by Zeiler et al.\cite{zeiler2014visualizing} was developed and named Hausdorff Distance Masks (HDM for short).
 
 \subsubsection{Build and train a neural network on the BraTS brain tumor segmentation dataset}
 A neural network with the U-Net architecture was trained on the BraTS dataset and delivered good accuracy values.
@@ -29,4 +27,4 @@ The Jupyter notebooks in the git repository contain a large amount of images. A 
 A Python library which allows the application of the RISE and HDM method was developed, documented and published on GitHub and PyPI.
 
 \section{Conclusion}
-Almost 
+All non-optional goals were completed successfully. Sadly, the output from the modified Grad-CAM method was not usable, but black box RISE method generated good results. Instead of modifying additional white box and black box methods (optional goals), we decided to build a new black box method from scratch called Hausdorff Distance Masks. The new method generated the best results of all methods, especially on the 3D BraTS dataset.
