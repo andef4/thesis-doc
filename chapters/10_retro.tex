@@ -3,10 +3,10 @@ This chapter compares the goals initially set in the introduction and the requir
 \section{Goals}
 
 \subsubsection{Research existing methods for image classification}
-A big list of methods was evaluated and listed in \autoref{chapter_methods}. Three selected methods (RISE, LIME and Grad-Cam) are explained in detail in the same chapter.
+12 methods were evaluated and listed in \autoref{chapter_methods}.
 
 \subsubsection{Asses if the found methods can be modified for image segmentation}
-The methods listed in chapter 2 were assessed and the three methods listed above were selected for modification.
+The three methods RISE, LIME and Grad-CAM were selected for modification to work on segmentation tasks. They are explained in detail in \autoref{chapter_methods}.
 
 \subsubsection{Modify the methods for image segmentation}
 Two of the methods (RISE and Grad-CAM) were successfully modified to work on image segmentation tasks. The output from RISE was usable, but had low spatial resolution. The output from Grad-CAM did not provide any significant insight into the inner working of the neural network.  The LIME method was not modified, because it delivered underwhelming results on the NIH Chest X-ray dataset. A new method based on ideas proposed in 2014 by Zeiler et al.\cite{zeiler2014visualizing} was developed and named Hausdorff Distance Masks (HDM for short).
