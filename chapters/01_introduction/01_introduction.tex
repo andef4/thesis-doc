@@ -16,7 +16,7 @@ In recent years, many methods for the interpretability of deep (convolutional) n
 These methods focus on providing explanations and interpretability of classification problems for datasets like ImageNet \cite{imagenet_cvpr09} or MNIST \cite{lecun1998gradient}. Classification means that an algorithm can tell what is displayed on an image, e.g. if and what kind of disease is visible on a X-ray or MRI scan.
 
 \section{Image segmentation}
-Image segmentation is different from classification in the way that the algoriths do not detect what is visible on a picture, but instead mark a region (the segment) in an image where it thinks something is visible. For example in self driving cars, it is important to know where other cars or pedestrians are located. 
+Image segmentation is different from classification in the way that the algorithms do not detect what is visible on a picture, but instead mark a region (the segment) in an image where it thinks something is visible. For example in self driving cars, it is important to know where other cars or pedestrians are located. 
 
 In the medical imaging field, one application is the segmentation of tumors in MRI scans. Figure \ref{introduction_tumor} shows a brain MRI scan with the tumor segment overlaid.
 
@@ -28,8 +28,8 @@ In the medical imaging field, one application is the segmentation of tumors in M
 \end{figure}
 
 
-\section{Interpretability on image segmentation}
-The interpretability of image segmentation task is nearly in-existent. In many cases this is understandable, because the interpretability methods would generate an image very similar to the actual segment. For example, in detecting pedestrians for self driving cars, the interpretability method would just mark the pedestrian. Only in cases where the network has not yet reached a good accuracy, other pixels in the image would be marked by the method.
+\section{Interpretability if image segmentation models}
+The interpretability of image segmentation task is nearly in-existent. In many cases this is understandable, because the interpretability methods would generate an image very similar to the actual segment. For example, when detecting pedestrians for self driving cars, the interpretability method would just mark the pedestrian. Only in cases where the network has not yet reached a good accuracy, other pixels in the image would be marked by the method.
 
 In other fields like medical imaging, it is possible or even desirable that a neural network looks at other parts of an image to decide if a part should be segmented. An example for this is the search for tumors on MRI scans of the human brain. The human brain is physically symmetric. When a tumor is growing on one side of the brain, the brain is no longer symmetric. A physician and possibly also neural networks can use this property to detect and segment tumors.
 
@@ -43,19 +43,18 @@ The goal of this thesis is to take existing methods for image classification int
     \item Apply the modified methods on the trained neuronal network
     \item Analyze, evaluate and discuss the results
     \item Build a reusable Python library so other developers can easily use our modified messages
+    \item Provide images and visualizations for the teaching materials of Mauricio Reyes
 \end{itemize}
-
-The second goal is providing the customer with images and visualization for use in their teaching material.
 
 See \autoref{appendix_a} for the full requirements specification.
 
 \section{Constituent}
-The constituent of this thesis is Mauricio Reyes and his team from the medical faculty of the University of Bern. Mr. Reyes is head Healthcare Imaging A.I. This thesis should help him and his team of master and PHD students to better understand the models they are developing.
+The constituent of this thesis is Mauricio Reyes and his team from the medical faculty of the University of Bern. Mr. Reyes is head of the Healthcare Imaging A.I. group. This thesis should help him and his team of master and PhD students to better understand the models they are developing.
 
 \section{Source Code}
 The source code of the thesis is available on GitHub:
 \begin{itemize}
-    \item Thesis source code (mostly jupyter notebooks): \url{https://github.com/andef4/thesis-code}
+    \item Thesis source code (mostly Jupyter notebooks): \url{https://github.com/andef4/thesis-code}
     \item Python library source code: \url{https://github.com/andef4/interpret-segmentation}
     \item Latex source for this document: \url{https://github.com/andef4/thesis-doc}
 \end{itemize}
