@@ -26,7 +26,7 @@ Apart from this basic correctness verification, no further insight is provided b
 The generated output is low resolution but still helpful, we therefore decided to build a version of RISE which works on all pixels of the segmentation.
 
 \section{Modifying and applying RISE (multi pixel)}
-\nblink{17\_rise\_multipixel.ipynb}
+\nblink{brats/17\_rise\_multipixel.ipynb}
 
 As written in the previous section, RISE crashes when running on all the pixels in the output of the model. We already modified the algorithm to only work on a single pixel. For this multi pixel variant, we extended the algorithm to work on all pixels in the segmentation ground truth. We batched the pixels into groups of 1000 pixels each, because depending on the size of the output segment the algorithm still crashed.
 
