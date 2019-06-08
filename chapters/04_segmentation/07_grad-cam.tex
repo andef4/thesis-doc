@@ -69,6 +69,7 @@ to see if there is any insight how the network came up with the output segmentat
 \end{figure}
 
 \subsection{Discussion}
+\nblink{brats/25\_flair\_threshold.ipynb}
 None of the generated outputs provide good insight into the inner working of the network. The output of the batch normalization layer of the third decoder (Image (g) in Figure \ref{grad_cam_brats_result}) shows the most promising output. But this output can easily be replicated by taking the FLAIR modality and applying a threshold, as seen in Figure \ref{grad_cam_treshold}.
 
 \begin{figure}[H]
