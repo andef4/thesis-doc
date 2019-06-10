@@ -3,9 +3,10 @@ The main goal of this thesis has been reached: Building a method to interpret im
 
 The generated heat maps from RISE provided insight into the inner workings of the neural networks, but the spatial resolution of the heat maps is very low. We therefore decided to build our own method, based on the ideas proposed in 2014 by Zeiler et al. This new method based on the occlusion of parts of the image and the Hausdorff distance metric to calculate the difference between segments. We named the method "Hausdorff Distance Masks", or HDM for short. This new method showed good results on the 2D BraTS network and even better results on the 3D volume neural networks provided as Docker images by the participant of the BraTS contest.
 
-\section{}
+\section{Future research}
 One idea to develop the method further is to apply different masks to the images. Instead of setting all pixels to zero, setting them to full intensity, to the mean of all pixels under the mask or filling it with random noise are all possible changes that should be investigated. Using a different shape than a circle should also be investigated. Generating dynamic masks based on the pixels under the mask similar to how the LIME method works could probably also enhance the results.
 
 There are other white box and black box methods which could be investigated for use in segmentation tasks. Many white box methods were built with CNN architectures in mind, but might still be usable with the U-Net architecture. There are fewer black box methods than white box methods published, but most of them should be adjustable to work on segmentation tasks, just like RISE.
 
+\section{Personal conclusion}
 The work on this thesis was very interesting and fun. There were many possibilities to investigate (methods, modifications of methods, visualizations, datasets etc.). Sometimes it was difficult to decide which way would be the right one to take. In the end, we got two methods working and actually returning usable output. Especially the output on the 3D volumes by the HDM method is very interesting and will be presented to Medical Imaging group of the University of Bern, who are working on the BraTS dataset.
