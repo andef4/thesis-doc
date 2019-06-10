@@ -1,6 +1,6 @@
 \section{RISE}
 
-Like LIME, RISE\cite{Petsiuk2018rise} is a black box method and works by manipulating of the input images.
+Like LIME, RISE \cite{Petsiuk2018rise} (Randomized Input Sampling for Explanation) is a black box method and works by manipulating of the input images.
 
 Instead of superpixels, RISE generates masks that are applied to the input images by multiplying the mask with the input image pixel values. Figure \ref{rise_mask0} and Figure \ref{rise_mask1} show two RISE masks applied to the same input image.
 
@@ -72,11 +72,11 @@ To visualize the results, the classification scores and masks are summed up and 
     \label{rise_explanation}
 \end{figure}
 
-To visualize the generated matrix, the data is upscaled to the original image size and displayed as a heat map by mapping the values to a color map. Figure \ref{rise_example} shows some examples for visualization of the RISE output for specific classes.
+To visualize the generated matrix, the data is upscaled to the original image size and displayed as a saliency map by mapping the values to a color map. A saliency map shows the important regions or pixels of an image. Figure \ref{rise_example} shows some examples for visualization of the RISE output for specific classes.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{chapters/02_methods/images/rise/sheep.png}
-\caption{Image from original paper explaining some classes}
+\caption{Image from original paper explaining some classes \cite{Petsiuk2018rise}.}
 \label{rise_example}
 \end{figure}
