@@ -8,49 +8,49 @@ The implementation of RISE on the NIH Chest X-ray dataset with the DenseNet mode
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise0_bbox.png}
-        \caption{Original image with bounding box added by a physician.}
+        \caption{Original image with bounding box added by a physician}
     \end{subfigure}\hspace{1cm}%
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise0_saliency.png}
-        \caption{RISE saliency map of (a).}
+        \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{Image (a) shows the input image with the bounding box added by a physician, showing which region is relevant for the diagnosis. The right image shows a RISE saliency map and proofs that the neural network considers the same part of the image as relevant for the correct classification.}
+    \caption{Image (a) shows the input image with the bounding box added by a physician, showing which region is relevant for the diagnosis. Image (b) shows a RISE saliency map and proofs that the neural network considers the same region of the image as relevant for the correct classification.}
     \label{rise_example_1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_bbox.png}
-        \caption{}
+        \caption{Original image with bounding box added by a physician}
     \end{subfigure}\hspace{1cm}%
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_saliency.png}
-        \caption{}
+        \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{The left image shows the input image with the bounding box added by a physician. The right image shows a RISE heat map and showing multiple regions that where important for the correct classification of this image.}
+    \caption{Image (a) shows the input image with the bounding box added by a physician, showing which region is relevant for the diagnosis. Image (b) shows a RISE heat map and highlights multiple regions that are important for the correct classification of this image.}
     \label{rise_example_2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise2_bbox.png}
-        \caption{}
+        \caption{Original image with bounding box added by a physician}
     \end{subfigure}\hspace{1cm}%
-    \begin{subfigure}[t]{.4\textwidth}
+    \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise2_saliency.png}
-        \caption{}
+        \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{The left image shows the input image with the bounding box added by a physician. The right image shows a RISE heat map where many regions which should be completely irrelevant for the classification are highlighted. The classification is still correct.}
+    \caption{Image (a) shows the input image with the bounding box added by a physician. Image (b) shows a RISE heat map where many regions which should be completely irrelevant for the classification are highlighted. The classification is still correct.}
     \label{rise_example_3}
 \end{figure}
 
