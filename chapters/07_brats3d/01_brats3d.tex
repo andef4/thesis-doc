@@ -34,7 +34,9 @@ We load the NIfTI file, set a cubic part of the loaded 3D matrix to zero and sav
 \nblink{brats3D/03\_execute.ipynb}
 To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. To enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
 
-Because of the long execution time for a single scan (1-2 minutes), we initially started a run with very big but few cubes cut out of the modality files. As expected, the output was very high coarse and did not provide much meaningful insight. We decided to execute the method with smaller cubes, but limited to one horizontal plane. The calculations for this configuration took around 6 hours on our current generation desktop machine with a high end consumer graphics card.
+Because of the long execution time for a single scan (1-2 minutes), we initially started a run with very big but few cubes cut out of the modality files. As expected, the output was very coarse and did not provide much meaningful insight. We decided to execute the method with smaller cubes, but limited to one horizontal plane. The calculations for this configuration took around 6 hours on our current generation desktop machine with a high end consumer graphics card.
+
+The used Docker container was fabianisensee/isen2018 \cite{brats3ddocker}, which supports GPU acceleration and generates very good results.
 
 \subsection{Distance calculation}
 \nblink{brats3D/04\_calculate\_hausdorff\_distance.ipynb}
@@ -49,8 +51,6 @@ Visualizing the calculated values is straight forward. We only run the algorithm
 \subsection{Results}
 \nblink{brats3D/02a\_generate\_single\_slice.ipynb}
 \nblink{brats3D/06\_display\_single\_slice.ipynb}
-
-The usedDocker container was 
 
 \begin{figure}[H]
     \centering
