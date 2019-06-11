@@ -1,16 +1,16 @@
 \section{NHS Chest X-ray dataset}
 The first step to investigate interpretability methods was to apply them on a classification task.
-We successfully (albeit with some difficulties on the way) trained a neural network for the NIH Chest X-Ray dataset.
+We successfully, albeit with some difficulties on the way, trained a neural network for the NIH Chest X-Ray dataset.
 We then applied the methods RISE, LIME and Grad-CAM on the neural network output. RISE delivered good results in most cases. Grad-CAM also generated good results, but generated no output at all on 33\% of all images. LIME delivered results of mixed quality. We therefore decided to only use RISE and Grad-CAM in the next phase.
 
 \section{BraTS}
-The BraTS dataset contains MRI scans of brains which have aggressive brain tumor growing in them. We extracted 2D slices from the 3D volumes of the dataset (because this reduces the required time to train a neural network significantly) and successfully trained a neural network based on the U-Net architecture on it. We then modified RISE and Grad-CAM to work on this image segmentation task. Grad-CAM did not generate any usable output which could be used to interpret the segmentation results. RISE generated a heat map marking the regions where the tumor is located. The spatial resolution of the heat map was quite low.
+The BraTS dataset contains MRI scans of brains which have aggressive brain tumor growing in them. We extracted 2D slices from the 3D volumes of the dataset (because this reduces the required time to train a neural network significantly) and successfully trained a neural network based on the U-Net architecture. We then modified RISE and Grad-CAM to work on this image segmentation task. Grad-CAM did not generate any usable output which could be used to interpret the segmentation results. RISE generated a heat map marking the regions where the tumor is located. The spatial resolution of the heat map was quite low.
 
 \section{Testnet}
-To more accurately asses the quality of the developed methods, we built a artificial dataset named testnet (a "toy" dataset) and trained the same U-Net model as used with BraTS on it. Using this network we discovered that the output of RISE is not only of low spatial resolution but also misses out an important part of the image which is needed for the correct segmentation of images in the testnet dataset.
+To more accurately asses the quality of the developed methods, we built an artificial dataset named testnet (a "toy" dataset) and trained the same U-Net model was used with BraTS. Using this network we discovered that the output of RISE is not only of low spatial resolution, but also misses out on important parts of the image which is needed for the correct segmentation of images in the testnet dataset.
 
 \section{Hausdorff Distance Masks}
-Because Grad-CAM did not work at all and RISE only has low spatial resolution, we started to build our own method. 
+Because Grad-CAM did not work at all, and RISE has only low spatial resolution, we started to evelop own method. 
 The basic idea is that we occlude small parts of an image (by drawing a black circle onto the image) and then compare the generated output segment with the unmodified baseline segment. When the segment changes significantly, the region occluded by the circle is important for the segmentation of the image.
 The method showed good results on BraTS and testnet, displaying a much higher spatial resolution than RISE.
 
