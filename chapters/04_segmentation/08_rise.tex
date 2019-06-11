@@ -66,10 +66,9 @@ To have a single saliency map for all pixels, we use the max and mean functions 
 \end{figure}
 
 \subsection{Discussion}
-Figure \ref{rise_multipixel_max} shows a single saliency map matching quite well with the binarized network output. The resolution of the generated saliency map
-is quite low, and not many insights can be gathered from it.
+Figure \ref{rise_multipixel_max} shows a single saliency map matching quite well with the binarized network output. The map was generated with the numpy max function on all generated saliency maps. This means the highest pixel value in any of the saliency map is copied into the final saliency map. The resolution of the generated saliency map is quite low, and not many insights can be gathered from it.
 
-The Figure \ref{rise_multipixel_mean} which was generated with the mean function also shows a heat map matching the binarized network output, although with much less detail than the map generated with the max function.
+Figure \ref{rise_multipixel_mean}, which was generated with the mean function, also shows a heat map matching the binarized network output, although with much less detail than the map generated with the max function.
 
 \subsection{Conclusion}
 The modified RISE method provides useful insight into the correctness of the model. It clearly marks the important regions the neural network uses to generate the segmentation output. However, the generated saliency map is of low resolution and does only provide a coarse look into the inner workins of the model. Increasing the quantity of used masks by RISE is possible, but generating a single RISE output already takes around 30 seconds on a high-end consumer GPU with 6000 masks. To generate a higher resolution saliency map, many more masks would be required.
