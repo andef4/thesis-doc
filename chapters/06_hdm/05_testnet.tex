@@ -63,12 +63,12 @@ This chapter shows the Hausdorff Distance Masks method applied on three examples
         \includegraphics[width=\linewidth]{chapters/06_hdm/testnet/11.png}
         \caption{Regions where the applied masks increase the accuracy of the segmentation}
     \end{subfigure}
-    \caption{In this sample, the output looks similar to the two figures above, which slightly different positions for the masks}
+    \caption{In this sample, the output looks similar to the two figures above, with slightly different positions for the masks}
     \label{hdm_testnet_3}
 \end{figure}
 
 \subsection{Discussion}
-All three figures (Figure \ref{hdm_testnet_1}, Figure \ref{hdm_testnet_2} and Figure \ref{hdm_testnet_3}) show the importance of not only the segmented region itself (cross/triangle symbol), but also the symbol on the right which decides which symbol on the left should be segmented. With this dataset, increasing the accuracy (the green visualizations in the figures) by masking parts of the image happens, but the decrease of the Hausdorff distance to the ground truth is quite small in comparison of to the distance when the accuracy goes down (red visualizations).
+All three figures (Figure \ref{hdm_testnet_1}, Figure \ref{hdm_testnet_2} and Figure \ref{hdm_testnet_3}) show the importance of not only the segmented region itself (cross/triangle symbol), but also the symbol on the right which decides which symbol on the left should be segmented. With this dataset, increasing the accuracy (the green visualizations in the figures) by masking parts of the image happens, but the decrease of the Hausdorff distance to the ground truth is quite small in comparison to the distance when the accuracy goes down (red visualizations).
 
 As expected from this dataset, the edges and corners of the right symbols are very important to generate the correct output segment.
 

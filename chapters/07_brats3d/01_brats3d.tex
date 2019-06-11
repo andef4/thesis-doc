@@ -1,8 +1,8 @@
 \section{Introduction}
 The BraTS scans are 3D volumes. The groups participating in the BraTS contest build neural networks that work with these volumes as input directly.
 
-One of the groups participating on the contest is the Healthcare Imaging A.I. group of the medical faculty of the University of Bern. The constituent of this thesis
-is Mauricio Reyes, who is also the head of this group.
+One of the participating groups on the contest is the Healthcare Imaging A.I. group of the medical faculty of the University of Bern. The constituent of this thesis
+is the head of this group.
 
 Applying the Hausdorff Distance Masks method on the neural network developed by the group could be helpful to enhance the neural network of the group.
 
@@ -10,7 +10,7 @@ Applying the Hausdorff Distance Masks method on the neural network developed by 
 \nblink{brats3D/01\_preprocess.ipynb}
 
 All participants of the contest are required to provide Docker images containing their neural networks. The Docker containers have to conform to a specific format which
-was specified by the contest organizers. This simplifies the evaluation of the neural network, because all neural networks can be used in the same fashion.
+was specified by the contest organizers. This simplifies the evaluation of the neural network, because all neural networks can be used in the same way.
 
 The Docker container can only analyze a single scan at a time. When analyzing multiple scans, the container has to be executed again.
 
@@ -32,7 +32,7 @@ We load the NIfTI file, set a cubic part of the loaded 3D matrix to zero and sav
 
 \subsection{Docker execution}
 \nblink{brats3D/03\_execute.ipynb}
-To run the Docker container on all of our modified files, we have the correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. To enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
+To run the Docker container on all of our modified files, we have to correctly set up the directory that is mounted into the container. Similar to the 2D BraTS version, we want to analyze the impact of every modality separately. To enhance the performance and avoid unnecessary file copying, we use filesystem hard links to prepare the directory. After running the Docker container on a single scan with only one modified modality, we copy away the result from the directory and update the directory content for the next execution.
 
 Because of the long execution time for a single scan (1-2 minutes), we initially started a run with very big but few cubes cut out of the modality files. As expected, the output was very coarse and did not provide much meaningful insight. We decided to execute the method with smaller cubes, but limited to one horizontal plane. The calculations for this configuration took around 6 hours on our current generation desktop machine with a high end consumer graphics card.
 
@@ -46,7 +46,7 @@ Our solution was the following: We calculate the Hausdorff distance between all 
 This generates an array with a Hausdorff distance for every horizontal plane. We now do the same thing for all output segments generated from our modified scans. We then calculate the mean square error between the array from the baseline segment and the array from the current scan. This gives us a single value for every modified scan.
 
 \subsection{Visualization}
-Visualizing the calculated values is straight forward. We only run the algorithm on a single horizontal plane, we can therefore use 2D images to display the distances and the distances itself are saved in a 2D matrix. The distances correspond to a specific location, the location where a the cube has been taken out of the volume. We can convert the 2D matrix of the distances into an image (using a color map to convert the float values into a color gradient). As a last step, we upscale the generated image until it has the same size as the 2D plane on which it should be displayed.
+Visualizing the calculated values is straight forward. We only run the algorithm on a single horizontal plane. We can therefore use 2D images to display the distances and the distances itself are saved in a 2D matrix. The distances correspond to a specific location, the location where the cube has been taken out of the volume. We can convert the 2D matrix of the distances into an image (using a color map to convert the float values into a color gradient). As a last step, we upscale the generated image until it has the same size as the 2D plane on which it is displayed.
 
 \subsection{Results}
 \nblink{brats3D/02a\_generate\_single\_slice.ipynb}
