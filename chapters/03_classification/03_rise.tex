@@ -18,7 +18,7 @@ The implementation of RISE on the NIH Chest X-ray dataset with the DenseNet mode
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise0_saliency.png}
         \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{Image (a) shows the input image with the bounding box added by a physician, showing which region is relevant for the diagnosis. Image (b) shows a RISE saliency map and proofs that the neural network considers the same region of the image as relevant for the correct classification.}
+    \caption{Image (a) shows the input image with the bounding box added by the physician, showing which region is relevant for the diagnosis. Image (b) is a RISE saliency map which shows that the neural network considers the same region of the image as relevant for the correct classification.}
     \label{rise_example_1}
 \end{figure}
 
@@ -34,7 +34,7 @@ The implementation of RISE on the NIH Chest X-ray dataset with the DenseNet mode
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_saliency.png}
         \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{Image (a) shows the input image with the bounding box added by a physician, showing which region is relevant for the diagnosis. Image (b) shows a RISE heat map and highlights multiple regions that are important for the correct classification of this image.}
+    \caption{Image (a) shows the input image with the bounding box added by the physician, showing which region is relevant for the diagnosis. Image (b) is a RISE heat map which highlights multiple regions that are important for the correct classification of this image.}
     \label{rise_example_2}
 \end{figure}
 
@@ -50,14 +50,14 @@ The implementation of RISE on the NIH Chest X-ray dataset with the DenseNet mode
         \includegraphics[width=\linewidth]{chapters/03_classification/images/rise2_saliency.png}
         \caption{RISE saliency map of (a)}
     \end{subfigure}
-    \caption{Image (a) shows the input image with the bounding box added by a physician. Image (b) shows a RISE heat map where many regions which should be completely irrelevant for the classification are highlighted. The classification is still correct.}
+    \caption{Image (a) shows the input image with the bounding box added by the physician. Image (b) is a RISE heat map which highlights many regions which should be completely irrelevant for the classification. The classification is still correct.}
     \label{rise_example_3}
 \end{figure}
 
 
 
 \subsection{Discussion}
-Figure \ref{rise_example_1} shows that the bounding box created by a physician perfectly matches the region the neural network looked to came to the correct classification. In comparison, in Figure \ref{rise_example_2} the RISE heat map shows two regions which the neural network considers import for the correct classification. In this case, consultation with a physician is required if looking at those two places is correct for the diagnosis or if the neural network is wrong here.
+Figure \ref{rise_example_1} shows, that the bounding box created by a physician perfectly matches the region the neural network looked to came to the correct classification. In comparison, in Figure \ref{rise_example_2} the RISE heat map shows two regions which the neural network considers import for the correct classification. In this case, consultation with a physician is required if looking at those two places is correct for the diagnosis or if the neural network is wrong here.
 
 As a last example, Figure \ref{rise_example_3} shows a heat map where regions are highlighted that should have no influence at all at a correct diagnosis. All three generated heat maps for this class (Infiltration) look similar, and are therefore an indicator that physicians can not depend on the correct diagnosis for this class.
 
