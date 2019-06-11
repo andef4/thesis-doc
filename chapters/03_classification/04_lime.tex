@@ -16,7 +16,7 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_0.png}
-        \caption{RISE saliency map of (a)}
+        \caption{LIME superpixels representing important regions for the classification}
     \end{subfigure}
     \caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. The superpixels are at the correct location, but too large in comparison to the bounding box.}
     \label{lime_example_1}
@@ -26,13 +26,13 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
     \centering
     \begin{subfigure}[t]{.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_bbox.png}
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_bbox}
         \caption{Original image with bounding box added by a physician}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_2.png}
-        \caption{RISE saliency map of (a)}
+        \caption{LIME superpixels representing important regions for the classification}
     \end{subfigure}
     \caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. Parts of the marked regions are inside the bounding box, but a big part is missing in the center.}
     \label{lime_example_2}
@@ -42,13 +42,13 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
     \centering
     \begin{subfigure}[t]{.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise2_bbox.png}
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise0_bbox}
         \caption{Original image with bounding box added by a physician}
     \end{subfigure}\hspace{1cm}%
     \begin{subfigure}[t]{.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_8.png}
-        \caption{RISE saliency map of (a)}
+        \caption{LIME superpixels representing important regions for the classification}
     \end{subfigure}
     \caption{he left image shows the input image with the bounding box added by the physician.  The right image  shows  LIME  superpixels  which  the  network considers  important  for  the  classification. The superpixels mostly do not match the bounding box.}
     \label{lime_example_3}
@@ -59,10 +59,30 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
 LIME has an important configuration parameter: the count of how many superpixels should be returned. This parameter directly influences how large the area marked by LIME is. Depending on the image, the generated superpixels may be bigger or smaller and therefore also the returned region size. This parameter should be adjusted per dataset or even per image. Figure \ref{lime_superpixel_count} shows the image from Figure \ref{lime_example_1} with different superpixel counts.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{chapters/03_classification/images/lime-superpixel.png}
-\caption{LIME applied to the first example image from Figure \ref{lime_example_1} with different superpixel counts: 1, 3, 6, 9}
-\label{lime_superpixel_count}
+    \centering
+    \begin{subfigure}[b]{.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_sp_1.png}
+        \caption{One superpixel}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[b]{.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_sp_3.png}
+        \caption{Three superpixels}
+    \end{subfigure}
+    \begin{subfigure}[b]{.4\textwidth}
+        \centering
+        \vspace{0.5cm}
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_sp_5.png}
+        \caption{Five superpixels}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[b]{.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_sp_10.png}
+        \caption{Ten superpixels}
+    \end{subfigure}
+    \caption{LIME applied to the first example image from Figure \ref{lime_example_1} with different superpixel counts.}
+    \label{lime_superpixel_count}
 \end{figure}
 
 \subsection{Discussion}
