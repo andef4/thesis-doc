@@ -4,25 +4,54 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
 
 
 \subsection{Results}
+
+
 \begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{chapters/03_classification/images/lime_0.png}
-\caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. The superpixels are at the correct location, but too large in comparison to the bounding box.}
-\label{lime_example_1}
+    \centering
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise0_bbox.png}
+        \caption{Original image with bounding box added by a physician}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_0.png}
+        \caption{RISE saliency map of (a)}
+    \end{subfigure}
+    \caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. The superpixels are at the correct location, but too large in comparison to the bounding box.}
+    \label{lime_example_1}
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{chapters/03_classification/images/lime_2.png}
-\caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. Parts of the marked regions are inside the bounding box, but a big part is missing in the center.}
-\label{lime_example_2}
+    \centering
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise1_bbox.png}
+        \caption{Original image with bounding box added by a physician}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_2.png}
+        \caption{RISE saliency map of (a)}
+    \end{subfigure}
+    \caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. Parts of the marked regions are inside the bounding box, but a big part is missing in the center.}
+    \label{lime_example_2}
 \end{figure}
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{chapters/03_classification/images/lime_8.png}
-\caption{The left image shows the input image with the bounding box added by the physician. The right image shows LIME superpixels which the network considers important for the classification. The superpixels mostly do not match the bounding box.}
-\label{lime_example_3}
+    \centering
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/rise2_bbox.png}
+        \caption{Original image with bounding box added by a physician}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/03_classification/images/lime_8.png}
+        \caption{RISE saliency map of (a)}
+    \end{subfigure}
+    \caption{he left image shows the input image with the bounding box added by the physician.  The right image  shows  LIME  superpixels  which  the  network considers  important  for  the  classification. The superpixels mostly do not match the bounding box.}
+    \label{lime_example_3}
 \end{figure}
 
 \subsection{LIME configuration}
