@@ -2,11 +2,11 @@
 \nblink{brats/04\_basic\_unet.ipynb}
 The detailed results of the training sessions are available in the results directory of the GitHub repository: \href{https://github.com/andef4/thesis-code/tree/master/brats/results/}{brats/results}.
 
-The first try training the U-Net model showed good loss values soon after starting the training session. When we actually looked at the output of the network, the output was completely blank.
+Training the U-Net model showed good loss values soon after starting the training session. When we actually looked at the output of the network, the output was completely blank.
 
-To avoid the lengthy process with evaluating different network architectures and parameters like in the classification model for the NIH Chest X-Ray dataset, we started to read different resources for enhancements of the basic U-Net architecture
+To avoid the lengthy process with evaluating different network architectures and parameters like in the classification model for the NIH Chest X-Ray dataset, we started to study different resources for enhancements of the basic U-Net architecture
 
-The first change we implemented was correctly normalizing the input data by using a transform from the PyTorch library.
+The first change we implemented was normalizing the input data by using a transform from the PyTorch library.
 Retraining after this change showed similar low loss values as in the first attempt, with the same result when evaluating the network output - a blank image.
 
 The second change we did after some investigation was the introduction of a batch normalization layer after every convolutional layer. The first training run after this change showed much worse loss numbers which decreased slowly.
