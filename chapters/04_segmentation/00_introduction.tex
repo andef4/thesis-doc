@@ -5,10 +5,34 @@ The constituent proposed the BraTS \cite{menze2015multimodal} dataset. This data
 images of human brains taken with an MRI machine. The images are taken from patients which have brain tumors of the glioblastoma or lower grade glioma type. The dataset contains four different types of images taken by MRI called modalities. Figure \ref{brats_example} shows the four modalities..
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=14cm]{chapters/04_segmentation/images/brats.png}
-\caption{One slice showing all 4 modalities and the tumor segmentation ground truth overlaid on the T1 contrast enhanced modality.}
-\label{brats_example}
+    \centering
+    \begin{subfigure}{.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/brats/0.png}
+        \caption{T1 modality}
+    \end{subfigure}%
+    \begin{subfigure}{.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/brats/1.png}
+        \caption{T1 modality}
+    \end{subfigure}%
+        \begin{subfigure}{.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/brats/2.png}
+        \caption{T1 modality}
+    \end{subfigure}%
+        \begin{subfigure}{.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/brats/3.png}
+        \caption{T1 modality}
+    \end{subfigure}%
+        \begin{subfigure}{.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/04_segmentation/images/brats/4.png}
+        \caption{T1 modality}
+    \end{subfigure}
+    \caption{The first four images show the modalities of the MRI scans in the BraTS dataset. Image (e) shows the tumor segmentation ground truth.}
+    \label{brats_example}
 \end{figure}
 
 In addition, the dataset contains ground truth labels. These labels mark the region in the brain where the tumor resides.
