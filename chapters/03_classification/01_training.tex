@@ -1,6 +1,6 @@
-Almost all interpretability methods work on image classification tasks. To learn how these methods are applied, how they work and what output they generate, the first step in this work is applying these methods on a classification task. We chose a dataset from the medical imaging field: The NIH (National Institutes of Health, United States) chest X-ray dataset \cite{wang2017chestx}.
+Almost all interpretability methods work on image classification tasks. To learn how these methods are applied, how they work and what output they generate, the first step in this work is applying these methods on a classification task. We chose a dataset from the medical imaging field: the NIH (National Institutes of Health, United States) chest X-ray dataset \cite{wang2017chestx}.
 
-We downloaded the dataset, trained a neural network on the dataset and applied the selected methods described above.
+We downloaded the dataset, trained a neural network on the dataset and applied the selected methods RISE, LIME and Grad-CAM described above.
 
 \section{NIH Chest X-ray dataset}
 The NIH Chest X-ray dataset contains 112,120 X-ray scans from 30,805 unique patients \cite{nihchestxraykaggle}. Every scan has one or more disease labels. Figure \ref{chest_xray_sample} show three sample images from the dataset.
@@ -20,7 +20,7 @@ The detailed results of the training sessions are available in the results direc
 \subsection{Inception ResNet v2}
 \nblink{nhs-chest-xray/inception\_resnetv2.ipynb}
 
-We chose Inception ResNet v2 \cite{szegedy2017inception} as the first architecture to investigate. This is modern neural network built for image analysis.
+We chose Inception ResNet v2 \cite{szegedy2017inception} as the first architecture to investigate. This is a modern neural network architecture built for image analysis.
 The ResNet variant of the Inception architecture delivers similar performance as the normal Inception model, but with significantly reduced training time.
 
 \nblink{nhs-chest-xray/preprocess.ipynb}
