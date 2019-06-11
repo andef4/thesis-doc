@@ -1,11 +1,10 @@
 \section{Introduction}
 \nblink{brats/12\_rise\_masks.ipynb}
 
-The results from applying RISE on our segmentation models (BraTS and testnet) were underwhelming. While they showed a low resolution heat map output on both tasks,
-on the testnet is missed out a big part (the right side of the image) which is very important for the correct generation of the segmentation output.
+The results from applying RISE on our segmentation models (BraTS and testnet) were underwhelming. While they showed a low resolution heat map output on both tasks, it missed out a big part on the testnet (the right side of the image) which is very important for the correct generation of the segmentation output.
 
-We suspect that this is caused by the low information entropy retained after applying a RISE mask on an image, as shown in Figure \ref{hdm_rise_mask}.
-The basic idea of occluding a part of an image is not new and has been proposed by Zeiler et al. in 2014 \cite{zeiler2014visualizing} in a highly cited paper.
+We suspect that this is caused by the low entropy retained after applying a RISE mask on an image, as shown in Figure \ref{hdm_rise_mask}.
+The basic idea of occluding a part of an image is not new and has been proposed by Zeiler et al. in 2014 \cite{zeiler2014visualizing}.
 Another similar method is Prediction Difference Analysis \cite{zintgraf2017visualizing} by Zintgraf et al.
 
 Still, all investigated algorithms and methods were originally built for image classification tasks. We therefore propose a new method based on the same basic idea

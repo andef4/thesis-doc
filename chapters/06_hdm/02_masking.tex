@@ -2,17 +2,17 @@
 \nblink{brats/16\_brats\_hausdorff\_masks\_examples.ipynb}
 
 The first part of the algorithm is the occlusion of parts of the input image.
-We iterate over the image in a linear fashion, from left to right and from top to bottom, based on an pixel offset between every row and column defined as a parameter of the algorithm.
+We iterate over the image in a linear fashion, from left to right and from top to bottom, based on a pixel offset between every row and column defined as a parameter of the algorithm.
 For every position that is encountered, we create a new image. On this image, we draw a filled black circle at the specific position.
-Some examples of this changed images are shown in Figure \ref{hdm_masks_1} and \ref{hdm_masks_2}.
+Some examples of this changed images are shown in Figures \ref{hdm_masks_1} and \ref{hdm_masks_2}.
 
 We chose the circle shape (instead of a square), because many objects visible in medical imaging and real world images are round, and not squares.
 The current implementation only supports the complete removal of information (setting all pixel values to zero) inside the circle, but other approaches like
 setting the color to the mean value of the pixels inside the circle, setting all the pixel to 1 (full intensity) might also work.
 The size of the circle is a configuration parameter of the algorithm, some experimentation of different sizes is done in \autoref{hdm_circle_size}.
 
-The drawing of the black circle is implemented in a similar way to RISE. As a first step, masks with the black circles are generate. In a second step,
-these masks are applied to the images. The generation of the masks is not very slow, but the masks are exactly the same for the same parameters of the algorithm and therefore
+The drawing of the black circle is implemented in a similar way to RISE. As a first step, masks with the black circles are generated. In a second step,
+these masks are applied to the images. The generation does not take that much time, but the masks are exactly the same for the same parameters of the algorithm and therefore
 only need to be generated once.
 
 The masks are generated based on the image size and the configured offset between the circles.
@@ -128,7 +128,7 @@ The images with the masks applied from above are then passed through the neural 
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/3c_diff.png}
         \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{Occluding a part of the cross (a), which is part of the output segment, removes this part from the output segment (b), as is to be expected when the crucial information is removed from the input image.}
+    \caption{Occluding a part of the cross (a), which is part of the output segment, removes this part from the output segment (b), as is to be expected when crucial information is removed from the input image.}
     \label{hdm_changed_output_3}
 \end{figure}
 
@@ -150,7 +150,7 @@ The images with the masks applied from above are then passed through the neural 
         \includegraphics[width=\linewidth]{chapters/06_hdm/images_analyze/2c_diff.png}
         \caption{Difference of the new output segment to the reference output segment (reference output - new output segment)}
     \end{subfigure}
-    \caption{Occluding the left side of the square in the input image (a), the triangle is segmented instead of the cross. The neural network interprets the changed square as a circle and therefore segments the triangle. This shows a clear weakness of this network, for a human the modified square still looks like a square and much less like a circle.}
+    \caption{Occluding the left side of the square in the input image (a), the triangle is segmented instead of the cross. The neural network interprets the changed square as a circle and therefore segments the triangle. This shows a clear weakness of this network. For a human, the modified square still looks like a square and much less like a circle.}
     \label{hdm_changed_output_4}
 \end{figure}
 

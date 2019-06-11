@@ -3,10 +3,10 @@
 \nblink{brats/15a\_hausdorff\_distance.ipynb}
 
 In the previous section, we showed differences between the reference neural network output and the output of images where a part of them has been masked by a circle.
-Showing this difference for all the applied masks is impractical, a single visualization which shows all the output segment changes would be helpful.
-A first step is getting a single number for the difference between two segments (unchanged reference segment vs. output segment from masked image or any generated segment vs. the ground truth).
+Showing this difference for all the applied masks is impractical. A single visualization which shows all the output segment changes would be helpful.
+A first step is getting a single number for the difference between two segments: The unchanged reference segment vs. output segment from masked image or any generated segment vs. the ground truth.
 
-A way to calculate the similarity (or difference) between two matrices (the output segments of the neural network are 2D matrices) is a distance function.
+A way to calculate the similarity or difference between two matrices, e.g. the output segments of the neural network, is a distance function.
 
 We choose the Hausdorff distance function because it has a specific property that is helpful for our requirements: A slightly moved object is still considered more similar to
 an object with a completely different shape, even when the changed pixel count is exactly the same.
@@ -23,7 +23,7 @@ an object with a completely different shape, even when the changed pixel count i
 % \label{inf_sup}
 % \end{figure}
 
-Intuitively, the Hausdorff distance searches the two maximal distances between sets (A to B and B to a) and returns the higher one as the distance.
+Intuitively, the Hausdorff distance searches the two maximal distances between sets (A to B and B to A) and returns the higher one as the distance.
 The maximal distance from set A to set B is the biggest distance between a pixel from set A to a pixel in set B, but the distance from the pixel from set A to the pixel B has to be the smallest distance from pixel A to any pixel on the set B.
 
 A visual explanation of the Hausdorff distance is given in Figure \ref{hausdorff_distance}.
@@ -31,7 +31,7 @@ A visual explanation of the Hausdorff distance is given in Figure \ref{hausdorff
 \begin{figure}[H]
 \centering
 \includegraphics[width=6cm]{chapters/06_hdm/images/hausdorff_distance.png}
-\caption{Visualization of the Hausdorff distance. The Hausdorff distance from set Y to set X is the maximal distance of a point in set Y to a point in set X, but this distance still has to be the smallest distance from the point on set Y to any point on set X.\cite{hausdorffdistanceimage}}
+\caption{Visualization of the Hausdorff distance. The Hausdorff distance from set Y to set X is the maximal distance of a point in set Y to a point in set X, but this distance still has to be the smallest distance from the point on set Y to any point on set X \cite{hausdorffdistanceimage}.}
 \label{hausdorff_distance}
 \end{figure}
 
@@ -93,7 +93,7 @@ Figure \ref{hdm_moved1} shows a slightly moved circle, the Hausdorff distance be
     \label{hdm_moved2}
 \end{figure}
 
-Figure \ref{hdm_moved2} shows a shape that is moved to right, showing a bigger Hausdorff distance than in Figure \ref{hdm_moved1} with 1565.
+Figure \ref{hdm_moved2} shows a shape that is moved to the right, showing a bigger Hausdorff distance than in Figure \ref{hdm_moved1} with 1565.
 
 \begin{figure}[H]
     \centering
