@@ -43,7 +43,7 @@ perturbed instances of image. The size of these symbols show the distance to the
 \label{lime_linear_regression}
 \end{figure}
 
-As a last step, LIME trains a linear regression model on this data: Superpixels represented as a binary vector on the x-axis and the corresponding neural network output for the specific class on the y-axis. The samples are weighted by distance to the original sample, because only a linear model is trained which is accurate in the local environment of the unchanged image, but not further away because the underlying model is not linear. To find the most relevant superpixels for the model, the linear model is queried with the original image.
+As a last step, LIME trains a linear regression model (Figure \ref{lime_linear_regression}) on this data: Superpixels represented as a binary vector on the x-axis and the corresponding neural network output for the specific class on the y-axis. The samples are weighted by distance to the original sample, because only a linear model is trained which is accurate in the local environment of the unchanged image, but not further away because the underlying model is not linear. The 
 
 For visualization, the original image is taken and all pixels that are outside of the superpixel cluster deemed relevant for the classification are grayed out.
 Figure \ref{lime_dog} shows a visualization for three classes on a complex input image. Alternatively, the superpixel cluster is drawn over the input image with transparency.
