@@ -12,7 +12,7 @@ setting the color to the mean value of the pixels inside the circle, setting all
 The size of the circle is a configuration parameter of the algorithm, some experimentation of different sizes is done in \autoref{hdm_circle_size}.
 
 The drawing of the black circle is implemented in a similar way to RISE. As a first step, masks with the black circles are generated. In a second step,
-these masks are applied to the images. The generation does not take that much time, but the masks are exactly the same for the same parameters of the algorithm and therefore
+these masks are applied to the image. The generation does not take that much time, but the masks are exactly the same for the same parameters of the algorithm and therefore
 only need to be generated once.
 
 The masks are generated based on the image size and the configured offset between the circles.
@@ -67,7 +67,7 @@ Applying the mask to and image is done using the numpy \texttt{min()} function w
 
 
 \section{Changed segmentation output}
-The images with the masks applied from above are then passed through the neural networks. As seen in Figure \ref{hdm_changed_output_1}, the output segmentation may not change or only change slightly when applied to an unimportant part of the image. Applying the mask on important parts of the image can change the segmentation output significantly, as seen in Figure \ref{hdm_changed_output_2}, \ref{hdm_changed_output_3} and \ref{hdm_changed_output_4}.
+The images with the masks applied from above are then passed through the neural networks. As seen in Figure \ref{hdm_changed_output_1}, the output segmentation may not change or only change slightly when the mask occludes an unimportant part of the image. Applying the mask on important parts of the image can change the segmentation output significantly, as seen in Figure \ref{hdm_changed_output_2}, \ref{hdm_changed_output_3} and \ref{hdm_changed_output_4}.
 
 \begin{figure}[H]
     \centering
