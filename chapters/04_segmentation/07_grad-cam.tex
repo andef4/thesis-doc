@@ -1,3 +1,5 @@
+\clearpage
+
 \section{Modifying and applying Grad-CAM}
 \nblink{brats/07\_gradcam.ipynb}
 
@@ -8,6 +10,8 @@ In a classification task, we are only interested in the highest class value. In 
 or did not show up in the network output.
 
 As a first step, we can analyze a saliency map generated for a single class. In the following Result chapter, we analyze the pixel indicated by a red dot.
+
+\clearpage
 
 \subsection{Results}
 
@@ -67,6 +71,8 @@ to see if there is any insight how the network came up with the output segmentat
     \caption{Grad-CAM output of the first pixel of the ground truth output segment (red pixel). No layers provided any significant insight into how the network came to the output segment.}
     \label{grad_cam_brats_result}
 \end{figure}
+
+\clearpage
 
 \subsection{Discussion}
 \nblink{brats/25\_flair\_threshold.ipynb}

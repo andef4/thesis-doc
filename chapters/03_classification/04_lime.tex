@@ -1,3 +1,4 @@
+\clearpage
 \section{Applying LIME}
 \nblink{nhs-chest-xray/analyze/lime.ipynb}
 Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was straightforward. The reference implementation is published on PyPI (Python Packaging Index) and can be installed with the pip Python package manager. Examples how to use LIME with PyTorch are available in the official GitHub repository \cite{limegithub}.
@@ -54,6 +55,8 @@ Implementing LIME on the NIH Chest X-ray dataset with the DenseNet model was str
     \label{lime_example_3}
 \end{figure}
 
+
+\clearpage
 \subsection{LIME configuration}
 \nblink{nhs-chest-xray/analyze/lime\_num\_features.ipynb}
 LIME has an important configuration parameter: the count of how many superpixels should be returned. This parameter directly influences how large the area marked by LIME is. Depending on the image, the generated superpixels may be bigger or smaller and therefore also the returned region size. This parameter should be adjusted per dataset or even per image. Figure \ref{lime_superpixel_count} shows the image from Figure \ref{lime_example_1} with different superpixel counts.
