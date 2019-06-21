@@ -116,3 +116,29 @@ In this section we discuss the results when applying Hausdorff Distance Masks to
 
 \subsubsection{Discussion}
 Figures \ref{brats_tcia08_t1}, \ref{brats_tcia08_t1ce}, \ref{brats_tcia08_t2} and \ref{brats_tcia08_flair} show HDM results applied on all four modalities. The generated visualizations for regions decreasing the accuracy look very similar, mostly matching the parts of the tumor that is visible on the corresponding modality. The T1 modality seems to have the smallest impact on the generated segmentation, the maximal deviation from the baseline distance is only 0.0025 compared to 0.005 for T1 contrast enhanced and T2. FLAIR is highest with a deviation of 0.006.
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/06_hdm/book/0.png}
+        \caption{MRI Scan T1ce modality}
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/06_hdm/book/1.png}
+        \caption{Tumor segment}
+    \end{subfigure}
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/06_hdm/book/2.png}
+        \caption{Important parts }
+    \end{subfigure}\hspace{1cm}%
+    \begin{subfigure}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{chapters/06_hdm/book/3.png}
+        \caption{Regions where the applied masks increase the accuracy of the segmentation}
+    \end{subfigure}
+\end{figure}
